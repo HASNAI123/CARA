@@ -31,9 +31,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::delete('generatesop/destroy', 'GeneratesopController.php@massDestroy')->name('generatesop.massDestroy');
     Route::post('generate-sops/parse-csv-import', 'GenerateSopController@parseCsvImport')->name('generate-sops.parseCsvImport');
     Route::post('generate-sops/process-csv-import', 'GenerateSopController@processCsvImport')->name('generate-sops.processCsvImport');
-    Route::resource('generatesop', 'generatesopController');
-    Route::post('generatesop/download', 'generatesopController@download')->name('generatesop.download');
-    Route::get('/generatesop/{id}/approve', 'generatesopController@approve')->name('generatesop.approve');
+    Route::resource('generatesop', 'GeneratesopController');
+    Route::post('generatesop/download', 'GeneratesopController@download')->name('generatesop.download');
+    Route::get('/generatesop/{id}/approve', 'GeneratesopController@approve')->name('generatesop.approve');
     
     
 
