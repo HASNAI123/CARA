@@ -9,7 +9,7 @@
             <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
                 {{ trans('global.app_csvImport') }}
             </button>
-            @include('csvImport.modal', ['model' => 'User', 'route' => 'admin.users.parseCsvImport'])
+            @include('csvimport.modal', ['model' => 'User', 'route' => 'admin.users.parseCsvImport'])
         </div>
     </div>
 @endcan
