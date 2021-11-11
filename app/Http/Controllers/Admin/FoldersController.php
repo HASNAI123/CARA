@@ -62,7 +62,7 @@ class FoldersController extends Controller
         
         // $created_bies = \App\User::get()->pluck('name', 'id')->prepend(trans('quickadmin.qa_please_select'), '');
 
-        return view('admin.folders.create');
+        return view('admin.Folders.create');
     }
 
     /**
@@ -87,7 +87,7 @@ class FoldersController extends Controller
 
         ]);
 
-        return redirect()->route('admin.Folders.index');
+        return redirect()->route('admin.folders.index');
     }
 
 
@@ -109,7 +109,7 @@ class FoldersController extends Controller
 
         $folder=DB::table('folders')->where('id',$id)->get();
 
-         return view('admin.folders.edit', compact('folder'));
+         return view('admin.Folders.edit', compact('folder'));
     }
 
     /**
@@ -150,7 +150,7 @@ class FoldersController extends Controller
        
 
 
-        return view('admin.folders.show', compact('generatesop'));
+        return view('admin.Folders.show', compact('generatesop'));
     }
               
 
@@ -180,7 +180,7 @@ class FoldersController extends Controller
             
              
 
-            return view('admin.folders.files');
+            return view('admin.Folders.files');
     }
 
     
