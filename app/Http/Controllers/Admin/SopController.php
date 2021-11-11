@@ -29,7 +29,7 @@ class SopController extends Controller
      $sops=DB::table('sop')->where('archive_folder',$id)->get();
      $archive_folders=DB::table('archive_folders')->where('title',$id)->first('title');
 
-       return view('admin.sops.index')->with('sops',$sops)->with('archive_folders',$archive_folders);
+       return view('admin.Sops.index')->with('sops',$sops)->with('archive_folders',$archive_folders);
      
     }
 
@@ -42,7 +42,7 @@ class SopController extends Controller
     {
         
         $archive_folders=DB::table('archive_folders')->where('title',$id)->first('title');
-         return view('admin.sops.create',compact('archive_folders'));
+         return view('admin.Sops.create',compact('archive_folders'));
     
     }
     /**
@@ -110,7 +110,7 @@ class SopController extends Controller
      
 
       
-       return redirect()->route('admin.sops.index',$folder);
+       return redirect()->route('admin.Sops.index',$folder);
     }
 
 
@@ -127,7 +127,7 @@ class SopController extends Controller
      */
     public function show(Sop $sop)
     {
-        return view('admin.sops.show', compact('sop'));
+        return view('admin.Sops.show', compact('sop'));
     }
 
     /**
@@ -139,7 +139,7 @@ class SopController extends Controller
     public function edit(Sop $sop)
     {
         
-        return view('admin.sops.edit', compact('sop'));
+        return view('admin.Sops.edit', compact('sop'));
     }
 
     /**
@@ -197,7 +197,7 @@ class SopController extends Controller
 
        
 
-       return redirect()->route('admin.sops.index');
+       return redirect()->route('admin.Sops.index');
                        
 
     }
@@ -206,7 +206,7 @@ class SopController extends Controller
 
         
 
-        return redirect()->route('admin.sops.index');
+        return redirect()->route('admin.Sops.index');
     }
     
     public function download($sop_file){
