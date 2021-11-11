@@ -47,7 +47,7 @@ class ArchiveFoldersController extends Controller
         //     $folders = Folder::all();
         // }
         $archive_folders = archive_folder::all();
-        return view('admin.archivefolders.index', compact('archive_folders'));
+        return view('admin.ArchiveFolders.index', compact('archive_folders'));
         
     }
 
@@ -93,7 +93,7 @@ class ArchiveFoldersController extends Controller
 
        ]);
 
-        return redirect()->route('admin.archivefolders.index');
+        return redirect()->route('admin.ArchiveFolders.index');
         //return view('admin.archivefolders.index', compact('archive_folders'));
     
     }
@@ -141,7 +141,7 @@ class ArchiveFoldersController extends Controller
         ->update(array('title' => $request->folder_title));  // update the record in the DB. 
 
 
-        return redirect()->route('admin.archivefolders.index');
+        return redirect()->route('admin.ArchiveFolders.index');
     }
 
 
@@ -219,7 +219,7 @@ class ArchiveFoldersController extends Controller
         $folder = Archive_Folder::findOrFail($id);
         $folder->delete();
 
-        return redirect()->route('admin.archivefolders.index');
+        return redirect()->route('admin.ArchiveFolders.index');
     }
 
 
