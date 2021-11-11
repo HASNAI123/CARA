@@ -82,6 +82,7 @@ class GeneratesopController extends Controller
    
        
 $flow=array();
+
     if ($request->hasFile('img')) {
         $file=$request->file('img');
       
@@ -89,7 +90,7 @@ $flow=array();
           
         $filename= $files->getClientOriginalName();
         $filename= time(). '.' .$filename;
-        $path=$files->storeas('public',$filename);
+        $path=$files->storeas('images',$filename,'s3');
         $path=public_path($filename);
         $flow[]=$filename;
 
