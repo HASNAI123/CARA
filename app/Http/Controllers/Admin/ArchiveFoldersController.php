@@ -46,7 +46,7 @@ class ArchiveFoldersController extends Controller
         // } else {
         //     $folders = Folder::all();
         // }
-        $archive_folders = archive_folder::all();
+        $archive_folders = Archive_Folder::all();
         return view('admin.archivefolders.index', compact('archive_folders'));
         
     }
