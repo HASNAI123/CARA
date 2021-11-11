@@ -110,7 +110,7 @@ $flow=array();
           
         $name= $files->getClientOriginalName();
         $name= time(). '.' .$name;
-        $path=$files->storeas('public',$name);
+        $path=$files->storeas('images',name,'s3');
         $path=public_path($name);
         $img[]=$name;
       }
