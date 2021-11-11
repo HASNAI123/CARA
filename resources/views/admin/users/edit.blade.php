@@ -30,6 +30,10 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.user.fields.email_helper') }}</span>
             </div>
+             <div class="form-group {{ $errors->has('unit_division') ? 'has-error' : '' }}">
+                           <label for="unit_division">Business Unit</label>
+                           <input type="text" class="form-control" name="business_unit" value="{{$user->business_unit}}">
+                        </div>
             <div class="form-group">
                 <label class="required" for="password">{{ trans('cruds.user.fields.password') }}</label>
                 <input class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" type="password" name="password" id="password">
