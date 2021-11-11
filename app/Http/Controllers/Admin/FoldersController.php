@@ -130,7 +130,7 @@ class FoldersController extends Controller
         ->update(array('title' => $request->folder_title));  // update the record in the DB. 
 
 
-        return redirect()->route('admin.Folders.index');
+        return redirect()->route('admin.folders.index');
     }
 
 
