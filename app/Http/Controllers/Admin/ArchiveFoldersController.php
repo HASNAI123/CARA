@@ -93,7 +93,7 @@ class ArchiveFoldersController extends Controller
 
        ]);
 
-        return redirect()->route('admin.ArchiveFolders.index');
+        return redirect()->route('ArchiveFolders');
         //return view('admin.archivefolders.index', compact('archive_folders'));
     
     }
