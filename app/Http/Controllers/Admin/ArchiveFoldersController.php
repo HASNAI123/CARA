@@ -219,7 +219,7 @@ class ArchiveFoldersController extends Controller
         $folder = Archive_Folder::findOrFail($id);
         $folder->delete();
 
-        return redirect()->route('admin.ArchiveFolders.index');
+        return redirect()->route('admin.archivefolders.index');
     }
 
 
