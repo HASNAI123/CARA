@@ -40,6 +40,14 @@
                                 </tr>
                                 <tr>
                                     <th>
+                                        {{ trans('cruds.user.fields.bussiness_unit') }}
+                                    </th>
+                                    <td>
+                                        {{ $user->bussiness_unit }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
                                         {{ trans('cruds.user.fields.email_verified_at') }}
                                     </th>
                                     <td>
