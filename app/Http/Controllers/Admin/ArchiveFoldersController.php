@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Folder;
-use App\Archive_Folder;
+use App\archive_folder;
 
 
 use App\Generatesop;
@@ -46,7 +46,7 @@ class ArchiveFoldersController extends Controller
         // } else {
         //     $folders = Folder::all();
         // }
-        $archive_folders = Archive_Folder::all();
+        $archive_folders = archive_folder::all();
         return view('admin.archivefolders.index', compact('archive_folders'));
         
     }
