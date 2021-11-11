@@ -40,10 +40,10 @@
                                 </tr>
                                 <tr>
                                     <th>
-                                        {{ trans('cruds.user.fields.bussiness_unit') }}
+                                        {{ trans('cruds.user.fields.business_unit') }}
                                     </th>
                                     <td>
-                                        {{ $user->bussiness_unit }}
+                                        {{ $user->business_unit }}
                                     </td>
                                 </tr>
                                 <tr>
