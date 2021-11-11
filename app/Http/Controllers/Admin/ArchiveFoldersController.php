@@ -151,7 +151,7 @@ class ArchiveFoldersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show(Request $request,$id)
 
     {   
          
