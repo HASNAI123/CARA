@@ -141,7 +141,7 @@ class ArchiveFoldersController extends Controller
         ->update(array('title' => $request->folder_title));  // update the record in the DB. 
 
 
-        return redirect()->route('admin.ArchiveFolders.index');
+        return redirect()->route('admin.archivefolders.index');
     }
 
 
