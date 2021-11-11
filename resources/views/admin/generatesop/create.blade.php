@@ -193,7 +193,7 @@ input[type=text]:focus {
                 <label>{{ trans('Status') }}</label>
                 <select  disabled readonly class="form-control {{ $errors->has('status') ? 'is-invalid' : '' }}" name="status" id="status">
                     
-                    @foreach(App\generatesop::STATUS_SELECT as $key => $label)
+                    @foreach(App\Generatesop::STATUS_SELECT as $key => $label)
                         <option readonly dea value="{{ $key }}" >{{ $label }}</option>
                     @endforeach
                 </select>
