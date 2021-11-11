@@ -120,7 +120,7 @@ class ArchiveFoldersController extends Controller
 
          $folder=DB::table('archive_folders')->where('id',$id)->get();
 
-         return view('admin.archivefolders.edit', compact('folder'));
+         return view('admin.ArchiveFolders.edit', compact('folder'));
     }
 
     /**
@@ -157,7 +157,7 @@ class ArchiveFoldersController extends Controller
          
           $sop=DB::table('sop')->where('archive_folder',$id)->get();
 
-          return view('admin.archivefolders.show', compact('sop'));
+          return view('admin.ArchiveFolders.show', compact('sop'));
     }
 
      
@@ -167,7 +167,7 @@ class ArchiveFoldersController extends Controller
        
         $ids=DB::table('archive_folders')->where('id',$id)->get();
 
-        return view('admin.archivefolders.password', compact('ids'));
+        return view('admin.ArchiveFolders.password', compact('ids'));
     }
 
       public function showfolder(Request $request)
@@ -191,7 +191,7 @@ class ArchiveFoldersController extends Controller
         }else{
 
                 $ids=DB::table('archive_folders')->where('id',$id)->get();
-                return view('admin.archivefolders.password', compact('ids'))->withErrors(['msg' => 'Password Invalid']);
+                return view('admin.ArchiveFolders.password', compact('ids'))->withErrors(['msg' => 'Password Invalid']);
                 
             }            
         }
