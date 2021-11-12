@@ -91,7 +91,6 @@ $flow=array();
         $filename= $files->getClientOriginalName();
         $filename= time(). '.' .$filename;
         $path=$files->storeas('images',$filename,'s3');
-        $path=public_path($filename);
         $flow[]=$filename;
 
       }
@@ -111,7 +110,6 @@ $flow=array();
         $name= $files->getClientOriginalName();
         $name= time(). '.' .$name;
         $path=$files->storeas('images',name,'s3');
-        $path=public_path($name);
         $img[]=$name;
       }
 	}
@@ -268,8 +266,7 @@ $flow=array();
 
             $filename= $file->getClientOriginalName();
             $filename= time(). '.' .$filename;
-            $path=$file->storeas('public',$filename);
-            $path=public_path($filename);
+            $path=$file->storeas('images',$filename,'s3');
             $flow[]=$filename;
             $image=implode(',',$flow);
             $generatesop->img =$image;
@@ -285,8 +282,7 @@ $flow=array();
 
             $filename= $file->getClientOriginalName();
             $filename= time(). '.' .$filename;
-            $path=$file->storeas('public',$filename);
-            $path=public_path($filename);
+            $path=$file->storeas('public',$filename,'s3');
             $appendix[]=$filename;
             $img=implode(',',$appendix);
             $generatesop->appendix =$img;
