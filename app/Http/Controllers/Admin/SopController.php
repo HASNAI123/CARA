@@ -59,54 +59,13 @@ class SopController extends Controller
      
     ]);
 
-      if($request->hasFile('sop_file')){ 
-       $file=$request->file('sop_file');
-       $filename= $file->getClientOriginalName();
-       $filename= time(). '.' .$filename;
-       $path=$file->storeas('pdf',$filename,'s3');
-       $path=public_path($filename);
-   }else{
-        $filename='null';
-   }
-
-       
-      
-       $uploaded=$request->uploaded_by;
-
-      $folder=$request->folder;
-
-       $sop_title=$request->sop_title;
-       $business_unit=$request->business_unit;
-       $effective_date=$request->effective_date;
-
-       //$modified="mujeeb";
- 
-      /* Sop::create([
-        'accepted_by'=>$accepted,
-        'uploaded_by'=>$uploaded,
-           'Sop_file'=>$filename,
-           'sop_title'=>$sop_title,
-           'business_unit'=>$business_unit,
-           'effective_date'=>$effective_date,
-            'archive_folder'=>$request->folder,
-           
-
-       ]);*/
-       $sop=new Sop;
-      
-       $sop->uploaded_by=$uploaded;
-       $sop->Sop_file=$filename;
-       $sop->sop_title=$sop_title;
-       $sop->business_unit=$business_unit;
-       $sop->effective_date=$effective_date;
-       $sop->archive_folder=$folder;
-
-       $sop->save();
 
      
+if($request->hasFile('sop_file')){ 
+       $path=$request->file('sop_file')->store('pdfs','s3');
+       dd($path);
 
       
-       return redirect()->route('admin.Sops.index',$folder);
     }
 
 
