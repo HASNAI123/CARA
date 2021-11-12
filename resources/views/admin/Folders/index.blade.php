@@ -100,7 +100,7 @@
                             
                             <td>
                            
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.folders.show',$folders->title) }}"> 
+                                    <a class="btn btn-xs btn-info" href="{{ route('admin.folders.check',$folders->id) }}"> 
                                         {{ trans('View Files') }}
                                     </a>
 
