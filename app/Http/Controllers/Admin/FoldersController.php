@@ -16,6 +16,7 @@ use App\Http\Resources\Admin\generatesopResource;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class FoldersController extends Controller
 {
@@ -79,11 +80,14 @@ class FoldersController extends Controller
         // $folder = Folder::create($request->all());
 
         $title=$request->folder_title;
+        $password=$request->password;
+        $hashed = Hash::make($password);
 
 
         folder::create([
 
             'title'=>$title,
+            'password'=>$hashed,
 
         ]);
 
@@ -143,14 +147,44 @@ class FoldersController extends Controller
     public function show( $id)
 
     {
-        
-         
+    
        $generatesop=DB::table('generatesops')->where('folder',$id)->get();
 
-       
-
-
         return view('admin.Folders.show', compact('generatesop'));
+    }
+    
+     public function check($id)
+
+    {   
+         $ids=DB::table('folders')->where('id',$id)->get();
+
+        return view('admin.folders.password', compact('ids'));
+    }
+    
+     public function showfolder(Request $request)
+
+    {   
+        $id=$request->id;
+        $password=$request->password;
+        $title=$request->title;
+
+
+        $query=DB::table('folders')->where('id',$id)->get();
+        foreach ($query as $querys) {
+
+        $check=password_verify($password, $querys->password);
+
+        if($check){
+                
+               $generatesop=DB::table('generatesops')->where('folder',$title)->get();
+               return view('admin.folders.show', compact('generatesop'));
+        }else{
+
+                $ids=DB::table('folders')->where('id',$id)->get();
+                return view('admin.folders.password', compact('ids'))->withErrors(['msg' => 'Password Invalid']);
+                
+            }            
+        }  
     }
               
 
