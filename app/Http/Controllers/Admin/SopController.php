@@ -26,7 +26,7 @@ class SopController extends Controller
    public function index($id)
     {
           
-     $sops=DB::table('sop')->where('archive_folder',$id)->get();
+     $sops=DB::table('Sop')->where('archive_folder',$id)->get();
      $archive_folders=DB::table('archive_folders')->where('title',$id)->first('title');
 
        return view('admin.Sops.index')->with('sops',$sops)->with('archive_folders',$archive_folders);
@@ -147,7 +147,7 @@ class SopController extends Controller
         //$user_name = Auth::user()->name;
 
         //$id=$sop->id;
-        if($request->hasFile('Sop_file')){
+        if($request->hasFile('sop_file')){
         $file=$request->file('sop_file');
        $filename= $file->getClientOriginalName();
        $filename= time(). '.' .$filename;
@@ -181,12 +181,12 @@ class SopController extends Controller
        
 
        $sop=sop::find($id)->update([
-           'Sop_file'=>$filename
+           'sop_file'=>$filename
        ]);
 
        
 
-       return redirect()->route('admin.Sops.index');
+       return redirect()->route('admin.sops.index');
                        
 
     }
