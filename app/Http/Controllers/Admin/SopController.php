@@ -29,7 +29,7 @@ class SopController extends Controller
      $sops=DB::table('Sop')->where('archive_folder',$id)->get();
      $archive_folders=DB::table('archive_folders')->where('title',$id)->first('title');
 
-       return view('admin.Sops.index')->with('sops',$sops)->with('archive_folders',$archive_folders);
+       return view('admin.sops.index')->with('sops',$sops)->with('archive_folders',$archive_folders);
      
     }
 
