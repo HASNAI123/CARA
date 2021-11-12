@@ -185,7 +185,7 @@ class ArchiveFoldersController extends Controller
 
         if($check){
                 
-                $sops=DB::table('Sop')->where('archive_folder',$title)->get();
+                $sops=DB::table('sops')->where('archive_folder',$title)->get();
                 $archive_folders=DB::table('archive_folders')->where('title',$title)->first('title');
                 return view('admin.Sops.index')->with('sops',$sops)->with('archive_folders',$archive_folders);
         }else{
