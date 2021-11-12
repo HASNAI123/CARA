@@ -99,7 +99,7 @@
         @endcan
         @can('generate_sop_access')
             <li class="c-sidebar-nav-item">
-                <a href="{{ route("admin.generate-sops.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/generate-sops") || request()->is("admin/generate-sops/*") ? "c-active" : "" }}">
+                <a href="{{ route("admin.generatesop.create") }}" class="c-sidebar-nav-link {{ request()->is("admin/generate-sops") || request()->is("admin/generate-sops/*") ? "c-active" : "" }}">
                     <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
 
                     </i>
