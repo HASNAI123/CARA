@@ -56,6 +56,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
   //Folders
      Route::resource('folders', 'FoldersController');
+     Route::get('folders/check/{id}', 'FoldersController@check')->name('folders.check');
+     Route::post('folders/showfolder', 'FoldersController@showfolder')->name('folders.showfolder');
 
  //Archive Folders
     Route::resource('archivefolders', 'ArchiveFoldersController');
