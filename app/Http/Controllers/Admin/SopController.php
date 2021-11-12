@@ -151,8 +151,7 @@ class SopController extends Controller
         $file=$request->file('sop_file');
        $filename= $file->getClientOriginalName();
        $filename= time(). '.' .$filename;
-       $path=$file->storeas('public',$filename);
-       $path=public_path($filename);
+       $path=$file->storeas('pdfs',$filename,'s3');
    }
    else{
             $filename='null';
@@ -176,8 +175,7 @@ class SopController extends Controller
         $file=$request->file('Sop_file');
        $filename= $file->getClientOriginalName();
        $filename= time(). '.' .$filename;
-       $path=$file->storeas('public',$filename);
-       $path=public_path($filename);
+       $path=$file->storeas('pdfs',$filename);
        
 
        $sop=sop::find($id)->update([
@@ -203,7 +201,7 @@ class SopController extends Controller
         // $path = storage_path('./app/public/'.$sop_file);
         // return response()->download($path);
         
-         $path = storage::disk(name: 's3')->response(path: 'images/'.$sop_file);
+         $path = storage::disk(name: 's3')->response(path: 'pdfs/'.$sop_file);
         return response()->download($path);
         
    
