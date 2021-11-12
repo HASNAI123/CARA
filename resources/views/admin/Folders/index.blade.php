@@ -14,7 +14,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Folder Title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">New Folder</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -23,6 +23,11 @@
       <form method="POST" action="{{ route("admin.folders.store") }}" enctype="multipart/form-data">
               @csrf
         <input type="text" name="folder_title">
+       
+        <br><br>
+
+        <label>Password </label>
+        &emsp;<input type="password" name="password" value="{{ old('title', '') }}" >
         
       </div>
       <div class="modal-footer">
