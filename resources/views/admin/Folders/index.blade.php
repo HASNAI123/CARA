@@ -22,8 +22,9 @@
       <div class="modal-body">
       <form method="POST" action="{{ route("admin.folders.store") }}" enctype="multipart/form-data">
               @csrf
-        <input type="text" name="folder_title">
-       
+        <label>Folder Title</label>
+        <input type="text" name="folder_title" value="{{ old('title', '') }}" >
+
         <br><br>
 
         <label>Password </label>
