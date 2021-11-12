@@ -203,7 +203,7 @@ class SopController extends Controller
         // $path = storage_path('./app/public/'.$sop_file);
         // return response()->download($path);
         
-         $path = storage_path('https://cara-sop.s3.ap-southeast-1.amazonaws.com/images/'.$sop_file);
+         $path = storage::disk(name: 's3')->response(path: 'images/'.$sop_file);
         return response()->download($path);
         
    
