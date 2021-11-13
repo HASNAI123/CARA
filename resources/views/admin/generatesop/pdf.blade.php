@@ -438,7 +438,7 @@ foreach ($image as $images) {
        
 @if($generatesop->appendix)
 
-        <img  width="700px" height="600px"   src="C:\inetpub\wwwroot\Sop new\storage\app\public/{{$images}}" alt="">
+        <img  width="700px" height="600px"  src="{{Storage::disk('s3')->url('images/'.$images)}}" alt="">
         
         
 @endif
