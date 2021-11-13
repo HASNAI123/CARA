@@ -91,6 +91,7 @@ $flow=array();
         $filename= $files->getClientOriginalName();
         $filename= time(). '.' .$filename;
         $path=$files->storeas('images',$filename,'s3');
+        Storage::disk('s3')setVisibility($path,'public');
         $flow[]=$filename;
 
       }
@@ -110,6 +111,7 @@ $flow=array();
         $name= $files->getClientOriginalName();
         $name= time(). '.' .$name;
         $path=$files->storeas('images',$name,'s3');
+        Storage::disk('s3')setVisibility($path,'public');
         $img[]=$name;
       }
 	}
