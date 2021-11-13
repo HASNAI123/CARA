@@ -161,7 +161,7 @@ $flow=array();
 
       
 
-       return redirect()->route('admin.generatesop.index', compact('generatesop'));
+       return redirect()->route('admin.folders.index', compact('generatesop'));
        
        
     }
@@ -199,10 +199,6 @@ $flow=array();
         $pdf = \PDF::loadView( 'admin.generatesop.pdf', [ 'generatesop' => $generatesop] );
         return $pdf->stream();
         
-       
-
-        
-
     }
 
     public function approve(generatesop $generatesop,$id)
