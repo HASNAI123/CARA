@@ -47,7 +47,7 @@ class FoldersController extends Controller
         //     $folders = Folder::all();
         // }
         $folders = folder::all();
-        return view('admin.Folders.index', compact('folders'));
+        return view('admin.folders.index', compact('folders'));
     }
 
     /**
