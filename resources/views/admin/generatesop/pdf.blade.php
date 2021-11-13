@@ -250,11 +250,11 @@
 $flow=explode(',',$generatesop->img);
 
 foreach ($flow as $img) {
-    
+    echo $img;
 
 ?>
 @if($generatesop->img)
-                <img  width="700px" height="600px"   src="{{Image::make(Storage::disk('s3')->get('images/'.$img))}}" alt="">
+                <img  width="700px" height="600px"   src="{{Storage::disk('s3')->get('images/'.$img)}}" alt="">
                
                         
 @endif
