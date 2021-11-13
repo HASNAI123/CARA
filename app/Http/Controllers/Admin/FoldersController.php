@@ -91,7 +91,7 @@ class FoldersController extends Controller
 
         ]);
 
-        return redirect()->route('admin.Folders.index');
+        return redirect()->route('admin.folders.index');
     }
 
 
