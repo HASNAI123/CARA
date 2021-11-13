@@ -205,10 +205,10 @@ class SopController extends Controller
          //return Storage::download($sop_file);
         // return $path= storage::disk('s3');
        //$path = Storage::disk('s3')->url('pdfs/'.$sop_file);
-      return \Response::download(Storage::disk('s3')->get('pdfs/'.$sop_file));
+      $path= Storage::disk('s3')->get('pdfs/'.$sop_file);
          
        
-       // return response()->download($path);
+       return response()->download($path);
         
    
          
