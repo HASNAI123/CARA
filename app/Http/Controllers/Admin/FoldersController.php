@@ -47,7 +47,7 @@ class FoldersController extends Controller
         //     $folders = Folder::all();
         // }
         $folders = folder::all();
-        return view('admin.folders.index', compact('folders'));
+        return view('admin.Folders.index', compact('folders'));
     }
 
     /**
@@ -134,7 +134,7 @@ class FoldersController extends Controller
         ->update(array('title' => $request->folder_title));  // update the record in the DB. 
 
 
-        return redirect()->route('admin.folders.index');
+        return redirect()->route('admin.Folders.index');
     }
 
 
