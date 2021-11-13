@@ -87,6 +87,12 @@
                                     <a class="btn btn-xs btn-primary" href="{{ route('admin.generatesop.show', $generatesop->id) }}">
                                         {{ trans('View & Download') }}
                                     </a>
+                                    
+                                     @can('Sop_approve') 
+                                    <a class="btn btn-xs btn-success" href="{{ route('admin.generatesop.approve', $generatesop->id) }}">
+                                        {{ trans('Approve') }}
+                                    </a>
+                                     @endcan
                                
 
                                     @can('Sop_edit')
