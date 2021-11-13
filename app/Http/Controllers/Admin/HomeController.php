@@ -107,10 +107,10 @@ class HomeController extends Controller
                 'id'    => '',
                 'sop_title'=> '',
        
-       'accepted_by'=> '',
-        'uploaded_by'=> '',
+       
+                      'uploaded_by'=> '',
         
-        'updated_at'=> '',
+                       'updated_at'=> '',
        
 
             
