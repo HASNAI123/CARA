@@ -194,10 +194,10 @@ $flow=array();
     {   
 
          
-        //$pdf = \PDF::loadView( 'admin.generatesop.pdf', [ 'generatesop' => $generatesop] );
-        //return $pdf->stream();
+        $pdf = \PDF::loadView( 'admin.generatesop.pdf', [ 'generatesop' => $generatesop] );
+        return $pdf->stream();
         
-        return "ok";
+       
 
         
 
