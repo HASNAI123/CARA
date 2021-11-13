@@ -224,7 +224,7 @@ $flow=array();
 
         ]);
 
-            return redirect()->route('admin.generatesop.index');
+            return redirect()->route('admin.folders.index');
 
            }else{
 
@@ -295,7 +295,7 @@ $flow=array();
 
      $generatesop->save();
 
-        return redirect()->route('admin.generatesop.index');
+        return redirect()->route('admin.folders.index');
     }
 
     /**
