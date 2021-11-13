@@ -137,7 +137,7 @@ input[type=text]:focus {
             <label> SOP Details </label><br><br><br>
             <p>SOP Title:<br><br><input  type="text" name="sop_title" value="{{ old('sop_title', '') }}"   /></p>
             <p>Version No. :<br><br><input type="integer" name="version_no"  value="{{ old('version_no', '') }}"         /> </p>
-            <p>Business Unit:<br><br><input type="text" name="business_unit"   value="{{ Auth::user()->business_unit }}"                /> </p> 
+            <p>Business Unit:<br><br><input readonly type="text" name="business_unit"   value="{{ Auth::user()->business_unit }}"                /> </p> 
             <p>Effective Date : <br><br><tr><input type="date" name="effective_date"   value="{{ old('effective_date', '') }}"             /></p>
             <p>Process Owner : <br><br><input type="text" name="Process_owner"      value="{{ old('Process_owner', '') }}"         /></p>
             <p>Process execution : <br><br><input type="text" name="Process_exec"      value="{{ old('Process_exec', '') }}" /></p>
