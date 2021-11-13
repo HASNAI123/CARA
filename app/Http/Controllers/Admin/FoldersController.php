@@ -91,7 +91,7 @@ class FoldersController extends Controller
 
         ]);
 
-        return redirect()->route('admin.folders.index');
+        return redirect()->route('admin.Folders.index');
     }
 
 
@@ -158,7 +158,7 @@ class FoldersController extends Controller
     {   
          $ids=DB::table('folders')->where('id',$id)->get();
 
-        return view('admin.folders.password', compact('ids'));
+        return view('admin.Folders.password', compact('ids'));
     }
     
      public function showfolder(Request $request)
@@ -177,11 +177,11 @@ class FoldersController extends Controller
         if($check){
                 
                $generatesop=DB::table('generatesops')->where('folder',$title)->get();
-               return view('admin.folders.show', compact('generatesop'));
+               return view('admin.Folders.show', compact('generatesop'));
         }else{
 
                 $ids=DB::table('folders')->where('id',$id)->get();
-                return view('admin.folders.password', compact('ids'))->withErrors(['msg' => 'Password Invalid']);
+                return view('admin.Folders.password', compact('ids'))->withErrors(['msg' => 'Password Invalid']);
                 
             }            
         }  
@@ -253,7 +253,7 @@ class FoldersController extends Controller
         $folder = Folder::onlyTrashed()->findOrFail($id);
         $folder->restore();
 
-        return redirect()->route('admin.folders.index');
+        return redirect()->route('admin.Folders.index');
     }
 
     /**
