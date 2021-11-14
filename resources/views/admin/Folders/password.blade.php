@@ -64,7 +64,7 @@
           
                 <span class="help-block">{{ trans('cruds.sop.fields.accepted_by_helper') }}</span>
             </div>
-            <div class="form-group">
+            <div style="padding-left: 30px;" class="form-group">
                 <button class="btn btn-success" type="submit">
                     {{ trans('global.submit') }}
                 </button>
