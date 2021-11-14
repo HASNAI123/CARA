@@ -59,8 +59,13 @@
                         <th width="10">
 
                         </th>
-                        <th>
+                        <th hidden>
                             {{ trans('id') }}
+                        </th>
+                        
+                        <th>
+                            {{trans('No.')}}
+                            
                         </th>
                         <th>
                             {{ trans('Folder Title') }}
@@ -85,8 +90,11 @@
                             <td>
 
                             </td>
-                            <td>
+                            <td hidden >
                                 {{ $folders->id  }}
+                            </td>
+                            <td>
+                                {{$loop->iteration}}
                             </td>
                             <td>
                                 <i class="fa fa-folder-open"></i> {{$folders->title}} 
