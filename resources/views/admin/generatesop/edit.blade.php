@@ -119,6 +119,8 @@ input[type=text]:focus {
             <div class="form-group">
 
             <p> Edited by:<br><br><input readonly    type="text" name="edited_by" value="{{ Auth::user()->name }}"   /></p>
+            
+            <p> Folder:<br><br><input readonly    type="hidden" name="folder" value="{{$generatesop->folder }}"   /></p>
 
 
             
