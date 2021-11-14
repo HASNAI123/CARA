@@ -126,12 +126,13 @@ class FoldersController extends Controller
     public function update( request $request,$id)
     {
          
-
+        $password=$request->password;
+        $hashed = Hash::make($password);
           
         DB::table('folders')
         ->where('id', $id)  // find your user by their email
         ->limit(1)  // optional - to ensure only one record is updated.
-        ->update(array('title' => $request->folder_title));  // update the record in the DB. 
+        ->update(array('title' => $request->folder_title, 'password'=>$hashed));  // update the record in the DB. 
 
 
         return redirect()->route('admin.folders.index');
