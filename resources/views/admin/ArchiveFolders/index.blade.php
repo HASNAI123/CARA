@@ -64,7 +64,7 @@
                         </th>
                         
                         <th>
-                            {{trans{{'No.'}}}}
+                            {{trans('No.')}}
                             
                         </th>
                         <th>
