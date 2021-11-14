@@ -29,7 +29,7 @@ class HomeController extends Controller
             'filter_days'           => '7',
             'group_by_field_format' => 'd.m.Y H:i:s',
             'column_class'          => 'col-md-12',
-            'entries_number'        => '10',
+            'entries_number'        => '5',
             'fields'                => [
                 'id'          => '',
                 'sop_title'    => '',
