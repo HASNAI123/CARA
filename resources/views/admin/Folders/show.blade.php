@@ -23,8 +23,12 @@
                         <th width="10">
 
                         </th>
-                        <th>
+                        <th hidden>
                             {{ trans('cruds.sop.fields.id') }}
+                        </th>
+                        <th>
+                            {{trans('No.')}}
+                            
                         </th>
                         <th>
                             {{ trans('SOP Title') }}
@@ -61,8 +65,12 @@
                             <td>
 
                             </td>
-                            <td>
+                            <td hidden >
                                 {{ $generatesop->id  }}
+                            </td>
+                            <td>
+                                {{$loop->iteration}}
+                                
                             </td>
                             <td>
                                 {{$generatesop->sop_title}}
