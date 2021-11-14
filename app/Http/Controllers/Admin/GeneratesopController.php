@@ -254,7 +254,7 @@ $flow=array();
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateGenerateSopRequest $request, generatesop $generatesop)
+    public function update(Request $request,$generatesop)
     {
         $generatesop->update($request->all());                                                
 
