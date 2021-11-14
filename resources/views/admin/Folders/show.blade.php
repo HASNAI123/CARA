@@ -44,6 +44,9 @@
                         <th>
                             {{ trans('Status') }}
                         </th>
+                         <th>
+                            {{ trans('Edited by') }}
+                        </th>
 
                     
                         <th>
@@ -79,6 +82,9 @@
                             
                             <td>
                                 {{ $generatesop->status  }}
+                            </td>
+                            <td>
+                                {{ $generatesop->edited_by  }}
                             </td>
 
                            
