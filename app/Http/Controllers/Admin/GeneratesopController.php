@@ -296,7 +296,9 @@ $flow=array();
 
      $generatesop->save();
 
-        return redirect()->route('admin.folders.index');
+      $title=$request->folder;
+      $generatesop=DB::table('generatesops')->where('folder',$title)->get();
+      return view('admin.folders.show', compact('generatesop'));
     }
 
     /**
