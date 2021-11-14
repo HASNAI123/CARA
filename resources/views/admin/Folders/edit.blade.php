@@ -43,7 +43,7 @@
                 <br><br>
                 @can('Password_edit')
                 <label for="Business unit">{{ trans('Update Password') }}</label>
-                <input class="form-control {{ $errors->has('business_unit') ? 'is-invalid' : '' }}" type="text" name="password" id="business_unit" value="">
+                <input class="form-control {{ $errors->has('business_unit') ? 'is-invalid' : '' }}" type="password" name="password" id="business_unit" value="">
                 @endcan       
              
                 <span class="help-block">{{ trans('cruds.sop.fields.uploaded_by_helper') }}</span>
