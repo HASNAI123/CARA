@@ -28,7 +28,7 @@
         <br><br>
 
         <label>Password</label>
-        <input type="password" name="password" value="{{ old('title', '') }}" >
+         &emsp;<input type="password" name="password" value="{{ old('title', '') }}" >
         
       </div>
       <div class="modal-footer">
