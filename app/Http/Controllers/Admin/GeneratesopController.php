@@ -14,6 +14,7 @@ use Barryvdh\DomPDF\Facade as PDF;
 use App\Folder;
 use Illuminate\Support\Facades\Auth;
 use App\user;
+use Illuminate\Support\Facades\DB;
 
 
 class GeneratesopController extends Controller
@@ -254,7 +255,7 @@ $flow=array();
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$generatesop)
+    public function update(UpdateGenerateSopRequest $request,generatesop $generatesop)
     {
         $generatesop->update($request->all());                                                
 
