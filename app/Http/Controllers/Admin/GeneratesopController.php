@@ -210,6 +210,12 @@ $flow=array();
         //return $pdf->stream();
         
           $generatesop= generatesop::find($id);
+          
+          $folders= generatesop::where('id',$id)->get('folder');
+           foreach ($folders as $folder) {
+
+             $folder['folder'];
+           }
 
           
 
@@ -225,13 +231,16 @@ $flow=array();
 
         ]);
 
-            return redirect()->route('admin.folders.index');
+            $generatesop=DB::table('generatesops')->where('folder',$folder['folder'])->get();
 
-           }else{
+           return view('admin.folders.show', compact('generatesop'));
 
-            return redirect()->route('admin.generatesop.index')->withErrors(['msg' => 'Already Approved']);
            
-        }
+           }else{
+             $generatesop=DB::table('generatesops')->where('folder',$folder['folder'])->get();
+            return view('admin.folders.show', compact('generatesop'))->withErrors(['msg' => 'Already Approved']);
+         
+         }
 
     }
 
