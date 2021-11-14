@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoregeneratesopRequest;
-use App\Http\Requests\updategeneratesopRequest;
+use App\Http\Requests\UpdateGenerateSopRequest;
 use Symfony\Component\HttpFoundation\Response;
 use App\Generatesop;
 use Barryvdh\DomPDF\Facade as PDF;
