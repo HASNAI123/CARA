@@ -51,6 +51,9 @@
                          <th>
                             {{ trans('Edited by') }}
                         </th>
+                         <th>
+                            {{ trans('Reviewed by') }}
+                        </th>
 
                     
                         <th>
@@ -93,6 +96,9 @@
                             </td>
                             <td>
                                 {{ $generatesop->edited_by  }}
+                            </td>
+                            <td>
+                                {{ $generatesop['revised by']  }}
                             </td>
 
                            
