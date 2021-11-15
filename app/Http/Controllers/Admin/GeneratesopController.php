@@ -243,6 +243,39 @@ $flow=array();
          }
 
     }
+    
+    
+            public function review(generatesop $generatesop,$id)
+    {   
+  
+         $generatesops= generatesop::find($id);
+
+           $folders= generatesop::where('id',$id)->get('folder');
+           foreach ($folders as $folder) {
+
+             $folder['folder'];
+           }
+          $user_id = Auth::user()->id;
+          $user_name = Auth::user()->name;
+
+         if ($generatesops['revised by']==""){
+         
+            $generatesops = generatesop::find($id)
+            ->update([
+                      'revised by'=>$user_name
+        ]);
+         
+            $generatesop=DB::table('generatesops')->where('folder',$folder['folder'])->get();
+
+           return view('admin.folders.show', compact('generatesop'));
+
+           
+           }else{
+             $generatesop=DB::table('generatesops')->where('folder',$folder['folder'])->get();
+            return view('admin.folders.show', compact('generatesop'))->withErrors(['msg' => 'Already Reviewed']);
+         
+         }  
+    }
 
     
 
