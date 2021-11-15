@@ -309,6 +309,14 @@ $flow=array();
       $generatesop=DB::table('generatesops')->where('folder',$title)->get();
       return view('admin.Folders.show', compact('generatesop'));
     }
+    
+    
+      public function delete($id){
+
+       $delete= DB::table('generatesops')->where('id',$id)->delete();
+ 
+       return redirect()->route('admin.folders.index');
+    }
 
     /**
      * Remove the specified resource from storage.
