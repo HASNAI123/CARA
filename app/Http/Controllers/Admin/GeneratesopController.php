@@ -267,12 +267,12 @@ $flow=array();
          
             $generatesop=DB::table('generatesops')->where('folder',$folder['folder'])->get();
 
-           return view('admin.folders.show', compact('generatesop'));
+           return view('admin.Folders.show', compact('generatesop'));
 
            
            }else{
              $generatesop=DB::table('generatesops')->where('folder',$folder['folder'])->get();
-            return view('admin.folders.show', compact('generatesop'))->withErrors(['msg' => 'Already Reviewed']);
+            return view('admin.Folders.show', compact('generatesop'))->withErrors(['msg' => 'Already Reviewed']);
          
          }  
     }
