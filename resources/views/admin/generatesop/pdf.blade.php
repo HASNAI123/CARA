@@ -101,7 +101,7 @@
 
                     <tr>
                         <th style align='left' >{{ trans('Reviewed By') }} <div style="font:50">(Name,ID)</div>  <div style="font:100"   >(Please Sign If printed)</div>  </th>
-                        <td>{{$generatesop->revised by}}</td>
+                        <td>{{$generatesop->['revised by']}}</td>
                         <th style align='left'>{{ trans('Approved By') }} <br> <div style="font:50">(Name,ID)</div>  <div style="font:100"   >(Please Sign If printed)</div>  </th>
                         <td>{{$generatesop->approved_by}}</td>
                     </tr>
