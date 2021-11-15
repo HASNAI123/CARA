@@ -319,7 +319,8 @@ $flow=array();
     public function destroy($id)
     {
         //$generatesop->delete();
+        $delete=generatesop::find($id)->delete();
 
-        return $id;
+        return "deleted";
     }
 }
