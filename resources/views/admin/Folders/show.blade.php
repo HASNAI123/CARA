@@ -98,7 +98,7 @@
                                 {{ $generatesop->edited_by  }}
                             </td>
                             <td>
-                                {{ $generatesop->revised by  }}
+                            
                             </td>
 
                            
