@@ -320,7 +320,15 @@ $flow=array();
     {
         //$generatesop->delete();
         $delete=generatesop::find($id)->delete();
+        
+        $folders= generatesop::where('id',$id)->get('folder');
+           foreach ($folders as $folder) {
 
-        return "deleted";
+             $folder['folder'];
+           }
+        $generatesop=DB::table('generatesops')->where('folder',$folder['folder'])->get();
+
+         return view('admin.Folders.show', compact('generatesop'));
+
     }
 }
