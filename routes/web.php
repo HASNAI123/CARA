@@ -35,6 +35,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('generatesop/download', 'GeneratesopController@download')->name('generatesop.download');
     Route::get('/generatesop/{id}/approve', 'GeneratesopController@approve')->name('generatesop.approve');
     Route::get('/generatesop/{id}/delete', 'GeneratesopController@delete')->name('generatesop.delete');
+    Route::get('/generatesop/{id}/review', 'GeneratesopController@review')->name('generatesop.review');
     
     
 
