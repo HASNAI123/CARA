@@ -319,8 +319,9 @@ $flow=array();
     public function destroy($id)
     {
         //$generatesop->delete();
+        return $id;
         $delete=generatesop::where('id',$id)->get();
-        return $delete;
+
         
         // $folders= generatesop::where('id',$id)->get('folder');
         //   foreach ($folders as $folder) {
