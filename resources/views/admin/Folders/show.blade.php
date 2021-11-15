@@ -51,9 +51,7 @@
                          <th>
                             {{ trans('Edited by') }}
                         </th>
-                         <th>
-                            {{ trans('Reviewed by') }}
-                        </th>
+                        
 
                     
                         <th>
