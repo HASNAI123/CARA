@@ -320,6 +320,6 @@ $flow=array();
     {
         $generatesop->delete();
 
-        return back();
+        return "deleted";
     }
 }
