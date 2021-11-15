@@ -107,6 +107,12 @@
                                         {{ trans('Approve') }}
                                     </a>
                                      @endcan
+                                     
+                                      
+                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.generatesop.review', $generatesop->id) }}">
+                                        {{ trans('Review') }}
+                                    </a>
+                                   
                                
 
                                     @can('Sop_edit')
