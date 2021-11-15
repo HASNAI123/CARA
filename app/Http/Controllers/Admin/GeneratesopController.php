@@ -316,9 +316,9 @@ $flow=array();
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(generatesop $generatesop)
     {
-        //$generatesop->delete();
+        $generatesop->delete();
 
         return "deleted";
     }
