@@ -316,10 +316,10 @@ $flow=array();
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(generatesop $generatesop)
+    public function destroy($id)
     {
-        $generatesop->delete();
+        //$generatesop->delete();
 
-        return "deleted";
+        return $id;
     }
 }
