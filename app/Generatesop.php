@@ -62,6 +62,7 @@ class Generatesop extends Model
             'folder',
             'Process_owner',
             'Process_exec',
+            'revised by',
 
 
             
