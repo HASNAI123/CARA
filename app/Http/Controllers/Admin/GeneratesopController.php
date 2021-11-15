@@ -320,15 +320,16 @@ $flow=array();
     {
         //$generatesop->delete();
         $delete=generatesop::where('id',$id)->delete();
+        return "deleted";
         
-        $folders= generatesop::where('id',$id)->get('folder');
-           foreach ($folders as $folder) {
+        // $folders= generatesop::where('id',$id)->get('folder');
+        //   foreach ($folders as $folder) {
 
-             $folder['folder'];
-           }
-        $generatesop=DB::table('generatesops')->where('folder',$folder['folder'])->get();
+        //      $folder['folder'];
+        //   }
+        // $generatesop=DB::table('generatesops')->where('folder',$folder['folder'])->get();
 
-         return view('admin.Folders.show', compact('generatesop'));
+        //  return view('admin.Folders.show', compact('generatesop'));
 
     }
 }
