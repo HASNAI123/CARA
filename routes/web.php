@@ -34,7 +34,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('generatesop', 'GeneratesopController');
     Route::post('generatesop/download', 'GeneratesopController@download')->name('generatesop.download');
     Route::get('/generatesop/{id}/approve', 'GeneratesopController@approve')->name('generatesop.approve');
-    Route::get('/generatesop/{id}/delete', 'generatesopController@delete')->name('generatesop.delete');
+    Route::get('/generatesop/{id}/delete', 'GeneratesopController@delete')->name('generatesop.delete');
     
     
 
