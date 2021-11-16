@@ -23,7 +23,7 @@
                 <span class="help-block">{{ trans('cruds.sop.fields.uploaded_by_helper') }}</span>
             </div>
             
-             <input class="form-control {{ $errors->has('uploaded_by') ? 'is-invalid' : '' }}" type="text" name="folder" id="uploaded_by" value="{{$sop->arvhive_folder}}">
+             <input class="form-control {{ $errors->has('uploaded_by') ? 'is-invalid' : '' }}" type="text" name="folder" id="uploaded_by" value="{{$sop->archive_folder}}">
 
             <div class="form-group">
                 <label for="uploaded_by">{{ trans('SOP Title') }}</label>
