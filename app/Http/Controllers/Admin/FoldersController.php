@@ -159,9 +159,9 @@ class FoldersController extends Controller
     {   
           $ids=DB::table('folders')->where('id',$id)->get();
          foreach($ids as $id){
-             $id['password'];
+             $id->password;
          }
-         if($id['password']==""){
+         if($id->password ==""){
              return "empty";
          }else{
 
