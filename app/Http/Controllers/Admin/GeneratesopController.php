@@ -300,7 +300,7 @@ $flow=array();
     public function update(UpdateGenerateSopRequest $request,generatesop $generatesop)
     {
         
-        return $generatesop;
+        return $generatesop->id;
         $generatesop->update($request->all());                                                
 
         $flow=array();
