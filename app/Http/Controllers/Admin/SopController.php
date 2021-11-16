@@ -143,7 +143,7 @@ class SopController extends Controller
         
 
        
-        
+        return $folder=$request->folder;
         //$user_name = Auth::user()->name;
 
         //$id=$sop->id;
@@ -175,7 +175,7 @@ class SopController extends Controller
         $file=$request->file('Sop_file');
        $filename= $file->getClientOriginalName();
        $filename= time(). '.' .$filename;
-       $path=$file->storeas('pdfs',$filename);
+       $path=$file->storeas('pdfs',$filename,'s3');
        
 
        $sop=sop::find($id)->update([
