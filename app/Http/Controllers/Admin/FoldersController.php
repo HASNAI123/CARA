@@ -212,7 +212,7 @@ class FoldersController extends Controller
         $folder = Folder::findOrFail($id);
         $folder->delete();
 
-        return redirect()->route('admin.Folders.index');
+        return redirect()->route('admin.folders.index');
     }
 
 
