@@ -143,7 +143,7 @@ class SopController extends Controller
         
 
        
-        return $folder=$request->folder;
+         $folder=$request->folder;
         //$user_name = Auth::user()->name;
 
         //$id=$sop->id;
@@ -182,19 +182,19 @@ class SopController extends Controller
            'sop_file'=>$filename
        ]);
         
-        return $folder=$request->folder;
+        
        
     
-       //return redirect()->route('admin.sops.index',$folder);
+      return redirect()->route('admin.sops.index',$folder);
                        
 
     }
 
     else
 
-        return "not done";
+       
 
-       //return redirect()->route('admin.sops.index',$folder);
+       return redirect()->route('admin.sops.index',$folder);
     }
     
     public function download($sop_file){
