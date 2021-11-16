@@ -234,7 +234,8 @@ input[type=text]:focus {
 <script>
 $("#input-fa").fileinput({
     theme: "fa",
-    uploadUrl: "/file-upload-batch/2"
+    uploadUrl: "/file-upload-batch/2",
+    enableResumableUpload: true
 });
 </script>
 
@@ -242,7 +243,8 @@ $("#input-fa").fileinput({
 <script>
 $("#input-fb").fileinput({
     theme: "fa",
-    uploadUrl: "/file-upload-batch/2"
+    uploadUrl: "/file-upload-batch/2",
+    enableResumableUpload: true
 });
 </script>
 
