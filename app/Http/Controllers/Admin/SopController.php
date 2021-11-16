@@ -144,30 +144,11 @@ class SopController extends Controller
 
        
          $folder=$request->folder;
-        //$user_name = Auth::user()->name;
 
-        //$id=$sop->id;
-  
-   else{
-            $filename='null';
-   }
 
-        $sop = sop::find($id)
-        ->update([
-                  'Modified_by'=>$request->edited_by,
-                  'Modified_date'=> now()->toDateString('Y-m-d'),
-                  'sop_title'=>$request->sop_title,
-                  'business_unit'=>$request->business_unit,
-                  'effective_date'=>$request->effective_date,
-                  'Sop_file'=>$filename,
-                  
-                  
-
-    ]);
-
- if ($request->hasFile('Sop_file')) {
+ if ($request->hasFile('sop_file')) {
      
-        $file=$request->file('Sop_file');
+        $file=$request->file('sop_file');
        $filename= $file->getClientOriginalName();
        $filename= time(). '.' .$filename;
        $path=$file->storeas('pdfs',$filename,'s3');
