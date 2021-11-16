@@ -158,7 +158,7 @@ class FoldersController extends Controller
 
     {   
          $ids=DB::table('folders')->where('id',$id)->get();
-         $return $ids->password;
+         return $ids->password;
 
         //return view('admin.Folders.password', compact('ids'));
     }
