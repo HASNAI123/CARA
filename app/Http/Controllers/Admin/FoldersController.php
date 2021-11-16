@@ -158,8 +158,9 @@ class FoldersController extends Controller
 
     {   
          $ids=DB::table('folders')->where('id',$id)->get();
+         $return $ids->password;
 
-        return view('admin.Folders.password', compact('ids'));
+        //return view('admin.Folders.password', compact('ids'));
     }
     
      public function showfolder(Request $request)
