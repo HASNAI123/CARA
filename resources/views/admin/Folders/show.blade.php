@@ -112,11 +112,11 @@
                                     </a>
                                      @endcan
                                      
-                                      
+                                      @can(Sop_review)
                                     <a class="btn btn-xs btn-warning" href="{{ route('admin.generatesop.review', $generatesop->id) }}">
                                         {{ trans('Review') }}
                                     </a>
-                                   
+                                      @endcan
                                
 
                                     @can('Sop_edit')
