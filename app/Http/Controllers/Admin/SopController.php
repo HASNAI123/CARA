@@ -181,10 +181,11 @@ class SopController extends Controller
        $sop=sop::find($id)->update([
            'sop_file'=>$filename
        ]);
-
+        
+        $folder=$request->folder;
        
-
-       return redirect()->route('admin.sops.index');
+    
+       return redirect()->route('admin.sops.index',$folder);
                        
 
     }
