@@ -107,13 +107,13 @@
                                     </a>
                                     
                                      @can('Sop_approve') 
-                                    <a class="btn btn-xs btn-warning" href="{{ route('admin.generatesop.approve', $generatesop->id) }}">
+                                    <a class="btn btn-xs btn-success" href="{{ route('admin.generatesop.approve', $generatesop->id) }}">
                                         {{ trans('Approve') }}
                                     </a>
                                      @endcan
                                      
                                       
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.generatesop.review', $generatesop->id) }}">
+                                    <a class="btn btn-xs btn-warning" href="{{ route('admin.generatesop.review', $generatesop->id) }}">
                                         {{ trans('Review') }}
                                     </a>
                                    
