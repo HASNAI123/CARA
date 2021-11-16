@@ -299,6 +299,8 @@ $flow=array();
      */
     public function update(UpdateGenerateSopRequest $request,generatesop $generatesop)
     {
+        
+        return $generatesop;
         $generatesop->update($request->all());                                                
 
         $flow=array();
@@ -313,6 +315,8 @@ $flow=array();
             $flow[]=$filename;
             $image=implode(',',$flow);
             $generatesop->img =$image;
+            
+            
         }
       }
 
@@ -336,7 +340,7 @@ $flow=array();
         $generatesop->edited_by=$edited_by;
 
 
-     $generatesop->update();
+     $generatesop->save();
 
       $title=$request->folder;
       $generatesop=DB::table('generatesops')->where('folder',$title)->get();
