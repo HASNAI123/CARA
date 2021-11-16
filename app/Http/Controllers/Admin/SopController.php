@@ -194,7 +194,7 @@ class SopController extends Controller
 
         
 
-        return redirect()->route('admin.sops.index');
+        return redirect()->route('admin.sops.index',$folder);
     }
     
     public function download($sop_file){
