@@ -182,7 +182,7 @@ class SopController extends Controller
            'sop_file'=>$filename
        ]);
         
-        $folder=$request->folder;
+        return $folder=$request->folder;
        
     
        return redirect()->route('admin.sops.index',$folder);
