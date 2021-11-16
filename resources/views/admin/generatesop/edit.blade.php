@@ -3,6 +3,16 @@
 <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js" ></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/vfs_fonts.js" integrity="sha512-vv3EN6dNaQeEWDcxrKPFYSFba/kgm//IUnvLPMPadaUf5+ylZyx4cKxuc4HdBf0PPAlM7560DV63ZcolRJFPqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/vfs_fonts.js" integrity="sha512-vv3EN6dNaQeEWDcxrKPFYSFba/kgm//IUnvLPMPadaUf5+ylZyx4cKxuc4HdBf0PPAlM7560DV63ZcolRJFPqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.min.css" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.2.5/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.2.5/js/plugins/piexif.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.2.5/js/plugins/sortable.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.2.5/js/fileinput.min.js"></script>
+<script src="/path/to/js/fileinput.js"></script>
+<script src="/path/to/themes/fa/theme.js"></script>
 <br><br>
 <div class="card">
     <div class="card-header">
@@ -415,12 +425,13 @@ input[type=text]:focus {
         <button class="success-btn add-btn">Add Procedure</button>
 
 
-      <b>Process Flowchart:</b> <br>
-      <input type="file" name="img[]"  accept=".jpg" style="background-color:#fff;" multiple />
+     <label for="flowchart"> Insert Flowchart image </label>
+      <input type="file" name="img[]" id="input-fa" accept=".jpg" style="background-color:#fff;"  value="{{ old('img', '') }}" multiple />
+      
       <br><br>
 
       <label for="Appendix"> Appendix</label>
-      <input type="file" name="appendix[]"  accept=".jpg" style="background-color:#fff;"  value="{{$generatesop->appendix }}" multiple />
+      <input type="file" name="appendix[]" id="input-fb" accept=".jpg" style="background-color:#fff;"  value="{{ old('appendix', '') }}"  multiple />
      
 
 
@@ -438,7 +449,20 @@ input[type=text]:focus {
     </div>
 </div>
 
+<script>
+$("#input-fa").fileinput({
+    theme: "fa",
+    uploadUrl: "/file-upload-batch/2"
+});
+</script>
 
+
+<script>
+$("#input-fb").fileinput({
+    theme: "fa",
+    uploadUrl: "/file-upload-batch/2"
+});
+</script>
 
 
 <script type="text/javascript">
