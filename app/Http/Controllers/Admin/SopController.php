@@ -127,7 +127,7 @@ class SopController extends Controller
      */
     public function edit(Sop $sop)
     {
-        
+       return $sop; 
         return view('admin.Sops.edit', compact('sop'));
     }
 
