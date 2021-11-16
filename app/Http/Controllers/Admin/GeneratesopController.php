@@ -336,7 +336,7 @@ $flow=array();
         $generatesop->edited_by=$edited_by;
 
 
-     $generatesop->save();
+     $generatesop->update();
 
       $title=$request->folder;
       $generatesop=DB::table('generatesops')->where('folder',$title)->get();
