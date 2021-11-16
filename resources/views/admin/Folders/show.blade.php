@@ -112,7 +112,7 @@
                                     </a>
                                      @endcan
                                      
-                                      @can(Sop_reviewer)
+                                      @can('Sop_reviewer')
                                     <a class="btn btn-xs btn-warning" href="{{ route('admin.generatesop.review', $generatesop->id) }}">
                                         {{ trans('Review') }}
                                     </a>
