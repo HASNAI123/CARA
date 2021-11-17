@@ -159,12 +159,12 @@ class FoldersController extends Controller
     {   
           $ids=DB::table('folders')->where('id',$id)->get();
           foreach($ids as $id){
-              $id->password
-         
-    $check=password_verify($id->password =="");
-    if($check){
+              $pswd=$id->password;
+    if(empty($pswd)){
         return "ok";
-    }else{return "not";}
+    }else{return "not";
+        
+    }
         
           }    
  }
