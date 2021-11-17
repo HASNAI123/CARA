@@ -160,9 +160,9 @@ class FoldersController extends Controller
           $ids=DB::table('folders')->where('id',$id)->get();
           
           foreach($ids as $id){
-            $pswd=$id->password;
+            $id->password;
     
-    if($pswd=""){
+    if($id->password==""){
        
         return "ok";
     }else{return "not";
