@@ -102,19 +102,34 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    
+                    <div class="card-body">
                     <div>
                     <div class="wrapper">
     <div class="typing-demo">
       Welcome to CARA, {{ Auth::user()->name  }}
     </div>
 </div>
+                    
+<div class="content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    Dashboard
+                </div>
+
+                <div class="card-body">
+                    @if(session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 
                     <div class="row">
                         {{-- Widget - latest entries --}}
                         <div class="{{ $settings1['column_class'] }}" style="overflow-x: auto;">
                             <h3>{{ $settings1['chart_title'] }}</h3>
-                            <table style="font-size: 15 px;"class="table table-bordered table-striped">
+                            <table class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         @foreach($settings1['fields'] as $key => $value)
@@ -149,8 +164,6 @@
                                 </tbody>
                             </table>
                         </div>
- 
-                        
                         {{-- Widget - latest entries --}}
                         <div class="{{ $settings3['column_class'] }}" style="overflow-x: auto;">
                             <h3>{{ $settings3['chart_title'] }}</h3>
@@ -253,8 +266,10 @@
                     </table>
                 </div>
             @endforeach
-        </div>
-        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
