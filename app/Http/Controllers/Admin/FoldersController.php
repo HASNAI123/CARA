@@ -163,6 +163,7 @@ class FoldersController extends Controller
     if (empty($v)) {
         echo "is empty";
     }else{echo "not working";}
+        }
 // }
 //           if($id->password==""){
 //              return "empty";
