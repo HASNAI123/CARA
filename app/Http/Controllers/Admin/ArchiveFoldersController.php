@@ -179,6 +179,7 @@ class ArchiveFoldersController extends Controller
         return view('admin.ArchiveFolders.password', compact('ids'));
     }
 }
+}
 
       public function showfolder(Request $request)
 
