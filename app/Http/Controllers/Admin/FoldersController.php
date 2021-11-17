@@ -164,20 +164,16 @@ class FoldersController extends Controller
     
     if($id->password==""){
        
-        return "ok";
-    }else{return "not";
+        $generatesop=DB::table('generatesops')->where('folder',$id->title)->get();
+        return view('admin.Folders.show', compact('generatesop'));
+    }else{
+        return view('admin.Folders.password', compact('ids'));
         
     }
         
           }    
  }
-    //       if($id->password==""){
-    //           return "empty";
-    //       }else{
 
-    //      return view('admin.Folders.password', compact('ids'));
-    //   }
-    // }
     
      public function showfolder(Request $request)
 
