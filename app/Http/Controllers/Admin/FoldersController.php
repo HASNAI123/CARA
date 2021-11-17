@@ -161,7 +161,7 @@ class FoldersController extends Controller
          foreach($ids as $id){
             $id->password;
          }
-          if(empty($id->password)){
+          if($id->password==""){
              return "empty";
           }else{
 
