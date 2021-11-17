@@ -83,13 +83,13 @@ class ArchiveFoldersController extends Controller
         $title=$request->title;
         $password=$request->password;
 
-        $hashed = Hash::make($password);
+        //$hashed = Hash::make($password);
 
 
         Archive_Folder::create([
 
             'title'=>$title,
-            'password'=>$hashed,
+            'password'=>$password,
 
        ]);
 
@@ -167,9 +167,18 @@ class ArchiveFoldersController extends Controller
     {   
        
         $ids=DB::table('archive_folders')->where('id',$id)->get();
+        foreach($ids as $id){
+        $id->password;
+        if($id->password==""){
+                
+                $sops=DB::table('Sop')->where('archive_folder',$id->title)->get();
+                $archive_folders=DB::table('archive_folders')->where('title',$id->title)->first('title');
+                return view('admin.Sops.index')->with('sops',$sops)->with('archive_folders',$archive_folders);
+        }else{
 
         return view('admin.ArchiveFolders.password', compact('ids'));
     }
+}
 
       public function showfolder(Request $request)
 
