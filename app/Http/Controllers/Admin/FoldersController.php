@@ -84,7 +84,7 @@ class FoldersController extends Controller
         $password=$request->password;
         $hashed = Hash::make($password);
 }else{
-    $hashed=null;
+    $hashed='null';
 }
 
         folder::create([
