@@ -159,14 +159,14 @@ class FoldersController extends Controller
     {   
           $ids=DB::table('folders')->where('id',$id)->get();
          foreach($ids as $id){
-             $id->password;
+            return $id->password;
          }
-         if(empty($id->password)){
-             return "empty";
-         }else{
+    //      if(empty($id->password)){
+    //          return "empty";
+    //      }else{
 
-        return view('admin.Folders.password', compact('ids'));
-    }
+    //     return view('admin.Folders.password', compact('ids'));
+    // }
     }
     
      public function showfolder(Request $request)
