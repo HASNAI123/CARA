@@ -115,7 +115,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    Dashboard
+                  
                 </div>
 
                 <div class="card-body">
