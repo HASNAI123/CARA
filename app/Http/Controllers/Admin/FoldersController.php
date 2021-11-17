@@ -161,12 +161,12 @@ class FoldersController extends Controller
          foreach($ids as $id){
             return $id->password;
          }
-    //      if(empty($id->password)){
-    //          return "empty";
-    //      }else{
+          if(empty($id->password)){
+             return "empty";
+          }else{
 
-    //     return view('admin.Folders.password', compact('ids'));
-    // }
+        return view('admin.Folders.password', compact('ids'));
+     }
     }
     
      public function showfolder(Request $request)
