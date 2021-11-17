@@ -157,16 +157,19 @@ class FoldersController extends Controller
      public function check($id)
 
     {   
-          $ids=DB::table('folders')->where('id',$id)->get();
-         foreach($ids as $id){
-            $id->password;
-         }
-          if($id->password==""){
-             return "empty";
-          }else{
+          $ids=DB::table('folders')->where('id',$id)->get('password');
+        
+        foreach ($ids as $id => $v) {
+    if (empty($v)) {
+        echo "is empty";
+    }else{echo "not working";}
+// }
+//           if($id->password==""){
+//              return "empty";
+//           }else{
 
-        return view('admin.Folders.password', compact('ids'));
-     }
+//         return view('admin.Folders.password', compact('ids'));
+//      }
     }
     
      public function showfolder(Request $request)
