@@ -157,14 +157,16 @@ class FoldersController extends Controller
      public function check($id)
 
     {   
-          $ids=DB::table('folders')->where('id',$id)->get('password');
+          $ids=DB::table('folders')->where('id',$id)->get();
+          foreach($ids as $id){
+              $id->password
+          }
+    $check=password_verify($id->password =="");
+    if($check){
+        return "ok";
+    }else{return "not";}
         
-        foreach ($ids as $id) {
-             if(empty($id)){
-              return "empty";
-           }else{return "not";}
-  
-        }
+       
  }
     //       if($id->password==""){
     //           return "empty";
