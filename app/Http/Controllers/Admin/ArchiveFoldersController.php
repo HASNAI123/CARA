@@ -192,7 +192,8 @@ class ArchiveFoldersController extends Controller
         $query=DB::table('archive_folders')->where('id',$id)->get();
         foreach ($query as $querys) {
 
-        $check=password_verify($password, $querys->password);
+        //$check=password_verify($password, $querys->password);
+        $check=$password==$querys->password;
 
         if($check){
                 
