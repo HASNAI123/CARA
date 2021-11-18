@@ -354,9 +354,17 @@ $flow=array();
     
       public function delete($id){
 
+       $folders=Generatesop::where('id',$id)->get();
+      foreach ($folders as $folder) {
+          $title=$folder->folder;
+        }
+
        $delete= DB::table('generatesops')->where('id',$id)->delete();
- 
-       return redirect()->route('admin.folders.index');
+
+    
+    
+        $generatesop=DB::table('generatesops')->where('folder',$title)->get();
+        return view('admin.folders.show', compact('generatesop'));
     }
 
     /**
