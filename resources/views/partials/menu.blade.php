@@ -39,7 +39,7 @@
             </a>
         </li>
 
-
+        @can('Generate_Sop') 
         <ul class="c-sidebar-nav">
         <li class="c-sidebar-nav-item">
             <a href="{{ route("admin.generatesop.create") }}" class="c-sidebar-nav-link">
@@ -49,6 +49,7 @@
                 {{ trans('Generate SOP') }}
             </a>
         </li>
+        @endcan
 
 
 
