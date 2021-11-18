@@ -139,10 +139,11 @@
   </div>
 </div>
 
-<!-- Edit button  -->
+<!-- Edit button  -->@can('Folder_edit') 
                         <a class="btn btn-xs btn-info" href="{{ route('admin.archivefolders.edit',$archive_folders->id) }}" > 
                                         {{ trans('Edit ') }}
                                     </a>
+                                    @endcan
 
                                      <form action="{{ route('admin.archivefolders.destroy', $archive_folders->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
