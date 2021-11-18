@@ -5,7 +5,7 @@
 
 
 
- @can('Ceate_folder') 
+ @can('Create_folder') 
  <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Create Folder
