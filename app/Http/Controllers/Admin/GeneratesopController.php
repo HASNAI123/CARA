@@ -364,7 +364,7 @@ $flow=array();
     
     
         $generatesop=DB::table('generatesops')->where('folder',$title)->get();
-        return view('admin.folders.show', compact('generatesop'));
+        return view('admin.Folders.show', compact('generatesop'));
     }
 
     /**
