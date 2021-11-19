@@ -130,7 +130,7 @@ input[type=text]:focus {
 
             <p> Edited by:<br><br><input readonly    type="text" name="edited_by" value="{{ Auth::user()->name }}"   /></p>
             
-            <p><br><br><input readonly    type="text" name="folder" value="{{$generatesop->folder }}"   /></p>
+            
             
             <label for="folders">Select Folder</label>
             <select  style="width:290px;  border: 3px solid;  border-style: solid border-radius:5px;" class="form-control {{ $errors->has('status') ? 'is-invalid' : '' }}" name="folder" id="folder">
