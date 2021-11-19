@@ -132,15 +132,7 @@ input[type=text]:focus {
             
             <p><br><br><input readonly    type="hidden" name="folder" value="{{$generatesop->folder }}"   /></p>
 
-    <label for="folders">Select Folder</label>
-            <select  style="width:290px;  border: 3px solid;  border-style: solid border-radius:5px;" class="form-control {{ $errors->has('status') ? 'is-invalid' : '' }}" name="folder" id="folder">
-                    
-                    @foreach($selectfolder as $folders)
-                        <option value="{{ $folders->folder }}"> {{ $folders->folder }}  </option>
-                    @endforeach
-                </select>
-            <br><br>
-            
+
             <label> SOP Details </label><br><br><br>
             <p> SOP Title:<br><br><input type="text" name="sop_title" value="{{ $generatesop->sop_title }}"   /></p>
             <p>Version No. :<br><br><input type="integer" name="version_no"  value="{{$generatesop->version_no }}"         /> </p>
