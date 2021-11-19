@@ -287,7 +287,8 @@ $flow=array();
      */
     public function edit(generatesop $generatesop)
     {
-        return view('admin.generatesop.edit', compact('generatesop'));
+        $selectfolder=folder::where('folder',$generatesop->folder)->first();
+        return view('admin.generatesop.edit', compact('generatesop','selectfolder'));
     }
 
     /**
