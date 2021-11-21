@@ -228,8 +228,11 @@ class ArchiveFoldersController extends Controller
     public function destroy($id)
     {
        
-        $folder = Archive_Folder::findOrFail($id);
-        $folder->delete();
+        $folder = Archive_Folder::where('title',$id)->delete();
+
+        $sop= DB::table('Sop')->where('archive_folder',$id)
+        ->select('*')
+        ->delete();
 
         return redirect()->route('admin.archivefolders.index');
     }
