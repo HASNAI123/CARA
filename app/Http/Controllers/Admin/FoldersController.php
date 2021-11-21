@@ -216,8 +216,11 @@ class FoldersController extends Controller
     public function destroy($id)
     {
        
-        $folder = Folder::findOrFail($id);
-        $folder->delete();
+       $folder = Folder::where('title',$id)->delete();
+
+        $generatesop= DB::table('generatesops')->where('folder',$id)
+        ->select('*')
+        ->delete();
 
         return redirect()->route('admin.folders.index');
     }
