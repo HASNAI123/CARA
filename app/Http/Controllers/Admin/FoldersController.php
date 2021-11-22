@@ -81,6 +81,7 @@ class FoldersController extends Controller
 
         $title=$request->folder_title;
         $password=$request->password;
+        $user= Auth::user()->name;
         //$hashed = Hash::make($password);
 
 
@@ -88,6 +89,7 @@ class FoldersController extends Controller
 
             'title'=>$title,
             'password'=>$password,
+            'created_by'=>$user,
 
         ]);
 
