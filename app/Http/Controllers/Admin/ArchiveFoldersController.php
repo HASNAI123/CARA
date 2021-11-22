@@ -82,6 +82,7 @@ class ArchiveFoldersController extends Controller
 
         $title=$request->title;
         $password=$request->password;
+        $user= Auth::user()->name;
 
         //$hashed = Hash::make($password);
 
@@ -90,6 +91,7 @@ class ArchiveFoldersController extends Controller
 
             'title'=>$title,
             'password'=>$password,
+            'created_by'=>$user,
 
        ]);
 
