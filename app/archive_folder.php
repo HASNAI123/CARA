@@ -9,7 +9,7 @@ class archive_folder extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title','password'];
+    protected $fillable = ['title','password','created_by'];
 
-    public $timestamps=false;
+    
 }
