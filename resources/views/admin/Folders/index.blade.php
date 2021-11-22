@@ -50,7 +50,7 @@
 <br><br>
 <div class="card">
     <div style="font-size:30px" class="card-header">
-       <B> {{ trans('SOP') }} {{ trans('library') }}</B>
+       <B> {{ trans('SOP') }} {{ trans('Library') }}</B>
     </div>
     <br><br>
 
