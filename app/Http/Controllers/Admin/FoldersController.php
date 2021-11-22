@@ -166,7 +166,7 @@ class FoldersController extends Controller
     
     if($id->password==""){
        
-        $generatesop=DB::table('generatesops')->where('folder',$id->title)->get();
+        $generatesop=DB::table('generatesops')->where('folder',$id->id)->get();
         return view('admin.Folders.show', compact('generatesop'));
     }else{
         return view('admin.Folders.password', compact('ids'));
@@ -193,7 +193,7 @@ class FoldersController extends Controller
 
         if($check){
                 
-               $generatesop=DB::table('generatesops')->where('folder',$title)->get();
+               $generatesop=DB::table('generatesops')->where('folder',$id)->get();
                return view('admin.Folders.show', compact('generatesop'));
         }else{
 
