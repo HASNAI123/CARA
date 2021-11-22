@@ -267,7 +267,7 @@ $("#input-fb").fileinput({
            <div class="input-box">
            Procedure : <br>
        <input type="text" name="steps[]"><br><br>
-      Description : <br>
+      Description : 
        <textarea rows = "5" cols = "100" name = "desc[]">
          </textarea>
              <a href="#" class="remove-lnk">Remove</a>
