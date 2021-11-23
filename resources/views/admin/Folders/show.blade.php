@@ -100,7 +100,7 @@
                            
                             <td>
                            
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.generatesop.show', $generatesop->id) }}">
+                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.generatesop.show', $generatesop->id) }}" target="_blank">
                                         {{ trans('View & Download') }}
                                     </a>
                                     
