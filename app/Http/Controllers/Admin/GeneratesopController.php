@@ -334,7 +334,7 @@ $flow=array();
 
             $filename= $file->getClientOriginalName();
             $filename= time(). '.' .$filename;
-            $path=$file->storeas('public',$filename,'s3');
+            $path=$file->storeas('images',$filename,'s3');
             Storage::disk('s3')->setVisibility($path,'public');
             $appendix[]=$filename;
             $img=implode(',',$appendix);
