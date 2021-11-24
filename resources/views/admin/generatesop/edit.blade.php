@@ -289,7 +289,7 @@ input[type=text]:focus {
             <input type="text" name="steps[5]" value="{{ $generatesop->steps[5]}}"><br>
              
             <label for="">Description</label> <br>
-            <textarea  style="resize:vertical" cols = "100" name = "desc[0]"  style="height:200px"  value="{{$generatesop->desc[5]}}">
+            <textarea  style="resize:vertical" cols = "100" name = "desc[5]"  style="height:200px"  value="{{$generatesop->desc[5]}}">
             {{$generatesop->desc[5]}}
           </textarea> 
 
