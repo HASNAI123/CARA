@@ -14,16 +14,11 @@
 <script src="/path/to/js/fileinput.js"></script>
 <script src="/path/to/themes/fa/theme.js"></script>
   <script src="https://cdn.tiny.cloud/1/ve0fvixes6pp7g6sd8cdiwj0mx2u8l7eu9hjwjnx0o13i5gq/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-  <script>
-   tinymce.init({
-      selector: 'textarea',
-      plugins: 'a11ychecker  advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
-      toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter pageembed permanentpen table',
-      toolbar_mode: 'floating',
-      tinycomments_mode: 'embedded',
-      tinycomments_author: 'Author name',
-  
-    });
+<script>
+  tinymce.init({
+   selector: 'textarea',
+    tinycomments_mode: 'embedded',
+  });
   </script>
 <br><br>
 <div class="card">
