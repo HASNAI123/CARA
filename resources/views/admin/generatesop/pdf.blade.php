@@ -205,38 +205,58 @@
         <footer>Copyright 2021 Aeon Co.(M) Bhd. All rights reserved | Digital Interal Audit (DIA)</footer>
         </div>
 
-        <div class="page_break">  
+       <div class="page_break">  
         
             <h3>POLICY</h3>
             <table>
-            <td>{{$generatesop->policy}}</td>
+            @php
+            $policy =$generatesop->policy;
+            @endphp
+            <td>{!! $policy !!}</td>
             </table>
 
             <h3>PURPOSE</h3>
             <table>
-            <td>{{$generatesop->purpose}}</td>
+            @php
+            $purpose =$generatesop->purpose;
+            @endphp 
+            <td>{!! $purpose !!}</td>
             </table>
              
             <h3>SCOPE</h3>
             <table>
-            <td>{{$generatesop->scope}}</td>
+            @php
+            $scope = $generatesop->scope;
+            @endphp 
+            <td>{!! $scope !!}</td>
             </table>
         
              <h3>REVIEW PROCEDURE</h3>
              <table>
-            <td>{{$generatesop->review_pro}}</td>
+             @php
+            $review_pro = $generatesop->review_pro;
+            @endphp  
+            <td>{!! $review_pro !!}</td>
             </table>
 
             <h3>MONITORING</h3>
             <table>
-            <td>{{$generatesop->monitoring}}</td>
+            @php
+            $monitoring = $generatesop->monitoring;
+            @endphp   
+            <td>{!! $monitoring !!}</td>
             </table>
 
             <h3>VERIFICATION AND RECORD KEEPING</h3>
             <table>
-            <td>{{$generatesop->verification}}</td>
+            @php
+            $Verification = $generatesop->verification;
+            @endphp
+            <td> {!! $Verification !!}    </td>
             </table>
-
+            
+            
+            
             <footer>Copyright 2021 Aeon Co.(M) Bhd. All rights reserved | Digital Interal Audit (DIA)</footer>
            
             </div>
