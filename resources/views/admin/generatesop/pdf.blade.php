@@ -268,12 +268,24 @@ foreach ($flow as $img) {
 
             <!-- Table for Procedure Code !-->         
              <h3>PROCEDURE</h3>
-            <table>
+           <table>
             <?php $a=1;?>
             @foreach ($generatesop->steps as $key=>$new)    
             <tr>
-            <td style="width: 30%; font-size:12px; "><b>{{$a++.'-'.$new}}</b></td>
-            <td style="font-size: 12px;" >{{ $generatesop->desc[$key]}}</td>
+            @php
+   $Steps= $a++.'-'.$new;
+@endphp
+
+            <td style="width: 30%; font-size:12px; "><b>{!! $Steps !!}</b></td>
+        
+            
+            @php
+            $desc=$generatesop->desc[$key];
+            @endphp
+
+
+
+            <td style="font-size: 12px;" >{!! $desc !!}</td>
             </tr>
             @endforeach
 
