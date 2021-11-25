@@ -304,11 +304,12 @@ $("#input-fb").fileinput({
              <a href="#" class="remove-lnk">Remove</a>
            </div>
          `); // add input field
+         tinymce.init({ selector:'textarea' });//  initialize again
        }
      });
 
      // handle click event of the remove link
-     $('.wrapper').on("click", ".remove-lnk", function (e) {
+     $('.wrapp').on("click", ".remove-lnk", function (e) {
        e.preventDefault();
        $(this).parent('div').remove();  // remove input field
        x--; // decrement the counter
