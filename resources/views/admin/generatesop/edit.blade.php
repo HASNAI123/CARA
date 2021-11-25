@@ -159,7 +159,7 @@ input[type=text]:focus {
             <p>Process execution : <br><br><input type="text" name="Process_exec"      value="{{ $generatesop->Process_exec }}" /></p>
             
             <p>Approved By : <br><br><input readonly type="text" name="approved_by"      value="{{$generatesop->approved_by }}"       /></p>
-            <p>Reviewed By : <br><br> <input type="text" name="reviewed_by"    value="{{ $generatesop->reviewed_by }}"            /></p><br>
+          
            <br>
 
 
@@ -193,18 +193,7 @@ input[type=text]:focus {
          
 
 
-         <!-- @foreach($generatesop->steps as $steps) 
-         <div >
-          Procedure <br>
-         <input style="resize:vertical" cols = "100" type="textarea" name="steps[]" id=""  value="{{$steps}}"  >  <br><br>
-         @endforeach
-        
-
-         @foreach($generatesop->desc as $desc) 
-          Description<br>
-         <textarea  style="resize:vertical" cols = "100"  name = "desc[]"  style="height:200px"  value=""  >{{$desc}}</textarea></p>
-         @endforeach
-         </div> -->
+       
 
          @foreach ($generatesop->steps as $key=>$new)
          
