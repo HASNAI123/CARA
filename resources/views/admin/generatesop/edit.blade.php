@@ -17,14 +17,12 @@
   <script>
    tinymce.init({
       selector: 'textarea',
-      plugins: 'a11ychecker quickbars advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+      plugins: 'a11ychecker  advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
       toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter pageembed permanentpen table',
       toolbar_mode: 'floating',
       tinycomments_mode: 'embedded',
       tinycomments_author: 'Author name',
-      toolbar: false,
-    menubar: false,
-    inline: true
+  
     });
   </script>
 <br><br>
@@ -60,7 +58,7 @@
   cursor: pointer;
 }
 textarea {
-  width: 150%;
+  width: 120%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
