@@ -14,7 +14,7 @@
 <script src="/path/to/js/fileinput.js"></script>
 <script src="/path/to/themes/fa/theme.js"></script>
  <script src="https://cdn.tiny.cloud/1/ve0fvixes6pp7g6sd8cdiwj0mx2u8l7eu9hjwjnx0o13i5gq/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
- <script>tinymce.init({ selector:'textarea' });</script>
+ <script>tinymce.init({ selector:'textarea', width : "740" });</script>
 <br><br>
 <div class="card">
     <div class="card-header">
@@ -274,7 +274,7 @@ $("#input-fb").fileinput({
              <a href="#" class="remove-lnk">Remove</a>
            </div>
          `); // add input field
-         tinymce.init({ selector:'textarea' });//  initialize again
+         tinymce.init({ selector:'textarea',width : "740" });//  initialize again
        }
      });
 
