@@ -18,6 +18,7 @@
   tinymce.init({
    selector: 'textarea',
     tinycomments_mode: 'embedded',
+    width : "740"
   });
   </script>
 <br><br>
@@ -293,7 +294,7 @@ $("#input-fb").fileinput({
              <a href="#" class="remove-lnk">Remove</a>
            </div>
          `); // add input field
-         tinymce.init({ selector:'textarea' });//  initialize again
+         tinymce.init({ selector:'textarea',width : "740" });//  initialize again
        }
      });
 
