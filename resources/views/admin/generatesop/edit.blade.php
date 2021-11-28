@@ -154,7 +154,6 @@ input[type=text]:focus {
             <label> SOP Details </label><br><br><br>
             <p> SOP Title:<br><br><input type="text" name="sop_title" value="{{ $generatesop->sop_title }}"   /></p>
             <p>Version No. :<br><br><input type="integer" name="version_no"  value="{{$generatesop->version_no }}"         /> </p>
-            <p>Dept./Business Unit:<br><br><input type="text" name="business_unit"   value="{{ $generatesop->business_unit }}"                /> </p> 
             <p>Effective Date : <br><br><tr><input type="date" name="effective_date"   value="{{ $generatesop->effective_date }}"             /></p>
             <p>Process Owner : <br><br><input type="text" name="Process_owner"      value="{{ $generatesop->Process_owner }}"         /></p>
             <p>Process execution : <br><br><input type="text" name="Process_exec"      value="{{ $generatesop->Process_exec }}" /></p>
