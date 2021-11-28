@@ -425,7 +425,7 @@ $flow=array();
 
       $title=$request->folder;
       $generatesop=DB::table('generatesops')->where('folder',$title)->get();
-      return view('admin.folders.show', compact('generatesop'));
+      return view('admin.Folders.show', compact('generatesop'));
 
         //return redirect()->route('admin.folders.show', compact('generatesop'));
     }
