@@ -311,9 +311,9 @@ $flow=array();
 
 
           $accepted=$request->accepted_by;
-       $uploaded=$request->uploaded_by;
+      
        $sop_title=$request->sop_title;
-       $business_unit=$request->business_unit;
+      
        $effective_date=$request->effective_date;
        $version_no=$request->version_no;
        $doc_no=$request->doc_no;
@@ -391,9 +391,9 @@ $flow=array();
 
             generatesop::find($id)
             ->update([
-           'uploaded_by'=>$uploaded,
+          
            'sop_title'=>$sop_title,
-           'business_unit'=>$business_unit,
+          
            'effective_date'=>$effective_date,
            'version_no'=>$version_no,
            'doc_no'=>$doc_no,
