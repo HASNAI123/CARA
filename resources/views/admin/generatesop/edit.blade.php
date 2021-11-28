@@ -159,8 +159,6 @@ input[type=text]:focus {
             <p>Process Owner : <br><br><input type="text" name="Process_owner"      value="{{ $generatesop->Process_owner }}"         /></p>
             <p>Process execution : <br><br><input type="text" name="Process_exec"      value="{{ $generatesop->Process_exec }}" /></p>
             
-            <p>Approved By : <br><br><input readonly type="text" name="approved_by"      value="{{$generatesop->approved_by }}"       /></p>
-          
            <br>
 
 
