@@ -219,6 +219,15 @@ input[type=text]:focus {
 
          @endforeach
          
+          <div class="wrapp">
+        
+        
+        </div>
+        
+
+        <button class="success-btn add-btn">Add Procedure</button>
+
+         
          
          <label for="Appendix"> Appendix</label><br>
       <?php 
@@ -246,14 +255,7 @@ input[type=text]:focus {
          
 
            
-        <div class="wrapp">
-        
-        
-        </div>
-        
-
-        <button class="success-btn add-btn">Add Procedure</button>
-
+       
 
      <label for="flowchart"> Insert Flowchart image </label><br>
      
