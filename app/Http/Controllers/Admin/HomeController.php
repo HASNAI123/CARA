@@ -31,7 +31,7 @@ class HomeController extends Controller
             'column_class'          => 'col-md-12',
             'entries_number'        => '5',
             'fields'                => [
-                'id'          => '',
+               
                 'sop_title'    => '',
                 'uploaded_by' => '',
                 'created_at'  => '',
@@ -104,7 +104,7 @@ class HomeController extends Controller
             'column_class'          => 'col-md-12',
             'entries_number'        => '5',
             'fields'                => [
-                'id'    => '',
+                
                 'sop_title'=> '',
        
        
