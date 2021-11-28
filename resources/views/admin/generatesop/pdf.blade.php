@@ -86,16 +86,14 @@
 
                     <tr>
                         <th style align='left'>{{ trans('Process Owner') }}</th>
-                        <td>{{ $generatesop->Process_owner }}</td>
-                        <td></td>
-                        <td></td>
+                        <td colspan="3" >{{ $generatesop->Process_owner }}</td>
+                       
                     </tr>
 
                     <tr>
                         <th style align='left' >{{ trans('Process Execution') }}</th>
-                        <td>{{  $generatesop->Process_exec }}</td>
-                        <td></td>
-                        <td></td>
+                        <td colspan="3" >{{  $generatesop->Process_exec }}</td>
+                        
                         
                     </tr>
 
