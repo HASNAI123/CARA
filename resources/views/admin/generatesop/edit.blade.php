@@ -124,6 +124,18 @@ input[type=file], select {
 input[type=text]:focus {
   background-color: lightblue;
 }
+#square {
+    width: 250px;
+    height: 30px;
+    background-color: lightblue;
+
+    }
+#squareflow {
+    width: 250px;
+    height: 30px;
+    background-color: lightblue;
+
+    } 
     
     </style>
 
@@ -203,9 +215,26 @@ input[type=text]:focus {
             <label for="">Description</label> <br>
             <textarea  style="resize:vertical" cols = "100" name = "desc[]"  style="height:200px"  value="{{$generatesop->desc[$key]}}">
             {{$generatesop->desc[$key]}}
-          </textarea> 
+          </textarea><br>
 
          @endforeach
+         
+         
+         <label for="Appendix"> Appendix</label><br>
+      <?php 
+        $image=explode(',',$generatesop->appendix);
+        foreach ($image as $images) {
+       ?>
+       
+       <div class="img" >
+        <input type="text" id="square" name="privious[]" value="<?php echo $images?>" readonly>
+        <input type="button" value="X" class="remove"><br>
+       </div>
+      
+      <?php 
+        }
+      ?>
+    <input type="file" name="appendix[]"  accept=".jpg" style="background-color:#fff;"  value="{{ old('img', '') }}" multiple />
 
             
             
@@ -226,17 +255,24 @@ input[type=text]:focus {
         <button class="success-btn add-btn">Add Procedure</button>
 
 
-     <label for="flowchart"> Insert Flowchart image </label>
+     <label for="flowchart"> Insert Flowchart image </label><br>
+     
+      <?php 
+        $img=explode(',',$generatesop->img);
+        foreach ($img as $img) {
+         
+       ?>
+       <div class="img">
+        <input type="text" id="squareflow" name="oldimg[]" value="<?php echo $img?>" readonly>
+        <input type="button" value="X" class="remove"><br>
+      </div>
+      <?php 
+        }
+      ?>
       <input type="file" name="img[]" id="input-fa" accept=".jpg" style="background-color:#fff;"  value="{{ old('img', '') }}" multiple />
       
       <br><br>
 
-      <label for="Appendix"> Appendix</label>
-      <input type="file" name="appendix[]" id="input-fb" accept=".jpg" style="background-color:#fff;"  value="{{ old('appendix', '') }}"  multiple />
-     
-
-
-                    
 
             </div>
 
@@ -268,6 +304,12 @@ $("#input-fb").fileinput({
 
 <script type="text/javascript">
    $(document).ready(function () {
+       
+       $('.remove').click(function(e){
+      $(this).parent('.img').remove();
+
+
+     });
 
      // allowed maximum input fields             <input type="text" name="file" size="4" style="background-color:#fff;" required="required" />
 
