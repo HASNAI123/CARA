@@ -302,8 +302,42 @@ $flow=array();
     public function update(UpdateGenerateSopRequest $request,generatesop $generatesop)
     {
         
-       
-        $generatesop->update($request->all());                                                
+     //$generatesop->update($request->all());   .
+         $edited_by=$request->edited_by;
+         $id=$generatesop->id;   
+        return $previoes=$request->privious;
+         $oldimg=$request->oldimg;
+         //$pre=implode(',',$previoes);  
+
+
+          $accepted=$request->accepted_by;
+       $uploaded=$request->uploaded_by;
+       $sop_title=$request->sop_title;
+       $business_unit=$request->business_unit;
+       $effective_date=$request->effective_date;
+       $version_no=$request->version_no;
+       $doc_no=$request->doc_no;
+       $approvedby=$request->approved_by;
+       $policy=$request->policy;
+       $purpose=$request->purpose;
+       $scope=$request->scope;
+       $review_pro=$request->review_pro;
+       $monitoring=$request->monitoring;
+       $verification=$request->verification;
+       $steps=$request->steps ;
+
+       $folder=$request->folder;
+
+       $employee_id=Auth::user()->email;
+    
+      
+       $desc=$request->desc;
+
+       $Process_owner=$request->Process_owner;
+
+       $Process_exec=$request->Process_exec;
+
+
 
         $flow=array();
         if ($request->hasFile('img')) {
@@ -311,19 +345,21 @@ $flow=array();
 
             foreach ($files as $file) {
 
-            $filename= $file->getClientOriginalName();
-            $filename= time(). '.' .$filename;
-            $path=$file->storeas('images',$filename,'s3');
-            Storage::disk('s3')->setVisibility($path,'public');
-            $flow[]=$filename;
+            $filenames= $file->getClientOriginalName();
+            $filenames= time(). '.' .$filenames;
+            $path=$file->storeas('public',$filenames);
+            $path=public_path($filenames);
+            $flow[]=$filenames;
             $image=implode(',',$flow);
             $generatesop->img =$image;
-            
-            
-            
-            
         }
-      }
+        $filenameo=implode(',',$flow);
+        $old=implode(',', $oldimg);
+        $filenames=$filenameo.','.$old;
+      }else{
+              $filenames=implode(',',$oldimg);
+  
+            }
 
 
       $appendix=array();
@@ -334,23 +370,64 @@ $flow=array();
 
             $filename= $file->getClientOriginalName();
             $filename= time(). '.' .$filename;
-            $path=$file->storeas('images',$filename,'s3');
-            Storage::disk('s3')->setVisibility($path,'public');
+            $path=$file->storeas('public',$filename);
+            $path=public_path($filename);
             $appendix[]=$filename;
             $img=implode(',',$appendix);
             $generatesop->appendix =$img;
             }
-        }
 
-        $edited_by=$request->edited_by;
-        $generatesop->edited_by=$edited_by;
+             $nameo=implode(',',$appendix);
+             $pre=implode(',', $previoes);
+            $name=$nameo.','.$pre;
+            
+
+        }else{
+              $name=implode(',',$previoes);
+            }
+
+          
 
 
-     $generatesop->save();
+            generatesop::find($id)
+            ->update([
+           'uploaded_by'=>$uploaded,
+           'sop_title'=>$sop_title,
+           'business_unit'=>$business_unit,
+           'effective_date'=>$effective_date,
+           'version_no'=>$version_no,
+           'doc_no'=>$doc_no,
+           'policy'=>$policy,
+           'purpose'=>$purpose,
+           'scope'=>$scope,
+           'review_pro'=>$review_pro,
+           'monitoring'=>$monitoring,
+           'verification'=>$verification,
+           'steps'=>$steps,
+           'desc'=>$desc,
+           'img'=>$filenames ,
+           'appendix'=>$name ,
+           'folder'=>$folder,
+           'Process_owner'=>$Process_owner,
+           'Process_exec'=>$Process_exec,
+           'Employee_id'=>$employee_id,
+           'edited_by'=>$edited_by,
+          
+       ]);
+
+        
+
+     //    $edited_by=$request->edited_by;
+     //    $generatesop->edited_by=$edited_by;
+
+
+     // $generatesop->save();
 
       $title=$request->folder;
       $generatesop=DB::table('generatesops')->where('folder',$title)->get();
-      return view('admin.Folders.show', compact('generatesop'));
+      return view('admin.folders.show', compact('generatesop'));
+
+        //return redirect()->route('admin.folders.show', compact('generatesop'));
     }
     
     
