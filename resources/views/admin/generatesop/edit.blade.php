@@ -125,13 +125,13 @@ input[type=text]:focus {
   background-color: lightblue;
 }
 #square {
-    width: 250px;
+    width: 300px;
     height: 30px;
     background-color: lightblue;
 
     }
 #squareflow {
-    width: 250px;
+    width: 300px;
     height: 30px;
     background-color: lightblue;
 
@@ -269,7 +269,7 @@ input[type=text]:focus {
       <?php 
         }
       ?>
-      <input type="file" name="img[]" id="input-fa" accept=".jpg" style="background-color:#fff;"  value="{{ old('img', '') }}" multiple />
+     <input type="file" name="img[]"  accept=".jpg" style="background-color:#fff;" multiple />
       
       <br><br>
 
