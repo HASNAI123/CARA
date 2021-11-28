@@ -305,7 +305,7 @@ $flow=array();
      //$generatesop->update($request->all());   .
          $edited_by=$request->edited_by;
          $id=$generatesop->id;   
-        return $previoes=$request->privious;
+         $previoes=$request->privious;
          $oldimg=$request->oldimg;
          //$pre=implode(',',$previoes);  
 
@@ -347,8 +347,8 @@ $flow=array();
 
             $filenames= $file->getClientOriginalName();
             $filenames= time(). '.' .$filenames;
-            $path=$file->storeas('public',$filenames);
-            $path=public_path($filenames);
+            $path=$file->storeas('images',$filenames,'s3');
+            Storage::disk('s3')->setVisibility($path,'public');
             $flow[]=$filenames;
             $image=implode(',',$flow);
             $generatesop->img =$image;
@@ -370,8 +370,8 @@ $flow=array();
 
             $filename= $file->getClientOriginalName();
             $filename= time(). '.' .$filename;
-            $path=$file->storeas('public',$filename);
-            $path=public_path($filename);
+            $path=$file->storeas('images',$filename,'s3');
+            Storage::disk('s3')->setVisibility($path,'public');
             $appendix[]=$filename;
             $img=implode(',',$appendix);
             $generatesop->appendix =$img;
