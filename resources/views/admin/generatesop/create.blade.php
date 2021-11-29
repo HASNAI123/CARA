@@ -166,7 +166,7 @@ input[type=text]:focus {
          Purpose :<br><br>
          <textarea style="resize:vertical" cols = "100"  name = "purpose"  style="height:200px"  value="{{ old('purpose', '') }}"     ></textarea>
         
-
+         <br><br>
         <p>
          Scope :<br><br>
          <textarea style="resize:vertical" cols = "100"  name = "scope"  style="height:200px"  value="{{ old('scope', '') }}"          ></textarea></p>
@@ -184,7 +184,9 @@ input[type=text]:focus {
         Verification and Record Keeping:<br><br>
          <textarea style="resize:vertical" cols = "100" name = "verification" style="height:200px" value="{{ old('verification', '') }}"        ></textarea></p>
           
-
+         
+          <label for="flowchart"> Insert Flowchart image </label>
+      <input type="file" name="img[]" id="input-fa" accept=".jpg" style="background-color:#fff;"  value="{{ old('img', '') }}" multiple />
 
         
          <div class="wrapp" >
@@ -211,8 +213,7 @@ input[type=text]:focus {
                 </select>
          
 
-      <label for="flowchart"> Insert Flowchart image </label>
-      <input type="file" name="img[]" id="input-fa" accept=".jpg" style="background-color:#fff;"  value="{{ old('img', '') }}" multiple />
+     
       
       <br><br>
 
