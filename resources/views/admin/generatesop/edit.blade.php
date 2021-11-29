@@ -216,6 +216,7 @@ input[type=text]:focus {
         }
       ?>
      <input type="file" name="img[]"  accept=".jpg" style="background-color:#fff;" multiple />
+     <br><br>
      
      
      
