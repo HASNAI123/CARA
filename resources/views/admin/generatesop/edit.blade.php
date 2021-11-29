@@ -176,32 +176,50 @@ input[type=text]:focus {
 
         <label> SOP Content  </label><br><br>
 
-        Policy :<br><br>
+        Policy :
         <textarea style="resize:vertical" cols = "100"id="policy" name="policy"  style="height:200px"    value="{{ $generatesop->policy }}" >{{ $generatesop->policy }}</textarea><br><br>
         
-         Purpose :<br><br>
+         Purpose :
          <textarea  style="resize:vertical" cols = "100" name = "purpose"  style="height:200px"  value="{{ $generatesop->purpose }}"     >{{ $generatesop->purpose }}</textarea>
         
 
         <p>
-         Scope :<br><br>
+         Scope :
          <textarea  style="resize:vertical" cols = "100" name = "scope" " style="height:200px"  value="{{ $generatesop->scope }}"          >{{ $generatesop->scope }}</textarea></p>
 
         <p>
-         Review Procedure :<br><br>
+         Review Procedure :
          <textarea style="resize:vertical" cols = "100"  name = "review_pro" style="height:200px"  value="{{ $generatesop->review_pro }}"              >{{ $generatesop->review_pro }}</textarea></p>
 
         <p>
-         Monitoring :<br><br>
+         Monitoring :
          <textarea style="resize:vertical" cols = "100" name = "monitoring" style="height:200px"  value="{{ $generatesop->monitoring }}"          >{{ $generatesop->monitoring }}</textarea></p>
 
 
         <p>
-         Verification and Record Keeping :<br><br>
+         Verification and Record Keeping :
          <textarea  style="resize:vertical" cols = "100" name = "verification" style="height:200px" value="{{ $generatesop->verification }}"        >{{ $generatesop->verification }}</textarea></p>
           
          
-
+          <label for="flowchart"> Insert Flowchart image </label><br>
+     
+      <?php 
+        $img=explode(',',$generatesop->img);
+        foreach ($img as $img) {
+         
+       ?>
+       <div class="img">
+        <input type="text" id="squareflow" name="oldimg[]" value="<?php echo $img?>" readonly>
+        <input type="button" value="X" class="remove"><br>
+      </div>
+      <?php 
+        }
+      ?>
+     <input type="file" name="img[]"  accept=".jpg" style="background-color:#fff;" multiple />
+     
+     
+     
+     
 
        
 
@@ -257,21 +275,7 @@ input[type=text]:focus {
            
        
 
-     <label for="flowchart"> Insert Flowchart image </label><br>
-     
-      <?php 
-        $img=explode(',',$generatesop->img);
-        foreach ($img as $img) {
-         
-       ?>
-       <div class="img">
-        <input type="text" id="squareflow" name="oldimg[]" value="<?php echo $img?>" readonly>
-        <input type="button" value="X" class="remove"><br>
-      </div>
-      <?php 
-        }
-      ?>
-     <input type="file" name="img[]"  accept=".jpg" style="background-color:#fff;" multiple />
+    
       
       <br><br>
 
