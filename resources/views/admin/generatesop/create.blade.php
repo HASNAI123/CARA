@@ -160,35 +160,35 @@ input[type=text]:focus {
 
         <label> SOP Content  </label><br><br>
 
-        Policy :<br><br>
+        Policy :
         <textarea style="resize:vertical" cols = "100" id="policy" name="policy"  style="height:200px"    value="{{ old('policy', '') }}" ></textarea><br><br>
         
-         Purpose :<br><br>
+         Purpose :
          <textarea style="resize:vertical" cols = "100"  name = "purpose"  style="height:200px"  value="{{ old('purpose', '') }}"     ></textarea>
         
          <br><br>
         <p>
-         Scope :<br><br>
+         Scope :
          <textarea style="resize:vertical" cols = "100"  name = "scope"  style="height:200px"  value="{{ old('scope', '') }}"          ></textarea></p>
 
         <p>
-         Review Procedure :<br><br>
+         Review Procedure :
          <textarea  style="resize:vertical" cols = "100" name = "review_pro" style="height:200px"  value="{{ old('review_pro', '') }}"              ></textarea></p>
 
         <p>
-         Monitoring :<br><br>
+         Monitoring :
          <textarea   style="resize:vertical" cols = "100" name = "monitoring" style="height:200px" value="{{ old('monitoring', '') }}"          ></textarea></p>
 
 
         <p>
-        Verification and Record Keeping:<br><br>
+        Verification and Record Keeping:
          <textarea style="resize:vertical" cols = "100" name = "verification" style="height:200px" value="{{ old('verification', '') }}"        ></textarea></p>
           
          
           <label for="flowchart"> Insert Flowchart image </label>
       <input type="file" name="img[]" id="input-fa" accept=".jpg" style="background-color:#fff;"  value="{{ old('img', '') }}" multiple />
 
-        
+        <br><br>
          <div class="wrapp" >
           Procedure: <br>
          <input type="textarea" name="steps[]" id=""  >  <br><br>
