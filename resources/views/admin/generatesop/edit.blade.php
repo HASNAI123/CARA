@@ -181,20 +181,21 @@ input[type=text]:focus {
         
          Purpose :
          <textarea  style="resize:vertical" cols = "100" name = "purpose"  style="height:200px"  value="{{ $generatesop->purpose }}"     >{{ $generatesop->purpose }}</textarea>
-        
+        <br>
 
         <p>
          Scope :
          <textarea  style="resize:vertical" cols = "100" name = "scope" " style="height:200px"  value="{{ $generatesop->scope }}"          >{{ $generatesop->scope }}</textarea></p>
-
+         <br>
         <p>
          Review Procedure :
          <textarea style="resize:vertical" cols = "100"  name = "review_pro" style="height:200px"  value="{{ $generatesop->review_pro }}"              >{{ $generatesop->review_pro }}</textarea></p>
-
+        <br>
         <p>
          Monitoring :
          <textarea style="resize:vertical" cols = "100" name = "monitoring" style="height:200px"  value="{{ $generatesop->monitoring }}"          >{{ $generatesop->monitoring }}</textarea></p>
-
+       
+       <br>
 
         <p>
          Verification and Record Keeping :
