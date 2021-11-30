@@ -138,7 +138,7 @@ input[type=text]:focus {
             <p> Created by:<br><br><input readonly class="inp" type="text" name="uploaded_by" value="{{ Auth::user()->name  }}"   /></p>
 
          <label for="folders">Select Folder</label>
-            <select  style="width:290p;  border: 3px solid;  border-style: solid border-radius:5px;" class="form-control {{ $errors->has('status') ? 'is-invalid' : '' }}" name="folder" id="folder">
+            <select  style="width:290p;  border: 3px solid;  border-style: solid border-radius:5px;" class="form-control {{ $errors->has('status') ? 'is-invalid' : '' }}" name="folder" id="folder" required>
                     
                     <option style="display:none">
                     @foreach($folders as $folders)
