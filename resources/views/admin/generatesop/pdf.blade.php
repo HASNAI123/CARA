@@ -169,7 +169,21 @@
             <td>Process Flow  {{$generatesop->sop_title}}</td>
             <td style align='center'> 7</td>
             </tr>
-            </table>
+           
+            
+             <tr>
+            <td style align='center'>9.</td>
+            <td>Procedures</td>
+            <td style align='center'>8</td>
+            </tr>
+            
+              <tr>
+            <td style align='center'>10.</td>
+            <td>Appendix</td>
+            <td style align='center'>9</td>
+            </tr>
+            
+             </table>
             
         <footer>
         Copyright &copy; Aeon Co.(M) Bhd. All rights reserved | Digital Interal Audit (DIA)
