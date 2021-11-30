@@ -203,6 +203,7 @@ input[type=text]:focus {
           
          
           <label for="flowchart"> Insert Flowchart image </label><br>
+     @if($generatesop->img) 
      
       <?php 
         $img=explode(',',$generatesop->img);
@@ -216,6 +217,7 @@ input[type=text]:focus {
       <?php 
         }
       ?>
+    @endif  
      <input type="file" name="img[]"  accept=".jpg" style="background-color:#fff;" multiple />
      <br><br>
      
@@ -250,6 +252,7 @@ input[type=text]:focus {
          
          
          <label for="Appendix"> Appendix</label><br>
+    @if($generatesop->appendix)  
       <?php 
         $image=explode(',',$generatesop->appendix);
         foreach ($image as $images) {
@@ -263,6 +266,7 @@ input[type=text]:focus {
       <?php 
         }
       ?>
+    @endif
     <input type="file" name="appendix[]"  accept=".jpg" style="background-color:#fff;"  value="{{ old('img', '') }}" multiple />
 
             
