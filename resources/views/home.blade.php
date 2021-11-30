@@ -249,7 +249,7 @@
                         <tr>
                             <th>Name</th>
                             <th>User ID</th>
-                            <th>Last login at</th>
+                            <th>Last login At</th>
                         </tr>
                         </thead>
                         <tbody>
