@@ -350,14 +350,11 @@ $flow=array();
             $path=$file->storeas('images',$filenames,'s3');
             Storage::disk('s3')->setVisibility($path,'public');
             $flow[]=$filenames;
-            $image=implode(',',$flow);
-            $generatesop->img =$image;
+            //$image=implode(',',$flow);
+            //$generatesop->img =$image;
         }
-        $filenameo=implode(',',$flow);
-        $old=implode(',', $oldimg);
-        $filenames=$filenameo.','.$old;
-      }else{
-              $filenames=implode(',',$oldimg);
+        }else{
+              $filenames="";
   
             }
 
@@ -376,15 +373,30 @@ $flow=array();
             $img=implode(',',$appendix);
             $generatesop->appendix =$img;
             }
+        }else{
+              $name="";
+            }
+            
+         if(is_null($oldimg)){
+          $filenames=implode(',',$flow);
+        }
+        if($oldimg){
 
+        $filenameo=implode(',',$flow);
+        $old=implode(',', $oldimg);
+        $filenames=$filenameo.','.$old;
+      }
+
+
+             if(is_null($previoes)){
+              $name=implode(',',$appendix);
+            }
+            if($previoes){
              $nameo=implode(',',$appendix);
              $pre=implode(',', $previoes);
             $name=$nameo.','.$pre;
-            
+            }    
 
-        }else{
-              $name=implode(',',$previoes);
-            }
 
           
 
