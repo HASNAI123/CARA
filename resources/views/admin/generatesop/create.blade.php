@@ -141,7 +141,7 @@ input[type=text]:focus {
             <select  style="width:290px;  border: 3px solid;  border-style: solid border-radius:5px;" class="form-control {{ $errors->has('status') ? 'is-invalid' : '' }}" name="folder" id="folder">
                     
                     @foreach($folders as $folders)
-                        <option style="display:none" value="{{ $folders->id }}"> {{ $folders->title }}  </option>
+                        <option  value="{{ $folders->id }}"> {{ $folders->title }} style="display:none" </option>
                     
                     @endforeach
                 </select>
