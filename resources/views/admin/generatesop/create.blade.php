@@ -188,7 +188,7 @@ input[type=text]:focus {
          <textarea style="resize:vertical" cols = "100" name = "verification" style="height:200px" value="{{ old('verification', '') }}"        ></textarea></p>
           
          
-          <label for="flowchart"> Insert Flowchart image </label>
+          <label for="flowchart"> Insert Flowchart image </label><br>
       <input type="file" name="img[]"  accept=".jpg,.png,.jpeg"  style="background-color:#fff;"  value="{{ old('img', '') }}" multiple />
 
         <br><br>
@@ -220,7 +220,7 @@ input[type=text]:focus {
       
       <br><br>
 
-      <label for="Appendix"> Appendix</label>
+      <label for="Appendix"> Appendix</label><br>
       <input type="file" name="appendix[]"  accept=".jpg,.png,.jpeg"   style="background-color:#fff;"  value="{{ old('appendix', '') }}"  multiple />
      
             </div>
