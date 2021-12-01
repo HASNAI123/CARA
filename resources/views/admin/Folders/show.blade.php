@@ -124,13 +124,13 @@
                                       @endcan
                                
 
-                                     @if($generatesop->approved_by == null)
+                                     
                                     @can('Sop_edit')
                                     <a class="btn btn-xs btn-info" href="{{ route('admin.generatesop.edit', $generatesop->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
                                     @endcan
-                                    @endif
+                                    
 
                                     
 
