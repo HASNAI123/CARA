@@ -189,7 +189,7 @@ input[type=text]:focus {
           
          
           <label for="flowchart"> Insert Flowchart image </label>
-      <input type="file" name="img[]" id="input-fa" accept=".jpg,.png,.jpeg"  style="background-color:#fff;"  value="{{ old('img', '') }}" multiple />
+      <input type="file" name="img[]"  accept=".jpg,.png,.jpeg"  style="background-color:#fff;"  value="{{ old('img', '') }}" multiple />
 
         <br><br>
          <div class="wrapp" >
@@ -221,7 +221,7 @@ input[type=text]:focus {
       <br><br>
 
       <label for="Appendix"> Appendix</label>
-      <input type="file" name="appendix[]"  id="input-fb" accept=".jpg,.png,.jpeg"   style="background-color:#fff;"  value="{{ old('appendix', '') }}"  multiple />
+      <input type="file" name="appendix[]"  accept=".jpg,.png,.jpeg"   style="background-color:#fff;"  value="{{ old('appendix', '') }}"  multiple />
      
             </div>
 
