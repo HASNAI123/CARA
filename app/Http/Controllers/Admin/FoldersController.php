@@ -127,7 +127,10 @@ class FoldersController extends Controller
      */
     public function update( request $request,$id)
     {
-         
+         $user= Auth::user()->name;   
+         $folder=$ids=DB::table('folders')->where('id',$id)->first();
+
+      if($folder->created_by==$user){ 
         $password=$request->password;
         //$hashed = Hash::make($password);
           
@@ -135,9 +138,15 @@ class FoldersController extends Controller
         ->where('id', $id)  // find your user by their email
         ->limit(1)  // optional - to ensure only one record is updated.
         ->update(array('title' => $request->folder_title, 'password'=> $request->password));  // update the record in the DB. 
-
-
+        
         return redirect()->route('admin.folders.index');
+      }else{
+
+         $folder=DB::table('folders')->where('id',$id)->get();
+        
+        return view('admin.Folders.edit', compact('folder'))->withErrors(['msg' => 'This Folder is created by another user']);
+
+     }
     }
 
 
