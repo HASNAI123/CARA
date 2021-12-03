@@ -230,6 +230,7 @@ input[type=text]:focus {
          @foreach ($generatesop->steps as $key=>$new)
          
             <tr>
+        <div class="oldproc">
 
             <label for=""> Procedure</label> <br>
             <input type="text" name="steps[]" value="{{$new }}"><br>
@@ -238,6 +239,8 @@ input[type=text]:focus {
             <textarea  style="resize:vertical" cols = "100" name = "desc[]"  style="height:200px"  value="{{$generatesop->desc[$key]}}">
             {{$generatesop->desc[$key]}}
           </textarea><br>
+          <a href="#" class="removeproc">Remove</a><br><br>
+        </div>
 
          @endforeach
          
@@ -321,6 +324,12 @@ $("#input-fb").fileinput({
       $(this).parent('.img').remove();
 
 
+     });
+     
+          $('.removeproc').click(function(e){
+      $(this).parent('.oldproc').remove();
+
+    
      });
 
      // allowed maximum input fields             <input type="text" name="file" size="4" style="background-color:#fff;" required="required" />
