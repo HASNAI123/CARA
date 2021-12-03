@@ -199,7 +199,6 @@ input[type=text]:focus {
           Description: <br>
          <textarea  style="resize:vertical" cols = "100" name = "desc[]"  style="height:200px"            ></textarea></p>
          
-        <a href="#" class="remove-lnk">Remove</a>
 
          
          </div>
