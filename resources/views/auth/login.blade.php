@@ -5,7 +5,14 @@
         <div class="card mx-4">
             <div class="card-body p-4">
                 <h1>{{ trans('panel.site_title') }}</h1>
-
+                
+                <style>
+                      form i {
+                        margin-left: -30px;
+                        cursor: pointer;
+                    }
+                    </style>
+                                    
                 <p class="text-muted">{{ trans('global.login') }}</p>
 
                 @if(session('message'))
@@ -39,8 +46,20 @@
                         </div>
 
                         <input id="password" name="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required placeholder="{{ trans('global.login_password') }}">
-                      
-                            
+                      <i class="bi bi-eye-slash" id="togglePassword"></i>
+                    
+                    <script >
+                        const togglePassword = document.querySelector('#togglePassword');
+                    const password = document.querySelector('#password');
+                    
+                    togglePassword.addEventListener('click', function (e) {
+                        // toggle the type attribute
+                        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                        password.setAttribute('type', type);
+                        // toggle the eye / eye slash icon
+                        this.classList.toggle('bi-eye');
+                    });
+                        </script>
                         @if($errors->has('password'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('password') }}
