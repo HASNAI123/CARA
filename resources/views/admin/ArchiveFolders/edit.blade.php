@@ -46,10 +46,10 @@
                  <script>
                     function myFunction() {
                       var x = document.getElementById("myInput");
-                      if (x.type === "password") {
+                      if (x.type === "business_unit") {
                         x.type = "text";
                       } else {
-                        x.type = "password";
+                        x.type = "business_unit";
                       }
                     }
                     </script>
