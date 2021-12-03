@@ -37,13 +37,12 @@
                 <input class="form-control {{ $errors->has('business_unit') ? 'is-invalid' : '' }}" type="text" name="folder_title" id="business_unit" value="{{$folder->title }}">
                
                  <br><br>
-               
+               <div class="input-group-prepend">
                 <label for="Business unit">{{ trans('Update Password') }}</label>
                 <input class="form-control {{ $errors->has('business_unit') ? 'is-invalid' : '' }}" type="password" name="password" id="business_unit" value="{{$folder->password}}">
                  
-                <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-eye-slash" id="togglePassword"></i></span>
-                        </div>
+                
+                    <span class="input-group-text"><i class="fa fa-eye-slash" id="togglePassword"></i></span>
                         
                          <script>
                             const togglePassword = document.querySelector('#togglePassword');
@@ -57,7 +56,8 @@
                                 this.classList.toggle('fa-eye');
                             });
                             </script>
-                    
+                    </div>
+                        
                 <span class="help-block">{{ trans('cruds.sop.fields.uploaded_by_helper') }}</span>
             </div>
          
