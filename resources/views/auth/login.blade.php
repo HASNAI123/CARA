@@ -48,7 +48,7 @@
                         <input id="password" name="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required placeholder="{{ trans('global.login_password') }}">
 
                    <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-eye"></i></span>
+                            <span class="input-group-text"><i class="fa fa-eye" id="togglePassword"></i></span>
                         </div>
                         @if($errors->has('password'))
                             <div class="invalid-feedback">
@@ -69,6 +69,17 @@
                                 x.type = "password";
                               }
                             }
+                            
+                            const togglePassword = document.querySelector('#togglePassword');
+                            const password = document.querySelector('#password');
+                            
+                            togglePassword.addEventListener('click', function (e) {
+                                // toggle the type attribute
+                                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                                password.setAttribute('type', type);
+                                // toggle the eye / eye slash icon
+                                this.classList.toggle('fa-eye');
+                            });
                             </script>
                     </div>
 
