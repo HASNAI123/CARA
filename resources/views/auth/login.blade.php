@@ -47,7 +47,9 @@
                             </div>
                         @endif
                         
-                        <br><br>  <input type="checkbox" onclick="myFunction()">Show Password
+                    </div>
+                    <div>
+                    <<input type="checkbox" onclick="myFunction()">Show Password
 
                             <script>
                             function myFunction() {
@@ -60,7 +62,6 @@
                             }
                             </script>
                     </div>
-                    
 
                     <div class="input-group mb-4">
                         <div class="form-check checkbox">
