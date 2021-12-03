@@ -37,8 +37,10 @@
                 <input class="form-control {{ $errors->has('business_unit') ? 'is-invalid' : '' }}" type="text" name="folder_title" id="business_unit" value="{{$folder->title }}">
                
                  <br><br>
-               <div class="input-group-prepend">
+              
                 <label for="Business unit">{{ trans('Update Password') }}</label>
+                
+                 <div class="input-group-prepend">
                 <input class="form-control {{ $errors->has('business_unit') ? 'is-invalid' : '' }}" type="password" name="password" id="business_unit" value="{{$folder->password}}">
                  
                 
