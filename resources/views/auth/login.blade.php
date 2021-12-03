@@ -50,26 +50,8 @@
                    <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fa fa-eye-slash" id="togglePassword"></i></span>
                         </div>
-                        @if($errors->has('password'))
-                            <div class="invalid-feedback">
-                                {{ $errors->first('password') }}
-                            </div>
-                        @endif
                         
-                    </div>
-                    <div>
-                    <input type="checkbox" onclick="myFunction()">Show Password
-
-                            <script>
-                            function myFunction() {
-                              var x = document.getElementById("password");
-                              if (x.type === "password") {
-                                x.type = "text";
-                              } else {
-                                x.type = "password";
-                              }
-                            }
-                            
+                         <script>
                             const togglePassword = document.querySelector('#togglePassword');
                             const password = document.querySelector('#password');
                             
@@ -81,7 +63,15 @@
                                 this.classList.toggle('fa-eye');
                             });
                             </script>
+                            
+                        @if($errors->has('password'))
+                            <div class="invalid-feedback">
+                                {{ $errors->first('password') }}
+                            </div>
+                        @endif
+                        
                     </div>
+                    
 
                     <div class="input-group mb-4">
                         <div class="form-check checkbox">
