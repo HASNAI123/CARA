@@ -40,26 +40,9 @@
               
                 <label for="Business unit">{{ trans('Update Password') }}</label>
                 
-                 <div class="input-group-prepend">
+                 
                 <input class="form-control {{ $errors->has('business_unit') ? 'is-invalid' : '' }}" type="password" name="password" id="business_unit" value="{{$folder->password}}">
                  
-                
-                    <span class="input-group-text"><i class="fa fa-eye-slash" id="togglePassword"></i></span>
-                        
-                         <script>
-                            const togglePassword = document.querySelector('#togglePassword');
-                            const password = document.querySelector('#password');
-                            
-                            togglePassword.addEventListener('click', function (e) {
-                                // toggle the type attribute
-                                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-                                password.setAttribute('type', type);
-                                // toggle the eye / eye slash icon
-                                this.classList.toggle('fa-eye');
-                            });
-                            </script>
-                    </div>
-                        
                 <span class="help-block">{{ trans('cruds.sop.fields.uploaded_by_helper') }}</span>
             </div>
          
