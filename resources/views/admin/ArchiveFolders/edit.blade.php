@@ -45,11 +45,11 @@
                  
                  <script>
                     function myFunction() {
-                      var x = document.getElementById("myInput");
-                      if (x.type === "business_unit") {
+                      var x = document.getElementById("business_unit");
+                      if (x.type === "password") {
                         x.type = "text";
                       } else {
-                        x.type = "business_unit";
+                        x.type = "password";
                       }
                     }
                     </script>
