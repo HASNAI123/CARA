@@ -39,10 +39,20 @@
                  <br><br>
               
                 <label for="Business unit">{{ trans('Update Password') }}</label>
-                
-                 
                 <input class="form-control {{ $errors->has('business_unit') ? 'is-invalid' : '' }}" type="password" name="password" id="business_unit" value="{{$folder->password}}">
                  
+                 <input type="checkbox" onclick="myFunction()">Show Password
+                 
+                 <script>
+                    function myFunction() {
+                      var x = document.getElementById("myInput");
+                      if (x.type === "password") {
+                        x.type = "text";
+                      } else {
+                        x.type = "password";
+                      }
+                    }
+                    </script>
                 <span class="help-block">{{ trans('cruds.sop.fields.uploaded_by_helper') }}</span>
             </div>
          
