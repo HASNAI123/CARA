@@ -46,20 +46,8 @@
                         </div>
 
                         <input id="password" name="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required placeholder="{{ trans('global.login_password') }}">
-                      <j class="bi bi-eye-slash" id="togglePassword"></j>
-                    
-                    <script >
-                        const togglePassword = document.querySelector('#togglePassword');
-                    const password = document.querySelector('#password');
-                    
-                    togglePassword.addEventListener('click', function (e) {
-                        // toggle the type attribute
-                        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-                        password.setAttribute('type', type);
-                        // toggle the eye / eye slash icon
-                        this.classList.toggle('bi-eye');
-                    });
-                        </script>
+
+                  
                         @if($errors->has('password'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('password') }}
