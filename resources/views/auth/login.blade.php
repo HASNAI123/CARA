@@ -25,18 +25,7 @@
                         </div>
 
                         <input id="email" name="email" type="text" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" required autocomplete="email" autofocus placeholder="{{ trans('USER ID') }}" value="{{ old('email', null) }}">
-<br><br>  <input type="checkbox" onclick="myFunction()">Show Password
 
-                            <script>
-                            function myFunction() {
-                              var x = document.getElementById("password");
-                              if (x.type === "password") {
-                                x.type = "text";
-                              } else {
-                                x.type = "password";
-                              }
-                            }
-                            </script>
                         @if($errors->has('email'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('email') }}
@@ -57,6 +46,19 @@
                                 {{ $errors->first('password') }}
                             </div>
                         @endif
+                        
+                        <br><br>  <input type="checkbox" onclick="myFunction()">Show Password
+
+                            <script>
+                            function myFunction() {
+                              var x = document.getElementById("password");
+                              if (x.type === "password") {
+                                x.type = "text";
+                              } else {
+                                x.type = "password";
+                              }
+                            }
+                            </script>
                     </div>
                     
 
