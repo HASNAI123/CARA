@@ -7,7 +7,7 @@
                 <h1>{{ trans('panel.site_title') }}</h1>
                 
                 <style>
-                      form i {
+                      form j {
                         margin-left: -30px;
                         cursor: pointer;
                     }
@@ -46,7 +46,7 @@
                         </div>
 
                         <input id="password" name="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required placeholder="{{ trans('global.login_password') }}">
-                      <i class="bi bi-eye-slash" id="togglePassword"></i>
+                      <j class="bi bi-eye-slash" id="togglePassword"></j>
                     
                     <script >
                         const togglePassword = document.querySelector('#togglePassword');
