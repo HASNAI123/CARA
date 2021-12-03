@@ -45,7 +45,7 @@
                  
                  <script>
                     function myFunction() {
-                      var x = document.getElementByTagName("password");
+                      var x = document.getElementByName("password");
                       if (x.type === "password") {
                         x.type = "text";
                       } else {
