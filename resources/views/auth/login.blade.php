@@ -25,7 +25,18 @@
                         </div>
 
                         <input id="email" name="email" type="text" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" required autocomplete="email" autofocus placeholder="{{ trans('USER ID') }}" value="{{ old('email', null) }}">
+<br><br>  <input type="checkbox" onclick="myFunction()">Show Password
 
+                            <script>
+                            function myFunction() {
+                              var x = document.getElementById("password");
+                              if (x.type === "password") {
+                                x.type = "text";
+                              } else {
+                                x.type = "password";
+                              }
+                            }
+                            </script>
                         @if($errors->has('email'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('email') }}
@@ -39,18 +50,7 @@
                         </div>
 
                         <input id="password" name="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required placeholder="{{ trans('global.login_password') }}">
-                      <br>  <input type="checkbox" onclick="myFunction()">Show Password
-
-                            <script>
-                            function myFunction() {
-                              var x = document.getElementById("password");
-                              if (x.type === "password") {
-                                x.type = "text";
-                              } else {
-                                x.type = "password";
-                              }
-                            }
-                            </script>
+                      
                             
                         @if($errors->has('password'))
                             <div class="invalid-feedback">
@@ -58,6 +58,7 @@
                             </div>
                         @endif
                     </div>
+                    
 
                     <div class="input-group mb-4">
                         <div class="form-check checkbox">
