@@ -39,7 +39,7 @@
                         </div>
 
                         <input id="password" name="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required placeholder="{{ trans('global.login_password') }}">
-                        <input type="checkbox" onclick="myFunction()">Show Password
+                      <br>  <input type="checkbox" onclick="myFunction()">Show Password
 
                             <script>
                             function myFunction() {
