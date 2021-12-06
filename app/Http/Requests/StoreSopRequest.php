@@ -18,10 +18,7 @@ class StoreSopRequest extends FormRequest
                 'nullable',
             ],
            
-                'Sop_file'=>[
-                    'string',
-                    'nullable',
-                ],
+                
 
                 'sop_title' => [
                     'string',
