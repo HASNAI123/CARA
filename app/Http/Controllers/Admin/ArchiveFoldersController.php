@@ -151,7 +151,7 @@ class ArchiveFoldersController extends Controller
 
           $folder=DB::table('archive_folders')->where('id',$id)->get();
         
-        return view('admin.Archivefolders.edit', compact('folder'))->withErrors(['msg' => 'This Folder is created by another user']);
+        return view('admin.ArchiveFolders.edit', compact('folder'))->withErrors(['msg' => 'This Folder is created by another user']);
 
      }
     }
