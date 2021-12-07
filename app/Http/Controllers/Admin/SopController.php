@@ -56,6 +56,8 @@ class SopController extends Controller
         
         $validated = $request->validate([
         'sop_file' => 'required',
+        'sop_file' => 'max:5120', //5MB 
+        
      
     ]);
 
