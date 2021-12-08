@@ -25,10 +25,10 @@
             @csrf
             <div class="form-group">
                 <label for="uploaded_by">{{ trans('cruds.sop.fields.uploaded_by') }}</label>
-                <input      readonly   class="form-control" type="text" name="uploaded_by" id="uploaded_by" value="{{ Auth::user()->name   }}">
+                <input      readonly   class="form-control {{ $errors->has('uploaded_by') ? 'is-invalid' : '' }} " type="text" name="uploaded_by" id="uploaded_by" value="{{ Auth::user()->name   }}">
                
                     <div class="invalid-feedback">
-                     
+                        {{ $errors->first('uploaded_by') }}
                     </div>
              
                 <span class="help-block">{{ trans('cruds.sop.fields.uploaded_by_helper') }}</span>
@@ -36,22 +36,22 @@
 
                 @foreach($archive_folders as $arvhive_folder)
                 @endforeach
-                <input class="form-control" type="hidden" name="folder" id="uploaded_by" value="{{$arvhive_folder}}">
+                <input class="form-control {{ $errors->has('uploaded_by') ? 'is-invalid' : '' }}" type="hidden" name="folder" id="uploaded_by" value="{{$arvhive_folder}}">
 
             <br>
             <div class="form-group">
                 <label for="uploaded_by">{{ trans('SOP Title') }}</label>
-                <input class="form-control" type="text" name="sop_title" id="uploaded_by" value="{{ old('sop_title', '') }}">
+                <input class="form-control {{ $errors->has('uploaded_by') ? 'is-invalid' : '' }}" type="text" name="sop_title" id="uploaded_by" value="{{ old('sop_title', '') }}">
                
                     <div class="invalid-feedback">
-                       
+                        {{ $errors->first('uploaded_by') }}
                     </div>
              
                 <span class="help-block">{{ trans('cruds.sop.fields.uploaded_by_helper') }}</span>
             </div>
             <div class="form-group">
                 <label for="Business unit">{{ trans('Business unit') }}</label>
-                <input class="form-control" type="text" name="business_unit" id="business_unit" value="{{ old('business_unit', '') }}">
+                <input class="form-control {{ $errors->has('business_unit') ? 'is-invalid' : '' }}" type="text" name="business_unit" id="business_unit" value="{{ old('business_unit', '') }}">
                
                     
              
@@ -65,7 +65,7 @@
             </script>
             <div class="form-group">
                 <label for="effective date">{{ trans('Effective date') }}</label>
-                <input     class="form-control" type="date" name="effective_date" id="effective_date" value="{{ old('effective_date', '') }}">
+                <input     class="form-control {{ $errors->has('effective_date') ? 'is-invalid' : '' }}" type="date" name="effective_date" id="effective_date" value="{{ old('effective_date', '') }}">
                
                     
              
@@ -76,7 +76,7 @@
                 <input type="file" name=sop_file>
                
                     <div class="invalid-feedback">
-                     
+                        {{ $errors->first('sop_file') }}
                     </div>
              
                 <span class="help-block">{{ trans('cruds.sop.fields.sop_file_helper') }}</span>
