@@ -73,9 +73,8 @@ class SopController extends Controller
        $file=$request->file('sop_file');
        $filename= $file->getClientOriginalName();
        $filename= time(). '.' .$filename;
-    //   $path=$file->storeas('pdfs',$filename,'s3');
-       $path=Storage::disk('s3');
-       $path->put('pdfs', fopen($filename, 'r+'));
+       $path=$file->storeas('pdfs',$filename,'s3');
+  
     
    }else{
         $filename='null';
