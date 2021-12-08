@@ -75,9 +75,7 @@
                 <label for="sop_file">{{ trans('SOP File') }}</label>
                 <input type="file" name=sop_file>
                
-                    <div class="invalid-feedback">
-                        {{ $errors->first('sop_file') }}
-                    </div>
+                   
              
                 <span class="help-block">{{ trans('cruds.sop.fields.sop_file_helper') }}</span>
             </div>
