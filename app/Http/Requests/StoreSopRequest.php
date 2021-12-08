@@ -18,6 +18,11 @@ class StoreSopRequest extends FormRequest
                 'nullable',
             ],
            
+           'Sop_file'=>[
+                    'string',
+                    'nullable',
+                    'file' => 'max:500000',
+                ],
                 
 
                 'sop_title' => [
