@@ -74,6 +74,15 @@
                             </div>
                         </div>
                     @endif
+                    @if($errors->count() > 0)
+                        <div class="alert alert-danger">
+                            <ul class="list-unstyled">
+                                @foreach($errors->all() as $error)
+                                    <li>{{ $error->message }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     
                     @yield('content')
 
