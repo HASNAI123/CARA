@@ -75,9 +75,7 @@
                 <label for="sop_file">{{ trans('SOP File') }}</label>
                 <input type="file" name=sop_file>
                
-                   
-             
-                <span class="help-block">{{ trans('cruds.sop.fields.sop_file_helper') }}</span>
+                  
             </div>
          
             <div class="form-group">
