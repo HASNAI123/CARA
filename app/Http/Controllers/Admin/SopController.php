@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
 use App\Archive_Folder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Validator;
+
 
 class SopController extends Controller
 {
@@ -62,9 +62,7 @@ class SopController extends Controller
      
     ]);
     
-    $validator = Validator::make($request->all(), [
-    'file' => 'max:500000',
-]);
+
 
 
      
