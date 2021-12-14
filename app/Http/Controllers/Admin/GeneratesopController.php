@@ -376,26 +376,44 @@ $flow=array();
         }else{
               $name="";
             }
-            
-         if(is_null($oldimg)){
-          $filenames=implode(',',$flow);
+       
+       $filenames ="";
+
+        if(count($flow) >0)
+        {
+          $filenames .=implode(',',$flow);
         }
-        if($oldimg){
 
-        $filenameo=implode(',',$flow);
-        $old=implode(',', $oldimg);
-        $filenames=$filenameo.','.$old;
-      }
+        if($oldimg !=null)
+        {
+          if($filenames)
+          {
+            $filenames .=",".implode(',',$oldimg);
+          }
+          else
+          {
+            $filenames .=implode(',',$oldimg);
+          }
+        }     
+    
+   $name ="";
 
+        if(count($appendix) >0)
+        {
+          $name .=implode(',',$appendix);
+        }
 
-             if(is_null($previoes)){
-              $name=implode(',',$appendix);
-            }
-            if($previoes){
-             $nameo=implode(',',$appendix);
-             $pre=implode(',', $previoes);
-            $name=$nameo.','.$pre;
-            }    
+        if($previoes !=null)
+        {
+          if($name)
+          {
+            $name .=",".implode(',',$previoes);
+          }
+          else
+          {
+            $name .=implode(',',$previoes);
+          }
+        }
 
 
           
