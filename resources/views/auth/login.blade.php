@@ -1,18 +1,43 @@
-@extends('layouts.app')
-@section('content')
-<div class="row justify-content-center">
-    <div class="col-md-6">
-        <div class="card mx-4">
-            <div class="card-body p-4">
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/@coreui/coreui@3.2/dist/css/coreui.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet" />
+
+<style>
+body {
+ background-image: url('CARA Home Page-Background.jpg');
+ background-position: center;
+ background-size: contain;
+ -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+</style>
+
+
+<!-- <img style="background-image: ;"  src="{{url('/img\CARA Home Page-Background.jpg')}}" alt="Image"/>  col d-flex justify-content-center  -->
+
+<img width="200px" height="100px" style="margin-left: 50px; "   style="object-position: 20% 80%;"      src="{{url('\AEON Magenta.jpg')}}"   alt="">
+
+
+<div   class="row align-items-center h-100  "> 
+
+    <div class="col-md-4 mx-auto">
+        <h1  style="text-align: center; font-size: 150px; color:darkblue; text-shadow: 2px 2px black; "> CARA</h1>
+        <div class="card mx-2">
+            <div class="card-body p-4 ">
                 <h1>{{ trans('panel.site_title') }}</h1>
-                
-                <style>
-                      form j {
-                        margin-left: -30px;
-                        cursor: pointer;
-                    }
-                    </style>
-                                    
+
                 <p class="text-muted">{{ trans('global.login') }}</p>
 
                 @if(session('message'))
@@ -47,36 +72,17 @@
 
                         <input id="password" name="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required placeholder="{{ trans('global.login_password') }}">
 
-                   <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fa fa-eye-slash" id="togglePassword"></i></span>
-                        </div>
-                        
-                         <script>
-                            const togglePassword = document.querySelector('#togglePassword');
-                            const password = document.querySelector('#password');
-                            
-                            togglePassword.addEventListener('click', function (e) {
-                                // toggle the type attribute
-                                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-                                password.setAttribute('type', type);
-                                // toggle the eye / eye slash icon
-                                this.classList.toggle('fa-eye');
-                            });
-                            </script>
-                            
                         @if($errors->has('password'))
                             <div class="invalid-feedback">
                                 {{ $errors->first('password') }}
                             </div>
                         @endif
-                        
                     </div>
-                    
 
                     <div class="input-group mb-4">
                         <div class="form-check checkbox">
                             <input class="form-check-input" name="remember" type="checkbox" id="remember" style="vertical-align: middle;" />
-                            <label class="form-check-label" for="remember" style="vertical-align: right;">
+                            <label class="form-check-label" for="remember" style="vertical-align: middle;">
                                 {{ trans('global.remember_me') }}
                             </label>
                         </div>
@@ -102,4 +108,3 @@
         </div>
     </div>
 </div>
-@endsection
