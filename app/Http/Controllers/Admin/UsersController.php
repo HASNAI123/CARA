@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Http\Controllers\Traits\CsvImportTrait;
 use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Facades\DB;
 
 
 
@@ -124,9 +125,13 @@ class UsersController extends Controller
 
     public function destroy(User $user)
     {
-        abort_if(Gate::denies('user_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        // abort_if(Gate::denies('user_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $user->delete();
+        // $user->delete();
+        
+        DB::table('users')
+            ->where('id', $user->id)
+            ->delete();
 
         return back();
     }
