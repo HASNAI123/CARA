@@ -27,16 +27,16 @@ body {
 
 <!-- <img style="background-image: ;"  src="{{url('/img\CARA Home Page-Background.jpg')}}" alt="Image"/>  col d-flex justify-content-center  -->
 
-<img width="200px" height="100px" style="margin-left: 50px; "   style="object-position: 20% 80%;"      src="{{url('\AEON Magenta.jpg')}}"   alt="">
+
 
 
 <div   class="row align-items-center h-100  "> 
 
     <div class="col-md-4 mx-auto">
-        <h1  style="text-align: center; font-size: 150px; color:darkblue; text-shadow: 2px 2px black; "> CARA</h1>
+        <h1  style="text-align: center; font-size: 150px; color:darkblue; "> CARA</h1>
         <div class="card mx-2">
             <div class="card-body p-4 ">
-                <h1>{{ trans('panel.site_title') }}</h1>
+               
 
                 <p class="text-muted">{{ trans('global.login') }}</p>
 
