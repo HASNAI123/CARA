@@ -227,7 +227,9 @@ class FoldersController extends Controller
     public function destroy($id)
     {
        
-       $folder = Folder::where('title',$id)->delete();
+        $folder=DB::table('folders')
+            ->where('id',$id)
+            ->delete();
 
         $generatesop= DB::table('generatesops')->where('folder',$id)
         ->select('*')
