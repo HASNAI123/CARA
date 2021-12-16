@@ -143,7 +143,7 @@
 
 <!-- Edit button  -->
  @can('Folder_edit') 
-<a class="btn btn-xs btn-info" href="{{ route('admin.folders.edit',$folders->title) }}"> 
+<a class="btn btn-xs btn-info" href="{{ route('admin.folders.edit',$folders->id) }}"> 
                                         {{ trans('Edit ') }}
                                     </a>
                                     @endcan
