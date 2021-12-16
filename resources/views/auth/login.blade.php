@@ -33,7 +33,7 @@ body {
 <div   class="row align-items-center h-100  "> 
 
     <div class="col-md-4 mx-auto">
-        <h1  style="text-align: center; font-size: 150px; color:darkblue; "> CARA</h1>
+        <h1  style="text-align: center; font-size: 150px; color:darkblue;text-shadow:1px 1px 10px #44b5ff, 1px 1px 10px #ccc;"> CARA</h1>
         <div class="card mx-2">
             <div class="card-body p-4 ">
                
