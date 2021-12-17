@@ -108,6 +108,6 @@ body {
         </div>
     </div>
      <footer style="  position: fixed;
-    bottom:0; right:350px ; color:whitesmoke; font-size:small; "> <h3>Copyright &copy 2021 AEON CO .(M) BHD. All Rights Reserved | Digital Internal Audit [DIA] </h3></footer>
+    bottom:0; right:350px ; color:whitesmoke; font-size:12px; "> <h3>Copyright &copy 2021 AEON CO .(M) BHD. All Rights Reserved | Digital Internal Audit [DIA] </h3></footer>
     </div>
 </div>
