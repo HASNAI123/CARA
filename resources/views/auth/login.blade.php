@@ -21,6 +21,16 @@ body {
   background-size: cover;
 }
 
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  
+  color: white;
+  text-align: center;
+}
+
 
 </style>
 
@@ -107,7 +117,6 @@ body {
             </div>
         </div>
     </div>
-     <footer style="  position: fixed;
-    bottom:0; right:470px ; color:whitesmoke;  "> <h5>Copyright &copy 2021 AEON CO .(M) BHD. All Rights Reserved | Digital Internal Audit [DIA] </h5></footer>
+     <footer> <h6 class="footer" style="color:whitesmoke;">Copyright &copy 2021 AEON CO .(M) BHD. All Rights Reserved | Digital Internal Audit [DIA] </h6></footer>
     </div>
 </div>
