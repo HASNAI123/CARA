@@ -32,6 +32,11 @@ body {
 }
 
 
+h6 {
+    font-size: 12px;
+}
+
+
 </style>
 
 
