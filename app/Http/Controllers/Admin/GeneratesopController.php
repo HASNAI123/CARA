@@ -263,6 +263,7 @@ $flow=array();
             $generatesops = generatesop::find($id)
             ->update([
                       'revised by'=>$user_name
+                      'status'=>'Reviewed'
         ]);
          
             $generatesop=DB::table('generatesops')->where('folder',$folder['folder'])->get();
