@@ -258,12 +258,12 @@ $flow=array();
           $user_id = Auth::user()->id;
           $user_name = Auth::user()->name;
 
-         if ($generatesops['revised by']=="Reviewed"){
+         if ($generatesops['revised by']==""){
          
             $generatesops = generatesop::find($id)
             ->update([
                       'revised by'=>$user_name
-                      'status'=>'Reviewed'
+                      
         ]);
          
             $generatesop=DB::table('generatesops')->where('folder',$folder['folder'])->get();
