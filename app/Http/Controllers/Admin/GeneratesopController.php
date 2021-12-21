@@ -258,11 +258,13 @@ $flow=array();
           $user_id = Auth::user()->id;
           $user_name = Auth::user()->name;
 
-         if ($generatesops['revised by']==""){
+       //  if ($generatesops['revised by']==""){
+         if ($generatesop['status']!=='Reviewed'){
          
-            $generatesops = generatesop::find($id)
+             $generatesops = generatesop::find($id)
             ->update([
                       'revised by'=>$user_name
+                      'status'=>'Reviewed'
                       
         ]);
          
