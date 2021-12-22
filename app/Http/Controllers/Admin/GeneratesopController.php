@@ -259,7 +259,7 @@ $flow=array();
           $user_name = Auth::user()->name;
 
        //  if ($generatesops['revised by']==""){
-         if ($generatesop['revised by']==""){
+         if ($generatesops['revised by']==""){
          
              $generatesops = generatesop::find($id)
             ->update([
