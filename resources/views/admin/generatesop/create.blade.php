@@ -197,7 +197,7 @@ input[type=text]:focus {
          <input type="textarea" name="steps[]" id=""  >  <br><br>
 
           Description: <br>
-         <textarea  style="resize:vertical" cols = "100" name = "desc[]"  style="height:200px"            ></textarea></p>
+         <textarea  style="resize:vertical" cols = "100" name = "desc[]"  style="height:200px"     box-sizing:" border-box"        ></textarea></p>
          
 
          
