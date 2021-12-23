@@ -315,7 +315,7 @@ foreach ($flow as $img) {
             @endphp
 
 
-            <td style="font-size: 12px; align: top; " >{!! $desc !!}</td>
+            <td style="width: 30%; font-size: 12px; vertical-align: top; ">{!! $desc !!}</td>
             </tr>
             @endforeach
         </table>
