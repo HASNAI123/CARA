@@ -298,7 +298,7 @@ foreach ($flow as $img) {
 
         <div class="page_break"><br>
 
-            <!-- Table for Procedure Code vertical-align: top;!-->         
+            <!-- Table for Procedure Code !-->         
              <h3>PROCEDURE</h3>
            <table>
             <?php $a=1;?>
@@ -308,14 +308,14 @@ foreach ($flow as $img) {
             $Steps= $a++.'-'.$new;
             @endphp
 
-            <td style="width: 30%; font-size:12px; "><b>{!! $Steps !!}</b></td>
+            <td style="width: 30%; font-size:12px;vertical-align: top; "><b>{!! $Steps !!}</b></td>
         
             @php
             $desc=$generatesop->desc[$key];
             @endphp
 
 
-            <td style="font-size: 12px; " >{!! $desc !!}</td>
+            <td style="font-size: 12px; vertical-align: top; " ><br>{!! $desc !!}</td>
             </tr>
             @endforeach
         </table>
