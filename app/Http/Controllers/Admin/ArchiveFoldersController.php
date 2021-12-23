@@ -139,7 +139,7 @@ class ArchiveFoldersController extends Controller
         $user= Auth::user()->name;   
         $folder=$ids=DB::table('archive_folders')->where('id',$id)->first();
 
-      if($folder->created_by==$user){
+      if($folder->created_by==$user OR $user=="Admin"){
           
         DB::table('archive_folders')
         ->where('id', $id)  // find your user by their email
