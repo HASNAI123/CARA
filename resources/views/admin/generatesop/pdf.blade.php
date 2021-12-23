@@ -286,7 +286,7 @@ foreach ($flow as $img) {
 
 ?>
 @if($generatesop->img)
-                <img  style="object-fit: contain;"   src="{{Storage::disk('s3')->url('images/'.$img)}}" alt="">
+                <img   width="700px" height="500px"   src="{{Storage::disk('s3')->url('images/'.$img)}}" alt="">
                
                         
 @endif
@@ -338,7 +338,7 @@ foreach ($image as $key=>$images) {
        
 @if($generatesop->appendix)
 
-        <img style="object-fit: contain;"  src="{{Storage::disk('s3')->url('images/'.$images)}}" alt="">
+        <img  width="700px" height="500px"  src="{{Storage::disk('s3')->url('images/'.$images)}}" alt="">
         
         
 @endif
