@@ -324,17 +324,17 @@ foreach ($flow as $img) {
         <footer>Copyright 2021</footer>
         </div>
 
-    <div class="page_break">  
-
-        <h3 > APPENDIX</h3> <br><br>
 
  <?php 
 $image=explode(',',$generatesop->appendix);
 
-foreach ($image as $images) {
+foreach ($image as $key=>$images) {
     
 
 ?>
+<div class="page_break">  
+
+ <h3 > APPENDIX {{$key+1}}</h3> <br><br>
        
 @if($generatesop->appendix)
 
