@@ -308,7 +308,7 @@ foreach ($flow as $img) {
             $Steps= $a++.'-'.$new;
             @endphp
 
-            <td style="width: 30%; font-size:12px;vertical-align: top; "><br><b>{!! $Steps !!}</b></td>
+            <td style="width: 30%; font-size:12px; vertical-align: top; ">{!! $Steps !!}</td>
         
             @php
             $desc=$generatesop->desc[$key];
