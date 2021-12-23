@@ -1,6 +1,7 @@
 
 <html>
-<head>         
+<head>   
+<link rel="stylesheet" href="/w3css/4/w3.css">
 <style>
 
             
@@ -314,8 +315,7 @@ foreach ($flow as $img) {
             $desc=$generatesop->desc[$key];
             @endphp
 
-
-            <td style=" font-size: 12px; vertical-align: top;  padding:1px; ">{!! $desc !!}</td>
+            <td style=" word-wrap:break-word; font-size: 12px; vertical-align: top;  padding:1px; ">{!! $desc !!}</td>
             </tr>
             @endforeach
         </table>
