@@ -30,7 +30,7 @@
                     border: 1px solid black;
                     font-size: 12px;
                     }
-                 
+                   
                  
 
             .center {
@@ -308,14 +308,14 @@ foreach ($flow as $img) {
             $Steps= $a++.'-'.$new;
             @endphp
 
-            <td style="width: 30%; font-size:12px; vertical-align: top; ">{!! $Steps !!}</td>
+            <td style="width: 30%; font-size:12px; vertical-align: top; "><b>{!! $Steps !!}</b></td>
         
             @php
             $desc=$generatesop->desc[$key];
             @endphp
 
 
-            <td style="font-size: 12px; vertical-align: top; " >{!! $desc !!}</td>
+            <td style="font-size: 12px; align: top; " >{!! $desc !!}</td>
             </tr>
             @endforeach
         </table>
