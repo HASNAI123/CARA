@@ -200,9 +200,12 @@ input[type=text]:focus {
         <p>
          Verification and Record Keeping :
          <textarea  style="resize:vertical" cols = "100" name = "verification" style="height:200px" value="{{ $generatesop->verification }}"        >{{ $generatesop->verification }}</textarea></p>
-          
-         
-          <label for="flowchart"> Insert Flowchart image </label><br>
+        
+        <label for="flowchart"> Insert Flowchart image </label><br>
+        <input type="file" name="img[]" id="input-flow"  accept=".jpg" style="background-color:#fff;" multiple />  
+        
+        <br><br> 
+        
      @if($generatesop->img) 
      
       <?php 
@@ -218,24 +221,20 @@ input[type=text]:focus {
         }
       ?>
     @endif  
-     <input type="file" name="img[]"  accept=".jpg" style="background-color:#fff;" multiple />
-     <br><br>
-     
-     
+    <br>
      
      
 
-       
 
          @foreach ($generatesop->steps as $key=>$new)
          
             <tr>
         <div class="oldproc">
 
-            <label for=""> Procedure</label> <br>
+            <label for=""> Procedure {{$key+1}}</label> <br>
             <input type="text" name="steps[]" value="{{$new }}"><br>
              
-            <label for="">Description</label> <br>
+            <label for="">Description {{$key+1}}</label> <br>
             <textarea  style="resize:vertical" cols = "100" name = "desc[]"  style="height:200px"  value="{{$generatesop->desc[$key]}}">
             {{$generatesop->desc[$key]}}
           </textarea><br>
@@ -252,9 +251,11 @@ input[type=text]:focus {
 
         <button class="success-btn add-btn">Add Procedure</button>
 
-         
-         
          <label for="Appendix"> Appendix</label><br>
+          <input type="file" id="input-fa" name="appendix[]"  accept=".jpg" style="background-color:#fff;" 
+          value="{{ old('img', '') }}" multiple /><br>
+         
+        
     @if($generatesop->appendix)  
       <?php 
         $image=explode(',',$generatesop->appendix);
@@ -270,22 +271,10 @@ input[type=text]:focus {
         }
       ?>
     @endif
-    <input type="file" name="appendix[]"  accept=".jpg" style="background-color:#fff;"  value="{{ old('img', '') }}" multiple />
-
-            
-            
-
 
    <br><br>
 
-         
-         
 
-           
-       
-
-    
-      
       <br><br>
 
 
@@ -310,7 +299,7 @@ $("#input-fa").fileinput({
 
 
 <script>
-$("#input-fb").fileinput({
+$("#input-flow").fileinput({
     theme: "fa",
     uploadUrl: "/file-upload-batch/2"
 });
@@ -338,6 +327,11 @@ $("#input-fb").fileinput({
 
      // initialize the counter for textbox
      var x = 1;
+     
+     
+     $('.oldproc').each(function(){
+     x++;
+    }); 
 
      // handle click event on Add More button
      $('.add-btn').click(function (e) {
@@ -346,9 +340,9 @@ $("#input-fb").fileinput({
          x++; // increment the counter
          $('.wrapp').append(`
            <div class="input-box">
-           Procedure : <br>
+           Procedure `+x+`: <br>
        <input type="text" name="steps[]"><br><br>
-      Description : <br>
+      Description `+x+`: <br>
        <textarea  rows = "5" cols = "100" name = "desc[]">
          </textarea>
              <a href="#" class="remove-lnk">Remove</a>
