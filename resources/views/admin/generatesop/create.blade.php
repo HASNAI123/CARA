@@ -188,15 +188,15 @@ input[type=text]:focus {
          <textarea style="resize:vertical" cols = "100" name = "verification" style="height:200px" value="{{ old('verification', '') }}"        ></textarea></p>
           
          
-          <label for="flowchart"> Insert Flowchart image </label><br>
-      <input type="file" name="img[]"  accept=".jpg,.png,.jpeg"  style="background-color:#fff;"  value="{{ old('img', '') }}" multiple />
+        <label for="flowchart"> Insert Flowchart image </label><br>
+        <input type="file" id="input-flow" name="img[]"  accept=".jpg,.png,.jpeg"  style="background-color:#fff;"  value="{{ old('img', '') }}" multiple />
 
         <br><br>
          <div class="wrapp" >
-          Procedure: <br>
+          Procedure 1: <br>
          <input type="textarea" name="steps[]" id=""  >  <br><br>
 
-          Description: <br>
+          Description 1: <br>
          <textarea  style="resize:vertical" cols = "100" name = "desc[]"  style="height:200px"     box-sizing:" border-box"        ></textarea></p>
          
 
@@ -222,8 +222,8 @@ input[type=text]:focus {
       
       <br><br>
 
-      <label for="Appendix"> Appendix</label><br>
-      <input type="file" name="appendix[]"  accept=".jpg,.png,.jpeg"   style="background-color:#fff;"  value="{{ old('appendix', '') }}"  multiple />
+         <label for="Appendix"> Appendix </label><br>
+         <input id="input-fa" type="file" name="appendix[]"  accept=".jpg,.png,.jpeg"   style="background-color:#fff;"  value="{{ old('appendix', '') }}"  multiple /><br>
      
             </div>
 
@@ -248,7 +248,7 @@ $("#input-fa").fileinput({
 
 
 <script>
-$("#input-fb").fileinput({
+$("#input-flow").fileinput({
     theme: "fa",
     uploadUrl: "/file-upload-batch/2",
     enableResumableUpload: true
@@ -272,9 +272,9 @@ $("#input-fb").fileinput({
          x++; // increment the counter
          $('.wrapp').append(`
            <div class="input-box">
-           Procedure : <br>
+           Procedure `+x+`: <br>
        <input type="text" name="steps[]"><br><br>
-      Description : 
+      Description `+x+`: 
        <textarea rows = "5" cols = "100" name = "desc[]">
          </textarea>
              <a href="#" class="remove-lnk">Remove</a>
