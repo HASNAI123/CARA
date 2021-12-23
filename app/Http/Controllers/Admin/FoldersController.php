@@ -130,7 +130,7 @@ class FoldersController extends Controller
          $user= Auth::user()->name;   
          $folder=$ids=DB::table('folders')->where('id',$id)->first();
 
-      if($folder->created_by==$user){ 
+      if($folder->created_by==$user OR $user=="Admin"){ 
         $password=$request->password;
         //$hashed = Hash::make($password);
           
