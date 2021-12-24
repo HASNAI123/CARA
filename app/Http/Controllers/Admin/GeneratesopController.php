@@ -263,7 +263,8 @@ $flow=array();
          
              $generatesops = generatesop::find($id)
             ->update([
-                      'revised by'=>$user_name
+                      'revised by'=>$user_name,
+                      'status'=>"Reviewed"
                       
                     ]);
          
