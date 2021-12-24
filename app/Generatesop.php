@@ -17,7 +17,7 @@ class Generatesop extends Model
         protected $table = 'generatesops';
     
         public const STATUS_SELECT = [
-            'Pending' => 'Pending',
+            'Pending' => 'In-Progress',
             'Accepted'   => 'Accepted',
             'Declined'   => 'Declined',
         ];
