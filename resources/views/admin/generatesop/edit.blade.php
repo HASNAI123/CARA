@@ -210,7 +210,7 @@ input[type=text]:focus {
      
       <?php 
         $img=explode(',',$generatesop->img);
-        foreach ($img as $img) {
+        foreach (array_reverse($img) as $img) {
          
        ?>
        <div class="img">
@@ -259,7 +259,7 @@ input[type=text]:focus {
     @if($generatesop->appendix)  
       <?php 
         $image=explode(',',$generatesop->appendix);
-        foreach ($image as $images) {
+        foreach (array_reverse($image) as $images) {
        ?>
        
        <div class="img" >
