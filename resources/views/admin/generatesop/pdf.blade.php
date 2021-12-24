@@ -282,7 +282,7 @@
 <?php 
 $flow=explode(',',$generatesop->img);
 
-foreach ($flow as $img) {
+foreach (array_reverse($flow) as $img) {
 
 ?>
 @if($generatesop->img)
@@ -328,7 +328,7 @@ foreach ($flow as $img) {
  <?php 
 $image=explode(',',$generatesop->appendix);
 
-foreach ($image as $key=>$images) {
+foreach (array_reverse($image) as $key=>$images) {
     
 
 ?>
