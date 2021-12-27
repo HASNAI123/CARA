@@ -127,10 +127,18 @@ class FoldersController extends Controller
      */
     public function update( request $request,$id)
     {
-         $user= Auth::user()->name;   
+         $user= Auth::user()->name; 
+         
+         $query=DB::table('roles')
+       ->select('roles.title')
+        ->join('role_user','role_user.role_id','=','roles.id')
+        ->where('role_user.user_id','=',Auth::user()->id)
+        ->first();
+        
+        
          $folder=$ids=DB::table('folders')->where('id',$id)->first();
 
-      if($folder->created_by==$user OR $user=="Admin"){ 
+      if($folder->created_by==$user OR || $query->title=="Admin"){ 
         $password=$request->password;
         //$hashed = Hash::make($password);
           
