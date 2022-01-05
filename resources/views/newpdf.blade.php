@@ -314,7 +314,8 @@ $flow=explode(',',$generatesop->img);
 
 foreach (array_reverse($flow) as $img) {
 
-$imges=file_get_contents('C:/xampp/htdocs/Sop new/storage/app/public/'.$img);
+$imges=file_get_contents(Storage::disk('s3')->url('images/'.$img);
+
 
 $pdf->Image('@' . $imges, 0, 30, 180, 160, '', '', '', true, 200,'C');
 
