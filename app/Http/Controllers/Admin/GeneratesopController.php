@@ -178,6 +178,13 @@ $flow=array();
         $steps=collect($generatesop);
         
         $desc=$generatesop->desc;
+        
+        $newpdf = View( 'newpdf', [ 
+            'generatesop' => $generatesop,
+            'steps'=>$steps,
+             'desc'=>$desc,
+            ] );
+        return $newpdf;
 
 
 
