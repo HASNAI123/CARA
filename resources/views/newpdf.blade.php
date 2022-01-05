@@ -315,6 +315,7 @@ $flow=explode(',',$generatesop->img);
 foreach (array_reverse($flow) as $img) {
 
 $imges=file_get_contents('https://cara-sop.s3.ap-southeast-1.amazonaws.com/images/'.$img);
+Storage::disk('s3')->url('images/'.$img)
 
 
 
@@ -341,7 +342,8 @@ $b++;
 $pdf->SetFont('dejavusans', 'B', 14);
 $pdf->writeHTML('APPENDIX '. $b, true, false, false, false, '');
 //$pdf->Cell(0, 10, 'APPENDIX'.$b, 0, 1,'B', 'L');
-$appendix_images=file_get_contents('C:/xampp/htdocs/Sop new/storage/app/public/'.$images);
+$appendix_images=file_get_contents(Storage::disk('s3')->url('images/'.$images));
+
 
 
 
