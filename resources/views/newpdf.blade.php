@@ -314,7 +314,8 @@ $flow=explode(',',$generatesop->img);
 
 foreach (array_reverse($flow) as $img) {
 
-$imges=file_get_contents(Storage::disk('s3')->url('images/'.$img));
+$imges=file_get_contents('https://cara-sop.s3.ap-southeast-1.amazonaws.com/images/');
+
 
 
 $pdf->Image('@' . $imges, 0, 30, 180, 160, '', '', '', true, 200,'C');
