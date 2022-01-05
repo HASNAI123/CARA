@@ -27,8 +27,8 @@
  */
 
 // Include the main TCPDF library (search for installation path).
-require_once ('../public\library\examples\tcpdf_include.php');
-require_once ('../public\library\tcpdf.php');
+require_once dirname('../public\library\examples\tcpdf_include.php');
+require_once dirname('../public\library\tcpdf.php');
 
 
 /**
