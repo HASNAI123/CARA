@@ -314,12 +314,11 @@ $flow=explode(',',$generatesop->img);
 
 foreach (array_reverse($flow) as $img) {
 
-$imges=file_get_contents('https://cara-sop.s3.ap-southeast-1.amazonaws.com/images/'.$img);
-
-
-
+if($generatesop->img){
+$imges=file_get_contents(Storage::disk('s3')->url('images/'.$img));
 
 $pdf->Image('@' . $imges, 0, 30, 180, 160, '', '', '', true, 200,'C');
+}
 
 $pdf->AddPage();
 }
@@ -340,13 +339,9 @@ foreach (array_reverse($image) as $key=>$images) {
 $b++;
 $pdf->SetFont('dejavusans', 'B', 14);
 $pdf->writeHTML('APPENDIX '. $b, true, false, false, false, '');
-//$pdf->Cell(0, 10, 'APPENDIX'.$b, 0, 1,'B', 'L');
+
+if($generatesop->appendix){
 $appendix_images=file_get_contents(Storage::disk('s3')->url('images/'.$images));
-
-
-
-
-
 
 $pdf->Image('@' . $appendix_images, 0, 30, 180, 160, '', '', '', true, 200,'C');
 
@@ -354,7 +349,7 @@ if($b < $count){
 $pdf->AddPage();
 }
 }
-
+}
 
 
 
