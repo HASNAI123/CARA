@@ -65,6 +65,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('archivefolders', 'ArchiveFoldersController');
     Route::get('archivefolders/check/{id}', 'ArchiveFoldersController@check')->name('archivefolders.check');
     Route::post('archivefolders/showfolder', 'ArchiveFoldersController@showfolder')->name('archivefolders.showfolder');
+    
+//New PDF
+    Route::view('/newpdf', 'newpdf');
 
 
     
