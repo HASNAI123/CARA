@@ -272,7 +272,7 @@ $pdf->SetFont('dejavusans', 'B', 20);
 $pdf->Cell(0, 50, 'STANDARD OPERATING PROCEDURES (SOP)', 0, 1, 'C');
 
 $pdf->SetFont('dejavusans', 'B', 20);
-$pdf->Cell(0, 0,$generatesop->sop_title, 0, 50, 'C');
+$pdf->writeHTML($sop_title, true, false, false, false, 'C');
 
 $pdf->SetTopMargin(210);
 $pdf->SetFont('dejavusans', '', 9);
