@@ -242,10 +242,10 @@ $procedure='<h2>PROCEDURE</h2>
 
           $procedure.='<tr>
 
-            <td style="font-size:12px; vertical-align: top; width:30%" "><b>'.$a++.'-'.$new.'</b></td>
+            <td style="font-size:12px; vertical-align: top; width:30%"><b>'.$a++.'-'.$new.'</b></td>
 
 
-            <td style="font-size:12px; width:70%" " >'.$generatesop->desc[$key].'</td>
+            <td style="font-size:12px; width:70%">'.$generatesop->desc[$key].'</td>
             </tr>';
         }
 
