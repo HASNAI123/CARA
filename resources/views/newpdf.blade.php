@@ -173,7 +173,7 @@ EOD;
 
 $policy=<<<EOD
 <h2>POLICY</h2>
-            <table cellpadding="15" style="margin-top:5px;">
+            <table cellpadding="13" style="margin-top:5px;">
             <tr>
             <td style="border: 1px solid black;">$generatesop->policy</td>
             </tr>
@@ -182,7 +182,7 @@ EOD;
 
 $purpose=<<<EOD
 <h2>PURPOSE</h2>
-            <table cellpadding="15" style="margin-top:5px;">
+            <table cellpadding="13" style="margin-top:5px;">
             <tr>
             <td style="border: 1px solid black;">$generatesop->purpose</td>
             </tr>
@@ -191,7 +191,7 @@ EOD;
 
 $scope=<<<EOD
 <h2>SCOPE</h2>
-            <table cellpadding="15" style="margin-top:5px;">
+            <table cellpadding="13" style="margin-top:5px;">
             <tr>
             <td style="border: 1px solid black;">$generatesop->scope</td>
             </tr>
@@ -201,7 +201,7 @@ EOD;
 
 $review_pro=<<<EOD
 <h2>REVIEW PROCEDURE</h2>
-            <table cellpadding="15" style="margin-top:5px;">
+            <table cellpadding="13" style="margin-top:5px;">
             <tr>
             <td style="border: 1px solid black;">$generatesop->review_pro</td>
             </tr>
@@ -211,7 +211,7 @@ EOD;
 
 $monitoring=<<<EOD
 <h2>MONITORING</h2>
-            <table cellpadding="15" style="margin-top:5px;">
+            <table cellpadding="13" style="margin-top:5px;">
             <tr>
             <td style="border: 1px solid black;">$generatesop->monitoring</td>
             </tr>
@@ -221,7 +221,7 @@ EOD;
 
 $verification=<<<EOD
 <h2>VERIFICATION AND RECORD KEEPING</h2>
-            <table cellpadding="15" style="margin-top:5px;">
+            <table cellpadding="13" style="margin-top:5px;">
             <tr>
             <td style="border: 1px solid black;">$generatesop->verification</td>
             </tr>
@@ -255,6 +255,10 @@ $appendix=<<<EOD
 <h2> APPENDIX</h2>
 EOD;
 
+$sop_title=<<<EOD
+<h3 style align='center'>$generatesop->sop_title</h3>
+EOD;
+
 
 
 
@@ -265,15 +269,12 @@ $page1=file_get_contents('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADh
 $pdf->Image('@' . $page1, 75, 0, 60, 0, '', '', '', true, 200);
 
 $pdf->SetFont('dejavusans', 'B', 20);
-$pdf->Cell(0, 185, 'STANDARD OPERATING PROCEDURES (SOP)', 0, 1, 'C');
-
-
-$pdf->AddPage();
+$pdf->Cell(0, 50, 'STANDARD OPERATING PROCEDURES (SOP)', 0, 1, 'C');
 
 $pdf->SetFont('dejavusans', 'B', 20);
 $pdf->Cell(0, 0,$generatesop->sop_title, 0, 50, 'C');
 
-$pdf->SetTopMargin(130);
+$pdf->SetTopMargin(210);
 $pdf->SetFont('dejavusans', '', 9);
 $pdf->writeHTML($page2, true, false, false, false, '');
 
@@ -411,14 +412,14 @@ $bookmark_templates = array();
  */
 
 // A monospaced font for the page number is mandatory to get the right alignment
-$bookmark_templates[0] = '<table border="1" cellpadding="2" cellspacing="0"><tr><td width="155mm"><span style="font-family:times;font-size:12pt;color:black;">#TOC_DESCRIPTION#</span></td><td width="25mm"><span style="font-family:courier;font-size:12pt;color:black;" align="right">#TOC_PAGE_NUMBER#</span></td></tr></table>';
+$bookmark_templates[0] = '<table border="1" cellpadding="2" cellspacing="0"><tr><td width="155mm"><span style="font-family:dejavusans;font-size:9pt;color:black;">#TOC_DESCRIPTION#</span></td><td width="25mm"><span style="font-family:dejavusans;font-size:9pt;color:black;" align="right">#TOC_PAGE_NUMBER#</span></td></tr></table>';
 $bookmark_templates[1] = '<table border="1" cellpadding="2" cellspacing="1"><tr><td width="5mm">&nbsp;</td><td width="150mm"><span style="font-family:times;font-size:11pt;color:green;">#TOC_DESCRIPTION#</span></td><td width="25mm"><span style="font-family:courier;font-size:11pt;color:green;" align="right">#TOC_PAGE_NUMBER#</span></td></tr></table>';
 $bookmark_templates[2] = '<table border="1" cellpadding="2" cellspacing="1"><tr><td width="10mm">&nbsp;</td><td width="145mm"><span style="font-family:times;font-size:10pt;color:#666666;"><i>#TOC_DESCRIPTION#</i></span></td><td width="25mm"><span style="font-family:courier;font-size:10pt;color:#666666;" align="right">#TOC_PAGE_NUMBER#</span></td></tr></table>';
 // add other bookmark level templates here ...
 
 // add table of content at page 1
 // (check the example n. 45 for a text-only TOC
-$pdf->addHTMLTOC(3, 'INDEX',$bookmark_templates, true, 'B', array(128,0,0));
+$pdf->addHTMLTOC(2, 'INDEX',$bookmark_templates, true, 'B', array(128,0,0));
 
 
 // end of TOC page
