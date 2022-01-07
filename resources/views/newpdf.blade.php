@@ -46,7 +46,7 @@ class TOC_TCPDF extends TCPDF {
 
       public function Footer() {
         // Position at 15 mm from bottom
-        $cara='<span align="center" style="color: grey;">Copyright 2021 Aeon Co.(M) Bhd. All rights reserved | Digital Interal Audit (DIA)</span>';
+        $cara='<span align="center" style="color: grey;">Copyright 2021 AEON Co.(M) Bhd. All rights reserved | Digital Interal Audit (DIA)</span>';
 
         $this->SetY(-10);
         // Set font
@@ -151,7 +151,7 @@ EOD;
 $history=<<<EOD
 <h1> LOG HISTORY</h1>
 
-            <table border="1" cellpadding="3" cellspacing="0" style="margin-top:100px;">
+            <table border="1" cellpadding="3" cellspacing="0" style="margin-top:120px;">
             <tr>
 
             <th><span style="font-weight:bold;" align="center">Uploaded Date</span></th>
