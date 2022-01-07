@@ -109,7 +109,7 @@
             </table>
 
         <footer>
-        Copyright 2021 Aeon Co.(M) Bhd. All rights reserved | Digital Interal Audit (DIA)
+        Copyright 2021 AEON Co.(M) Bhd. All rights reserved | Digital Interal Audit (DIA)
         </footer>
         
         
@@ -187,7 +187,7 @@
              </table>
             
         <footer>
-        Copyright &copy; Aeon Co.(M) Bhd. All rights reserved | Digital Interal Audit (DIA)
+        Copyright &copy; AEON Co.(M) Bhd. All rights reserved | Digital Interal Audit (DIA)
         </footer>
         </div>
 
@@ -215,7 +215,7 @@
             </tr>
             </table>
 
-        <footer>Copyright 2021 Aeon Co.(M) Bhd. All rights reserved | Digital Interal Audit (DIA)</footer>
+        <footer>Copyright 2021 AEON Co.(M) Bhd. All rights reserved | Digital Interal Audit (DIA)</footer>
         </div>
 
        <div class="page_break">  
@@ -270,7 +270,7 @@
             
             
             
-            <footer>Copyright 2021 Aeon Co.(M) Bhd. All rights reserved | Digital Interal Audit (DIA)</footer>
+            <footer>Copyright 2021 AEON Co.(M) Bhd. All rights reserved | Digital Interal Audit (DIA)</footer>
            
             </div>
 
@@ -294,7 +294,7 @@ foreach (array_reverse($flow) as $img) {
 }
 ?>                
           
-            <footer>Copyright 2021 Aeon Co.(M) Bhd. All rights reserved | Digital Interal Audit (DIA)</footer>
+            <footer>Copyright 2021 AEON Co.(M) Bhd. All rights reserved | Digital Interal Audit (DIA)</footer>
         </div>
 
         <div class="page_break"><br>
