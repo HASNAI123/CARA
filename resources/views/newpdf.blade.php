@@ -50,7 +50,7 @@ class TOC_TCPDF extends TCPDF {
 
         $this->SetY(-10);
         // Set font
-        $this->SetFont('helvetica', 'B', 10);
+        $this->SetFont('helvetica', '', 8);
         // Page number
         $this->Cell(0, 10, 'Page '. $this->getAliasNumPage().'/'.$this->getAliasNbPages(), 0, false, 'R', 0, '', 0, false, 'T', 'M');
 
