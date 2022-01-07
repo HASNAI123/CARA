@@ -106,7 +106,7 @@ $page2=<<<EOD
 
 
 
- <table border="1" cellpadding="3">
+ <table border="1" cellpadding="3" style="margin-top:100px;>
 
     <tr>
                     <td colspan="4" style="text-align:left; font-weight: bold;">VERSION HISTORY</td>
@@ -151,7 +151,7 @@ EOD;
 $history=<<<EOD
 <h1> LOG HISTORY</h1>
 
-            <table border="1" cellpadding="3" cellspacing="0" style="margin-top:120px;">
+            <table border="1" cellpadding="3" cellspacing="0" style="margin-top:100px;">
             <tr>
 
             <th><span style="font-weight:bold;" align="center">Uploaded Date</span></th>
