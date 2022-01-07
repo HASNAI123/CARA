@@ -106,7 +106,7 @@ $page2=<<<EOD
 
 
 
- <table border="1" cellpadding="3" style="margin-top:10px;">
+ <table border="1" cellpadding="3" style="margin-top:50px;">
 
     <tr>
                     <td colspan="4" style="text-align:left; font-weight: bold;">VERSION HISTORY</td>
