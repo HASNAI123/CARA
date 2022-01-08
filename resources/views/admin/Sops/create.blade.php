@@ -34,9 +34,8 @@
                 <span class="help-block">{{ trans('cruds.sop.fields.uploaded_by_helper') }}</span>
             </div>
 
-                @foreach($archive_folders as $arvhive_folder)
-                @endforeach
-                <input class="form-control {{ $errors->has('uploaded_by') ? 'is-invalid' : '' }}" type="hidden" name="folder" id="uploaded_by" value="{{$arvhive_folder}}">
+               
+                <input class="form-control {{ $errors->has('uploaded_by') ? 'is-invalid' : '' }}" type="hidden" name="folder" id="uploaded_by" value="{{$arvhive_folders}}">
 
             <br>
             <div class="form-group">
