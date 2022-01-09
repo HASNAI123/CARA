@@ -182,8 +182,8 @@ class ArchiveFoldersController extends Controller
         $id->password;
         if($id->password==""){
                 
-                $sops=DB::table('Sop')->where('archive_folder',$id->title)->get();
-                $archive_folders=DB::table('archive_folders')->where('title',$id->title)->first('title');
+                $sops=DB::table('Sop')->where('archive_folder',$id->id)->get();
+                $archive_folders=DB::table('archive_folders')->where('id',$id->id)->first('id');
                 return view('admin.Sops.index')->with('sops',$sops)->with('archive_folders',$archive_folders);
         }else{
 
