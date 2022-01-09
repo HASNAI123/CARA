@@ -28,9 +28,9 @@ class SopController extends Controller
     {
           
      $sops=DB::table('Sop')->where('archive_folder',$id)->get();
-     $archive_folders=DB::table('archive_folders')->where('title',$id)->first('title');
+     $archive_folders=DB::table('archive_folders')->where('id',$id)->first('id');
 
-       return view('admin.Sops.index')->with('sops',$sops)->with('archive_folders',$archive_folders);
+     return view('admin.Sops.index')->with('sops',$sops)->with('archive_folders',$archive_folders);
      
     }
 
@@ -77,9 +77,8 @@ class SopController extends Controller
        $filename= $file->getClientOriginalName();
        $filename= time(). '.' .$filename;
        
+       $path=$file->storeas('pdfs',$filename,'s3');
 
-       
-      $path=$file->storeas('pdfs',$filename,'s3');
        
        
        
@@ -165,8 +164,8 @@ class SopController extends Controller
         $file=$request->file('sop_file');
        $filename= $file->getClientOriginalName();
        $filename= time(). '.' .$filename;
-       $path=$file->storeas('pdfs',$filename,'s3');
-       
+       $path=$file->storeas('public',$filename);
+       $path=public_path($filename);
 
        $sop=sop::find($id)->update([
                   'Modified_by'=>$request->edited_by,
@@ -237,6 +236,5 @@ class SopController extends Controller
         return view('admin.sops.generate');
     }
 }
-
 
 
