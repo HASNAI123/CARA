@@ -35,7 +35,7 @@
             </div>
 
                
-                <input class="form-control {{ $errors->has('uploaded_by') ? 'is-invalid' : '' }}" type="hidden" name="folder" id="uploaded_by" value="{{$arvhive_folders}}">
+                <input class="form-control {{ $errors->has('uploaded_by') ? 'is-invalid' : '' }}" type="text" name="folder" id="uploaded_by" value="{{$arvhive_folders}}">
 
             <br>
             <div class="form-group">
