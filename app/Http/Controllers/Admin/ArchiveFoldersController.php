@@ -136,10 +136,17 @@ class ArchiveFoldersController extends Controller
     {
         //$password=$request->password;
         //$hashed = Hash::make($password);
-        $user= Auth::user()->name;   
+        $user= Auth::user()->name;
+        
+        $query=DB::table('roles')
+       ->select('roles.title')
+        ->join('role_user','role_user.role_id','=','roles.id')
+        ->where('role_user.user_id','=',Auth::user()->id)
+        ->first();
+        
         $folder=$ids=DB::table('archive_folders')->where('id',$id)->first();
 
-      if($folder->created_by==$user OR $user=="Admin"){
+      if($folder->created_by==$user || $query->title=="Admin"){
           
         DB::table('archive_folders')
         ->where('id', $id)  // find your user by their email
