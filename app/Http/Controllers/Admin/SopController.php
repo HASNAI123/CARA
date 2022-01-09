@@ -42,7 +42,7 @@ class SopController extends Controller
     public function create($id)
     {
         
-        $archive_folders=DB::table('archive_folders')->where('title',$id)->first('title');
+        $archive_folders=$id;
          return view('admin.Sops.create',compact('archive_folders'));
     
     }
