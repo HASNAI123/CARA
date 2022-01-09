@@ -164,8 +164,7 @@ class SopController extends Controller
         $file=$request->file('sop_file');
        $filename= $file->getClientOriginalName();
        $filename= time(). '.' .$filename;
-       $path=$file->storeas('public',$filename);
-       $path=public_path($filename);
+       $path=$file->storeas('pdfs',$filename,'s3');
 
        $sop=sop::find($id)->update([
                   'Modified_by'=>$request->edited_by,
