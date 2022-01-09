@@ -10,15 +10,17 @@
                 </a>
             </div>
 
-             @foreach($archive_folders as $archive_folder)
             
-             @endforeach
+            
+             
 
 
         @can('Sop_upload')
+           @foreach($archive_folders as $archive_folder)
             <a class="btn btn-success" href="{{ route('admin.sops.create',$archive_folder) }}">
                 {{ trans('global.upload') }} {{ trans('cruds.sop.title_singular') }}
             </a>
+            @endforeach
 
             @endcan
         </div>
