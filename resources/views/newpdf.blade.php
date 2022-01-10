@@ -94,7 +94,7 @@ $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
 // set font
 $pdf->SetFont('dejavusans', '', 10);
-$pdf->SetMargins(10, 10, 10, true);
+
 
 
 // ---------------------------------------------------------
