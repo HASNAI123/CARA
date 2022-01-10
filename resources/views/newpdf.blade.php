@@ -240,7 +240,7 @@ $procedure='<h2>PROCEDURE</h2>
             $a=1;
             foreach($generatesop->steps as $key=>$new){
 
-          $procedure.='<tr>
+          $procedure.='<tr nobr="true">
 
             <td style="font-size:12px; vertical-align: top; width:30%"><b>'.$a++.'-'.$new.'</b></td>
 
