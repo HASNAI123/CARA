@@ -94,6 +94,7 @@ $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
 // set font
 $pdf->SetFont('dejavusans', '', 10);
+$pdf->SetMargins(10, 10, 10, true);
 
 
 // ---------------------------------------------------------
@@ -222,7 +223,7 @@ EOD;
 $verification=<<<EOD
 <h2>VERIFICATION AND RECORD KEEPING</h2>
             <table cellpadding="13" style="margin-top:5px;">
-            <tr>
+            <tr nobr="true">
             <td style="border: 1px solid black;">$generatesop->verification</td>
             </tr>
             </table>
