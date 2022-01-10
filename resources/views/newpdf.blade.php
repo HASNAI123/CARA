@@ -308,27 +308,33 @@ $pdf->Bookmark('Verification and Record Keeping ', 0, 0, '', 'B', array(0,64,128
 $pdf->writeHTML($verification, true, false, false, false, '');
 
 
-$pdf->AddPage();
+$pdf->AddPage('L');
 $pdf->Bookmark('Flow', 0, 0, '', 'B', array(0,64,128));
 $pdf->writeHTML($flow, true, false, false, false, '');
 
 $flow=explode(',',$generatesop->img);
+$countflow=count($flow);
 
+$c=0;
 foreach (array_reverse($flow) as $img) {
 
+ $c++;
 if($generatesop->img){
 $imges=file_get_contents(Storage::disk('s3')->url('images/'.$img));
 
-$pdf->Image('@' . $imges, 0, 30, 180, 160, '', '', '', true, 200,'C');
+$pdf->Image('@' . $imges, 0, 30, 180, 150, '', '', '', true, 200,'C');
+
+if($c < $countflow){
+$pdf->AddPage('L');
+}
+}
 }
 
-$pdf->AddPage();
-}
-
+$pdf->AddPage('P');
 $pdf->Bookmark('Procedures', 0, 0, '', 'B', array(0,64,128));
 $pdf->writeHTML($procedure, true, false, false, false, '');
 
-$pdf->AddPage();
+$pdf->AddPage('L');
 $pdf->Bookmark('Appendix', 0, 0, '', 'B', array(0,64,128));
 //$pdf->writeHTML('APPENDIX', true, false, false, false, '');
 
@@ -345,10 +351,10 @@ $pdf->writeHTML('APPENDIX '. $b, true, false, false, false, '');
 if($generatesop->appendix){
 $appendix_images=file_get_contents(Storage::disk('s3')->url('images/'.$images));
 
-$pdf->Image('@' . $appendix_images, 0, 30, 180, 160, '', '', '', true, 200,'C');
+$pdf->Image('@' . $appendix_images, 0, 30, 180, 150, '', '', '', true, 200,'C');
 
 if($b < $count){
-$pdf->AddPage();
+$pdf->AddPage('L');
 }
 }
 }
@@ -387,7 +393,7 @@ $pdf->AddPage();
 
 
 // add a new page for TOC
-$pdf->addTOCPage();
+$pdf->addTOCPage('P');
 
 // write the TOC title and/or other elements on the TOC page
 
