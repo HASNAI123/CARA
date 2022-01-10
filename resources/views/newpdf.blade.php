@@ -221,7 +221,7 @@ $monitoring=<<<EOD
 EOD;
 
 $verification=<<<EOD
-<h2>VERIFICATION AND RECORD KEEPING</h2>
+<h2 >VERIFICATION AND RECORD KEEPING</h2>
             <table cellpadding="13" style="margin-top:5px;">
             <tr>
             <td style="border: 1px solid black;">$generatesop->verification</td>
