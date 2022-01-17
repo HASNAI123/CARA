@@ -50,8 +50,16 @@
             </a>
         </li>
         @endcan
+        
+        <ul class="c-sidebar-nav">
+        <li class="c-sidebar-nav-item">
+            <a href="{{ route("admin.feedback.create") }}" class="c-sidebar-nav-link">
+                <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt">
 
-
+                </i>
+                {{ trans('Feedback') }}
+            </a>
+        </li>
 
 
 
