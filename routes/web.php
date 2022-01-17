@@ -56,18 +56,21 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Audit Logs
     Route::resource('audit-logs', 'AuditLogsController', ['except' => ['create', 'store', 'edit', 'update', 'destroy']]);
 
-  //Folders
-     Route::resource('folders', 'FoldersController');
-     Route::get('folders/check/{id}', 'FoldersController@check')->name('folders.check');
-     Route::post('folders/showfolder', 'FoldersController@showfolder')->name('folders.showfolder');
+    //Folders
+    Route::resource('folders', 'FoldersController');
+    Route::get('folders/check/{id}', 'FoldersController@check')->name('folders.check');
+    Route::post('folders/showfolder', 'FoldersController@showfolder')->name('folders.showfolder');
 
- //Archive Folders
+    //Archive Folders
     Route::resource('archivefolders', 'ArchiveFoldersController');
     Route::get('archivefolders/check/{id}', 'ArchiveFoldersController@check')->name('archivefolders.check');
     Route::post('archivefolders/showfolder', 'ArchiveFoldersController@showfolder')->name('archivefolders.showfolder');
     
-//New PDF
+    //New PDF
     Route::view('/newpdf', 'newpdf');
+    
+    //Feedback
+    Route::resource('feedback', 'FeedbackController');
 
 
     
