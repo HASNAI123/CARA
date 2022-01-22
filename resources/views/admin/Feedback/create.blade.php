@@ -133,7 +133,7 @@ input[type=text]:focus {
     <form class="text-align:center" method="POST" action="{{ route("admin.feedback.store") }}" enctype="multipart/form-data">
       @csrf
       <div class="form-group">
-        <p> User ID:<br><input readonly class="inp" type="text" name="user_id" value="{{ Auth::user()->id  }}"   /></p>
+        <p> User ID:<br><input readonly class="inp" type="text" name="user_id" value="{{ Auth::user()->email  }}"   /></p>
 
         <p> User Name:<br><input readonly class="inp" type="text" name="user_name" value="{{ Auth::user()->name  }}"   /></p>
 
