@@ -17,7 +17,7 @@ class InprogressSopController extends Controller
     {
         $inprogress_sop= Generatesop::where('status','In-Progress')->get();
 
-        return view('admin.Filter.Inprogress.index',compact('inprogress_sop'));
+        return view('admin.Inprogress.index',compact('inprogress_sop'));
     }
 
     /**
