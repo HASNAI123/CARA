@@ -17,7 +17,7 @@ class ReviewedSopController extends Controller
     {
         $reviewed_sop= Generatesop::where('status','Reviewed')->get();
 
-        return view('admin.Filter.Reviewed.index',compact('reviewed_sop'));
+        return view('admin.Reviewed.index',compact('reviewed_sop'));
     }
 
     /**
