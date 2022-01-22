@@ -17,7 +17,7 @@ class ApprovedSopController extends Controller
     {
         $approved_sop= Generatesop::where('status','Approved')->get();
 
-        return view('admin.Filter.Approved.index',compact('approved_sop'));
+        return view('admin.Approved.index',compact('approved_sop'));
         
     }
 
