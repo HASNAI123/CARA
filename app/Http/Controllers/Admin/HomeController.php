@@ -14,6 +14,9 @@ class HomeController extends Controller
        
             $userCount = User::count();
             
+            $inprogress_sop = Generatesop::where('status','In-Progress')->count();
+            $reviewed_sop = Generatesop::where('status','Reviewed')->count();
+            $approved_sop = Generatesop::where('status','Approved')->count();
       
 
 
@@ -147,6 +150,6 @@ class HomeController extends Controller
             ],
         ];
 
-        return view('home', compact('settings1', 'settings2', 'settings3', 'list_blocks','userCount'));
+        return view('home', compact('settings1', 'settings2', 'settings3', 'list_blocks','userCount','inprogress_sop','reviewed_sop','approved_sop'));
     }
 }
