@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 use App\User;
+use App\Generatesop;
 use App\Http\Controllers\Controller;
 
 use LaravelDaily\LaravelCharts\Classes\LaravelChart;
