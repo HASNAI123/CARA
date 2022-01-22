@@ -16,7 +16,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/generatepdf', 'pdfController@index')->name('pdf');
 
-    
+
  //exisitng Sop
     Route::delete('sops/destroy', 'SopController@massDestroy')->name('sops.massDestroy');
     Route::post('sops/media', 'SopController@storeMedia')->name('sops.storeMedia');
@@ -36,8 +36,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::get('/generatesop/{id}/approve', 'GeneratesopController@approve')->name('generatesop.approve');
     Route::get('/generatesop/{id}/delete', 'GeneratesopController@delete')->name('generatesop.delete');
     Route::get('/generatesop/{id}/review', 'GeneratesopController@review')->name('generatesop.review');
-    
-    
+
+
 
     // Permissions
     Route::delete('permissions/destroy', 'PermissionsController@massDestroy')->name('permissions.massDestroy');
@@ -65,15 +65,22 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('archivefolders', 'ArchiveFoldersController');
     Route::get('archivefolders/check/{id}', 'ArchiveFoldersController@check')->name('archivefolders.check');
     Route::post('archivefolders/showfolder', 'ArchiveFoldersController@showfolder')->name('archivefolders.showfolder');
-    
+
     //New PDF
     Route::view('/newpdf', 'newpdf');
-    
+
     //Feedback
     Route::resource('feedback', 'FeedbackController');
 
+    //SOP Filter
+    Route::resource('filter', 'SopFilterController');
 
-    
+    Route::resource('inprogress_sop', 'InprogressSopController');
+    Route::resource('reviewed_sop', 'ReviewedSopController');
+    Route::resource('approved_sop', 'ApprovedSopController');
+
+
+
 });
 
 

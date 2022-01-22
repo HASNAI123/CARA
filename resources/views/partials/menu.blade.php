@@ -34,12 +34,12 @@
                 <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt">
 
                 </i>
-                
+
                 {{ trans('SOP Library') }}
             </a>
         </li>
 
-        @can('Generate_Sop') 
+        @can('Generate_Sop')
         <ul class="c-sidebar-nav">
         <li class="c-sidebar-nav-item">
             <a href="{{ route("admin.generatesop.create") }}" class="c-sidebar-nav-link">
@@ -50,7 +50,50 @@
             </a>
         </li>
         @endcan
-        
+
+        @can('Sop_Filter')
+            <li class="c-sidebar-nav-dropdown">
+                <a class="c-sidebar-nav-dropdown-toggle" href="#">
+                    <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt">
+
+                    </i>
+                    {{ trans('SOP Filter') }}
+                </a>
+                <ul class="c-sidebar-nav-dropdown-items">
+
+                        <li class="c-sidebar-nav-item">
+                            <a href="{{ route("admin.inprogress_sop.index") }}" class="c-sidebar-nav-link">
+                                <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt">
+
+                                </i>
+                                {{ trans('Inprogress SOP') }}
+                            </a>
+                        </li>
+
+
+                        <li class="c-sidebar-nav-item">
+                            <a href="{{ route("admin.reviewed_sop.index") }}" class="c-sidebar-nav-link">
+                                <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt">
+
+                                </i>
+                                {{ trans('Reviewed SOP') }}
+                            </a>
+                        </li>
+
+
+                        <li class="c-sidebar-nav-item">
+                            <a href="{{ route("admin.approved_sop.index") }}" class="c-sidebar-nav-link">
+                                <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt">
+
+                                </i>
+                                {{ trans('Approved SOP') }}
+                            </a>
+                        </li>
+
+                </ul>
+            </li>
+        @endcan
+
         <ul class="c-sidebar-nav">
         <li class="c-sidebar-nav-item">
             <a href="{{ route("admin.feedback.create") }}" class="c-sidebar-nav-link">

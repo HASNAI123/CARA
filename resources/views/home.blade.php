@@ -4,11 +4,13 @@
 .flex-wrapper {
   display: flex;
   flex-flow: row nowrap;
+
 }
 
 .single-chart {
   width: 33%;
   justify-content: space-around ;
+
 }
 
 .circular-chart {
@@ -34,6 +36,7 @@
 @keyframes progress {
   0% {
     stroke-dasharray: 0 100;
+
   }
 }
 
@@ -41,7 +44,23 @@
 
 .circular-chart.green .circle {
   stroke: #4CC790;
+
 }
+
+.circular-chart.red .circle {
+  stroke: red;
+
+}
+.circular-chart.info .circle {
+  stroke: #00BFFF;
+
+}
+.circular-chart.black .circle {
+  stroke: black;
+
+}
+
+
 
 
 
@@ -50,40 +69,8 @@
   font-family: sans-serif;
   font-size: 0.5em;
   text-anchor: middle;
+
 }
-
-
-
-.wrapper {
-  height: 10vh;
-  /*This part is important for centering*/
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.typing-demo {
-  width: 50ch;
-  animation: typing 2s steps(25), blink .5s step-end infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid;
-  font-family: monospace;
-  font-size: 2em;
-}
-
-@keyframes typing {
-  from {
-    width: 0
-  }
-}
-    
-@keyframes blink {
-  50% {
-    border-color: transparent
-  }
-}
-
 
 </style>
 
@@ -93,7 +80,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    
+
                 </div>
 
                 <div class="panel-body">
@@ -102,31 +89,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <div class="card-body">
-                    <div>
-                    <div class="wrapper">
-    <div class="typing-demo">
-      Welcome to CARA, {{ Auth::user()->name  }}
-    </div>
-</div>
-                    
-<div class="content">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header">
-                  
-                </div>
-
-                <div class="card-body">
-                    @if(session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
 
                     <div class="row">
-                       {{-- Widget - latest entries --}}
+                        {{-- Widget - latest entries --}}
                         <div class="{{ $settings1['column_class'] }}" style="overflow-x: auto;">
                             <h3>{{ $settings1['chart_title'] }}</h3>
                             <table style="font-size: 15 px;"class="table table-bordered table-striped">
@@ -164,8 +129,8 @@
                                 </tbody>
                             </table>
                         </div>
- 
- 
+
+
                         {{-- Widget - latest entries --}}
                         <div class="{{ $settings3['column_class'] }}" style="overflow-x: auto;">
                             <h3>{{ $settings3['chart_title'] }}</h3>
@@ -189,7 +154,7 @@
                                                     @elseif(is_iterable($entry->{$key}))
                                                         @foreach($entry->{$key} as $subEentry)
                                                             <span class="label label-info">{{ $subEentry->{$value} }}</span>
-                                                            
+
                                                         @endforeach
                                                     @else
                                                         {{ data_get($entry, $key . '.' . $value) }}
@@ -207,38 +172,118 @@
                         </div>
 
                     </div>
-                    
-          <div class="info-box-content">
 
-                                <h3>Number of Employees</h3>
+                <div class="row">
+                  <div class="col-lg-3">
+                  <div class="info-box-content">
+                    <h3>Number of Employees</h3>
+                     <div class="flex-wrapper">
+                      <div class="single-chart">
+                        <svg viewBox="0 0 36 36" class="circular-chart black">
+                          <path class="circle-bg"
+                            d="M18 2.0845
+                              a 15.9155 15.9155 0 0 1 0 31.831
+                              a 15.9155 15.9155 0 0 1 0 -31.831"
+                          />
+                          <path class="circle"
+                          stroke-dasharray="60, 100"
+                          d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <text x="18" y="20.35" class="percentage">{{ $userCount }}</text>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-                                <div class="flex-wrapper">
-  
-  
-  <div class="single-chart">
-    <svg viewBox="0 0 36 36" class="circular-chart green">
-      <path class="circle-bg"
-        d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"
-      />
-      <path class="circle"
-        stroke-dasharray="60, 100"
-        d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"
-      />
-      <text x="18" y="20.35" class="percentage">{{ $userCount }}</text>
-    </svg>
-  </div>
+                <div class="col-lg-3">
+                  <div class="info-box-content">
+                    <h3>SOP Inprogress</h3>
+                     <div class="flex-wrapper">
+                      <div class="single-chart">
+                        <svg viewBox="0 0 36 36" class="circular-chart red">
+                          <path class="circle-bg"
+                            d="M18 2.0845
+                              a 15.9155 15.9155 0 0 1 0 31.831
+                              a 15.9155 15.9155 0 0 1 0 -31.831"
+                          />
+                          <path class="circle"
+                          stroke-dasharray="60, 100"
+                          d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <text x="18" y="20.35" class="percentage">{{ $inprogress_sop }}</text>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-  
-</div>
+                <div class="col-lg-3">
+                  <div class="info-box-content">
+                    <h3>SOP Reviewed</h3>
+                     <div class="flex-wrapper">
+                      <div class="single-chart">
+                        <svg viewBox="0 0 36 36" class="circular-chart info">
+                          <path class="circle-bg"
+                            d="M18 2.0845
+                              a 15.9155 15.9155 0 0 1 0 31.831
+                              a 15.9155 15.9155 0 0 1 0 -31.831"
+                          />
+                          <path class="circle"
+                          stroke-dasharray="60, 100"
+                          d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <text x="18" y="20.35" class="percentage">{{ $reviewed_sop }}</text>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-3">
+                   <div class="info-box-content">
+                    <h3>SOP Approved</h3>
+                     <div class="flex-wrapper">
+                      <div class="single-chart">
+                        <svg viewBox="0 0 36 36" class="circular-chart green">
+                          <path class="circle-bg"
+                            d="M18 2.0845
+                              a 15.9155 15.9155 0 0 1 0 31.831
+                              a 15.9155 15.9155 0 0 1 0 -31.831"
+                          />
+                          <path class="circle"
+                          stroke-dasharray="60, 100"
+                          d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <text x="18" y="20.35" class="percentage">{{ $approved_sop }}</text>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
 
 
-                                    
-                                   
-                                </div>
+
+
+
+
+
+
+
+
+
+
+
             <div class="content">
             <div class="row">
             @foreach ($list_blocks as $block)
@@ -249,7 +294,7 @@
                         <tr>
                             <th>Name</th>
                             <th>User ID</th>
-                            <th>Last login At</th>
+                            <th>Last login at</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -268,10 +313,8 @@
                     </table>
                 </div>
             @endforeach
-
-                    </div>
-                </div>
-            </div>
+        </div>
+        </div>
         </div>
     </div>
 </div>
