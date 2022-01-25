@@ -376,7 +376,7 @@ $flow=array();
               $file->getClientOriginalName();
               $name= $file->getClientOriginalName();
               $name= time(). '.' .$name;
-              $path=$files->storeas('images',$name,'s3');
+              $path=$file->storeas('images',$name,'s3');
               Storage::disk('s3')->setVisibility($path,'public');
               $appendix[] = $name;
 
