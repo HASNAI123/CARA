@@ -238,6 +238,17 @@ input[type=text]:focus {
             <textarea  style="resize:vertical" cols = "100" name = "desc[]"  style="height:200px"  value="{{$generatesop->desc[$key]}}">
             {{$generatesop->desc[$key]}}
           </textarea><br>
+          
+          <label for="">Appendix {{$key+1}}</label> <br>
+           <input  type="file" name="appendix{{$key}}[]"  accept=".jpg,.png,.jpeg"   style="background-color:#fff;" multiple/><br>
+
+           @foreach($generatesop->appendix[$key] as $appendix)
+           <div class="img">
+          <input type="text" id="square" name="privious{{$key}}[]" value="{{$appendix}}" readonly>
+          <input type="button" value="X" class="remove"><br>
+           </div>
+           @endforeach
+           
           <a href="#" class="removeproc">Remove</a><br><br>
         </div>
 
@@ -246,31 +257,10 @@ input[type=text]:focus {
           <div class="wrapp">
         
         
-        </div>
+          </div>
         
 
         <button class="success-btn add-btn">Add Procedure</button>
-
-         <label for="Appendix"> Appendix</label><br>
-          <input type="file" id="input-fa" name="appendix[]"  accept=".jpg" style="background-color:#fff;" 
-          value="{{ old('img', '') }}" multiple /><br>
-         
-        
-    @if($generatesop->appendix)  
-      <?php 
-        $image=explode(',',$generatesop->appendix);
-        foreach (array_reverse($image) as $images) {
-       ?>
-       
-       <div class="img" >
-        <input type="text" id="square" name="privious[]" value="<?php echo $images?>" readonly>
-        <input type="button" value="X" class="remove"><br>
-       </div>
-      
-      <?php 
-        }
-      ?>
-    @endif
 
    <br><br>
 
@@ -326,7 +316,7 @@ $("#input-flow").fileinput({
      var max_input = 30;
 
      // initialize the counter for textbox
-     var x = 1;
+     var x = 0;
      
      
      $('.oldproc').each(function(){
@@ -338,6 +328,7 @@ $("#input-flow").fileinput({
        e.preventDefault();
        if (x < max_input) { // validate the condition
          x++; // increment the counter
+         y=x-1;
          $('.wrapp').append(`
            <div class="input-box">
            Procedure `+x+`: <br>
@@ -345,6 +336,8 @@ $("#input-flow").fileinput({
       Description `+x+`: <br>
        <textarea  rows = "5" cols = "100" name = "desc[]">
          </textarea>
+         Appendix <br>
+         <input  type="file" name="appendix`+y+`[]"  accept=".jpg,.png,.jpeg" multiple><br>
              <a href="#" class="remove-lnk">Remove</a>
            </div>
          `); // add input field
