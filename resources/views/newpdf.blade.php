@@ -349,11 +349,13 @@ $pdf->SetFont('dejavusans', 'B', 14);
 $pdf->writeHTML('APPENDIX '. $b, true, false, false, false, '');
 
 if($generatesop->appendix){
-$appendix_images=file_get_contents(Storage::disk('s3')->url('images/'.$images));
 
+foreach ($images as $pkey=>$value) {    
+$appendix_images=file_get_contents(Storage::disk('s3')->url('images/'.$images));
+b++;
 $pdf->Image('@' . $appendix_images, 0, 30, 180, 150, '', '', '', true, 200,'C');
 
-if($b < $count){
+
 $pdf->AddPage('L');
 }
 }
