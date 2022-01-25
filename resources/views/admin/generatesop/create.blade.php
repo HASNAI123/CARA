@@ -199,6 +199,9 @@ input[type=text]:focus {
           Description 1: <br>
          <textarea  style="resize:vertical" cols = "100" name = "desc[]"  style="height:200px"     box-sizing:" border-box"        ></textarea></p>
          
+          Appendix 1: <br>
+         <input  type="file" class="input-fa" name="appendix1[]"  accept=".jpg,.png,.jpeg"   style="background-color:#fff;" multiple="" /><br>
+         
 
          
          </div>
@@ -216,15 +219,9 @@ input[type=text]:focus {
                         <option readonly dea value="{{ $key }}" >{{ $label }}</option>
                     @endforeach
                 </select>
-         
-
-     
       
       <br><br>
 
-         <label for="Appendix"> Appendix </label><br>
-         <input id="input-fa" type="file" name="appendix[]"  accept=".jpg,.png,.jpeg"   style="background-color:#fff;"  value="{{ old('appendix', '') }}"  multiple /><br>
-     
             </div>
 
             <br><br>
@@ -276,7 +273,9 @@ $("#input-flow").fileinput({
        <input type="text" name="steps[]"><br><br>
       Description `+x+`: 
        <textarea rows = "5" cols = "100" name = "desc[]">
-         </textarea>
+       </textarea> <br>
+      Appendix `+x+`: <br>
+      <input  type="file" class="input-fa" name="appendix`+x+`[]"  accept=".jpg,.png,.jpeg" multiple="" ><br>
              <a href="#" class="remove-lnk">Remove</a>
            </div>
          `); // add input field
