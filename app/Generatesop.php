@@ -31,6 +31,7 @@ class Generatesop extends Model
           
             'steps'=>'array',
             'desc'=>'array',
+            'appendix'=>'array',
 
         ];
         
