@@ -338,12 +338,12 @@ $pdf->AddPage('L');
 $pdf->Bookmark('Appendix', 0, 0, '', 'B', array(0,64,128));
 //$pdf->writeHTML('APPENDIX', true, false, false, false, '');
 
-$image=explode(',',$generatesop->appendix);
+$image=$generatesop->appendix;
 $count=count($image);
 
 $b=0;
 
-foreach (array_reverse($image) as $key=>$images) {
+foreach ($image as $key=>$images) {
 $b++;
 $pdf->SetFont('dejavusans', 'B', 14);
 $pdf->writeHTML('APPENDIX '. $b, true, false, false, false, '');
@@ -351,7 +351,7 @@ $pdf->writeHTML('APPENDIX '. $b, true, false, false, false, '');
 if($generatesop->appendix){
 
 foreach ($images as $pkey=>$value) {    
-$appendix_images=file_get_contents(Storage::disk('s3')->url('images/'.$images));
+$appendix_images=file_get_contents(Storage::disk('s3')->url('images/'.$value));
 $b++;
 $pdf->Image('@' . $appendix_images, 0, 30, 180, 150, '', '', '', true, 200,'C');
 
