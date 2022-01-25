@@ -104,27 +104,30 @@ $flow=array();
     }
        
   
-  $img=array();
-    if ($request->hasFile('appendix')) {
-        $file=$request->file('appendix');
+  $appendix = array();
+   foreach ($steps as $key => $value) {
+       $img=array();
+       $nbr=$key+1;
+    if ($request->hasFile('appendix'.$nbr)) {
+        $file=$request->file('appendix'.$nbr);
         foreach ($file as $files) {
-          
+
         $name= $files->getClientOriginalName();
         $name= time(). '.' .$name;
-        $path=$files->storeas('images',$name,'s3');
-        Storage::disk('s3')->setVisibility($path,'public');
+        $path=$files->storeas('public',$name);
+        $path=public_path($name);
         $img[]=$name;
       }
-	}
-
-
+      $appendix[] =  $img;
+    }
     else
     {
-        $name='null';
-    }
-
-    
-      $name=implode(',',$img);
+        $appendix[] =  array("");
+    }  
+  }    
+  
+  
+      $name=$appendix;
       $filename=implode(',',$flow);
        
 
@@ -314,12 +317,11 @@ $flow=array();
     public function update(UpdateGenerateSopRequest $request,generatesop $generatesop)
     {
         
-     //$generatesop->update($request->all());   .
+       .
          $edited_by=$request->edited_by;
          $id=$generatesop->id;   
-         $previoes=$request->privious;
          $oldimg=$request->oldimg;
-         //$pre=implode(',',$previoes);  
+           
 
 
           $accepted=$request->accepted_by;
@@ -348,6 +350,42 @@ $flow=array();
        $Process_owner=$request->Process_owner;
 
        $Process_exec=$request->Process_exec;
+       
+       $appendix2 = array();
+
+       foreach ($steps as $key => $value) 
+       {
+          $previoes = array();
+          if(isset($request['privious'.$key]))
+          {
+            foreach ($request['privious'.$key] as $pvalue) 
+            {
+              $previoes[] = $pvalue;
+            }
+            $appendix2[] = $previoes;
+          }
+          else
+          {
+           $appendix2[] = array(); 
+          }
+
+          if($request->hasFile('appendix'.$key))
+          {
+            $appendix = array();
+            foreach ($request->file('appendix'.$key) as $file) 
+            {
+              $file->getClientOriginalName();
+              $name= $file->getClientOriginalName();
+              $name= time(). '.' .$name;
+              $path=$file->storeas('public',$name);
+              $path=public_path($name);
+              $appendix[] = $name;
+
+            }
+            $appendix2[$key] = array_merge($appendix2[$key],$appendix);
+          }
+
+       }
 
 
 
@@ -370,24 +408,6 @@ $flow=array();
   
             }
 
-
-      $appendix=array();
-        if ($request->hasFile('appendix')) {
-            $files=$request->file('appendix');
-
-            foreach($files as $file){
-
-            $filename= $file->getClientOriginalName();
-            $filename= time(). '.' .$filename;
-            $path=$file->storeas('images',$filename,'s3');
-            Storage::disk('s3')->setVisibility($path,'public');
-            $appendix[]=$filename;
-            $img=implode(',',$appendix);
-            $generatesop->appendix =$img;
-            }
-        }else{
-              $name="";
-            }
        
        $filenames ="";
 
@@ -448,7 +468,7 @@ $flow=array();
            'steps'=>$steps,
            'desc'=>$desc,
            'img'=>$filenames ,
-           'appendix'=>$name ,
+           'appendix'=>$appendix2,
            'folder'=>$folder,
            'Process_owner'=>$Process_owner,
            'Process_exec'=>$Process_exec,
