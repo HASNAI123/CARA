@@ -114,8 +114,8 @@ $flow=array();
 
         $name= $files->getClientOriginalName();
         $name= time(). '.' .$name;
-        $path=$files->storeas('public',$name);
-        $path=public_path($name);
+        $path=$files->storeas('images',$name,'s3');
+        Storage::disk('s3')->setVisibility($path,'public');
         $img[]=$name;
       }
       $appendix[] =  $img;
@@ -317,7 +317,6 @@ $flow=array();
     public function update(UpdateGenerateSopRequest $request,generatesop $generatesop)
     {
         
-       .
          $edited_by=$request->edited_by;
          $id=$generatesop->id;   
          $oldimg=$request->oldimg;
@@ -377,8 +376,8 @@ $flow=array();
               $file->getClientOriginalName();
               $name= $file->getClientOriginalName();
               $name= time(). '.' .$name;
-              $path=$file->storeas('public',$name);
-              $path=public_path($name);
+              $path=$files->storeas('images',$name,'s3');
+              Storage::disk('s3')->setVisibility($path,'public');
               $appendix[] = $name;
 
             }
