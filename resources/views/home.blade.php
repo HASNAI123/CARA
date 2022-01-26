@@ -200,7 +200,7 @@
 
                 <div class="col-lg-3">
                   <div class="info-box-content">
-                    <h3>SOP Inprogress</h3>
+                    <h3>SOP Draft</h3>
                      <div class="flex-wrapper">
                       <div class="single-chart">
                         <svg viewBox="0 0 36 36" class="circular-chart red">
