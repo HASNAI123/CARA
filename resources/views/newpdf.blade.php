@@ -339,7 +339,12 @@ $pdf->Bookmark('Appendix', 0, 0, '', 'B', array(0,64,128));
 //$pdf->writeHTML('APPENDIX', true, false, false, false, '');
 
 $image=$generatesop->appendix;
-$count=count($image);
+$d=0;
+$count=0;
+
+foreach ($image as $value) {
+    $count+=count($value);
+}
 
 $b=0;
 
@@ -354,12 +359,12 @@ foreach ($images as $pkey=>$value) {
 $appendix_images=file_get_contents(Storage::disk('s3')->url('images/'.$value));
 $pdf->Image('@' . $appendix_images, 0, 30, 180, 150, '', '', '', true, 200,'C');
 
-
+if($d < $count){
 $pdf->AddPage('L');
 }
 }
 }
-
+}
 
 
 
