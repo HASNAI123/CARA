@@ -66,7 +66,7 @@
                                 <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt">
 
                                 </i>
-                                {{ trans('Draft SOP') }}
+                                {{ trans('In-Progress SOP') }}
                             </a>
                         </li>
 
