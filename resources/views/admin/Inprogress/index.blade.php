@@ -6,7 +6,7 @@
 
 <div class="card">
     <div class="card-header" style="font-size:20px">
-        <b>{{ trans('Inprogress SOP') }} {{ trans('global.list') }}</b>
+        <b>{{ trans('Draft SOP') }} {{ trans('global.list') }}</b>
     </div>
     <br><br>
 
