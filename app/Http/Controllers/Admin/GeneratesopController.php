@@ -382,10 +382,7 @@ $flow=array();
 
             }
             $appendix2[$key] = array_merge($appendix2[$key],$appendix);
-          }else
-        {
-            $appendix2[$key] =  array("");
-        }  
+          }  
 
        }
 
