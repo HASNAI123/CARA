@@ -427,25 +427,7 @@ $flow=array();
           }
         }     
     
-   $name ="";
-
-        if(count($appendix) >0)
-        {
-          $name .=implode(',',$appendix);
-        }
-
-        if($previoes !=null)
-        {
-          if($name)
-          {
-            $name .=",".implode(',',$previoes);
-          }
-          else
-          {
-            $name .=implode(',',$previoes);
-          }
-        }
-
+   
 
           
 
