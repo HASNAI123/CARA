@@ -200,7 +200,7 @@
 
                 <div class="col-lg-3">
                   <div class="info-box-content">
-                    <h3>SOP In-Progress</h3>
+                    <h3> Draft SOP</h3>
                      <div class="flex-wrapper">
                       <div class="single-chart">
                         <svg viewBox="0 0 36 36" class="circular-chart red">
@@ -224,7 +224,7 @@
 
                 <div class="col-lg-3">
                   <div class="info-box-content">
-                    <h3>SOP Reviewed</h3>
+                    <h3>Reviewed SOP</h3>
                      <div class="flex-wrapper">
                       <div class="single-chart">
                         <svg viewBox="0 0 36 36" class="circular-chart info">
@@ -248,7 +248,7 @@
 
                 <div class="col-lg-3">
                    <div class="info-box-content">
-                    <h3>SOP Approved</h3>
+                    <h3>Approved SOP</h3>
                      <div class="flex-wrapper">
                       <div class="single-chart">
                         <svg viewBox="0 0 36 36" class="circular-chart green">
