@@ -244,10 +244,12 @@ input[type=text]:focus {
           
           
            @foreach($generatesop->appendix[$key] as $appendix)
+           @if($appendix)
            <div class="img">
           <input type="text" id="square" name="privious{{$key}}[]" value="{{$appendix}}" readonly>
           <input type="button" value="X" class="remove"><br>
            </div>
+           @endif
            @endforeach
          
            
