@@ -242,7 +242,7 @@ input[type=text]:focus {
           <label for="">Appendix {{$key+1}}</label> <br>
            <input  type="file" name="appendix{{$key}}[]"  accept=".jpg,.png,.jpeg"   style="background-color:#fff;" multiple/><br>
           
-           @if($generatesop->appendix)
+           @if($generatesop->appendix[$key])
            @foreach($generatesop->appendix[$key] as $appendix)
            <div class="img">
           <input type="text" id="square" name="privious{{$key}}[]" value="{{$appendix}}" readonly>
