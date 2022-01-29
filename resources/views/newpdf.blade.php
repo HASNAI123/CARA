@@ -323,7 +323,7 @@ foreach (array_reverse($flow) as $img) {
 if($generatesop->img){
 $imges=file_get_contents(Storage::disk('s3')->url('images/'.$img));
 
-$pdf->Image('@' . $imges, 0, 30, 180, 150, '', '', '', true, 200,'C');
+$pdf->Image('@' . $imges, 0, 30, 220, 150, '', '', '', true, 200,'C');
 
 if($c < $countflow){
 $pdf->AddPage('L');
@@ -360,7 +360,7 @@ if($generatesop->appendix){
 foreach ($images as $pkey=>$value) { 
 $d++;
 $appendix_images=file_get_contents(Storage::disk('s3')->url('images/'.$value));
-$pdf->Image('@' . $appendix_images, 0, 30, 180, 150, '', '', '', true, 200,'C');
+$pdf->Image('@' . $appendix_images, 0, 30, 220, 150, '', '', '', true, 200,'C');
 
 if($d < $count){
 $pdf->AddPage('L');
