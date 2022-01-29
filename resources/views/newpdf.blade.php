@@ -213,7 +213,7 @@ EOD;
 $monitoring=<<<EOD
 <h2>MONITORING</h2>
             <table cellpadding="13" style="margin-top:5px;">
-            <tr>
+            <tr nobr="true">
             <td style="border: 1px solid black;">$generatesop->monitoring</td>
             </tr>
             </table>
