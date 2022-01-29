@@ -57,7 +57,7 @@
                     <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt">
 
                     </i>
-                    {{ trans('SOP Filter') }}
+                    {{ trans('SOP Progress') }}
                 </a>
                 <ul class="c-sidebar-nav-dropdown-items">
 
