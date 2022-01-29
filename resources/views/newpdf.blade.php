@@ -298,6 +298,7 @@ $pdf->writeHTML($purpose, true, false, false, false, '');
 $pdf->Bookmark('Scope', 0, 0, '', 'B', array(0,64,128));
 $pdf->writeHTML($scope, true, false, false, false, '');
 
+$pdf->AddPage();
 $pdf->Bookmark('Review Procedure', 0, 0, '', 'B', array(0,64,128));
 $pdf->writeHTML($review_pro, true, false, false, false, '');
 
