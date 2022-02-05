@@ -342,7 +342,7 @@ $pdf->Bookmark('Appendix', 0, 0, '', 'B', array(0,64,128));
 $image=$generatesop->appendix;
 $d=0;
 $count=0;
-
+if($imag){
 foreach ($image as $value) {
     $count+=count($value);
 }
@@ -354,7 +354,7 @@ $b++;
 $pdf->SetFont('dejavusans', 'B', 14);
 if($images){
 $pdf->writeHTML('APPENDIX '. $b, true, false, false, false, '');
-}
+}}
 if($generatesop->appendix){
 
 foreach ($images as $pkey=>$value) { 
