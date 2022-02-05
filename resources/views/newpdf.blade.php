@@ -359,7 +359,7 @@ if($generatesop->appendix){
 
 foreach ($images as $pkey=>$value) { 
 $d++
-if($generatesop->appendix){
+if($images){
 $appendix_images=file_get_contents(Storage::disk('s3')->url('images/'.$value))
 
 $pdf->Image('@' . $appendix_images, 0, 30, 220, 150, '', '', '', true, 200,'C');
