@@ -342,7 +342,7 @@ $pdf->Bookmark('Appendix', 0, 0, '', 'B', array(0,64,128));
 $image=$generatesop->appendix;
 $d=0;
 $count=0;
-if($imag){
+if($image){
 foreach ($image as $value) {
     $count+=count($value);
 }
