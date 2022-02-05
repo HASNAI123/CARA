@@ -354,11 +354,10 @@ $b++;
 $pdf->SetFont('dejavusans', 'B', 14);
 if($images){
 $pdf->writeHTML('APPENDIX '. $b, true, false, false, false, '');
-}
+
 
 foreach ($images as $pkey=>$value) { 
 $d++
-if($generatesop->appendix){
 $appendix_images=file_get_contents(Storage::disk('s3')->url('images/'.$value))
 
 $pdf->Image('@' . $appendix_images, 0, 30, 220, 150, '', '', '', true, 200,'C');
