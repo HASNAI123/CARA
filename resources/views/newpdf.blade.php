@@ -358,14 +358,13 @@ $pdf->writeHTML('APPENDIX '. $b, true, false, false, false, '');
 
 foreach ($images as $pkey=>$value) { 
 $d+
-if(isset($images)){
+
 $appendix_images=file_get_contents(Storage::disk('s3')->url('images/'.$value))
 
 $pdf->Image('@' . $appendix_images, 0, 30, 220, 150, '', '', '', true, 200,'C');
 
 if($d < $count){
 $pdf->AddPage('L');
-}
 }
 }
 }
