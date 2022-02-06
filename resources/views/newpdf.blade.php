@@ -357,7 +357,7 @@ $pdf->writeHTML('APPENDIX '. $b, true, false, false, false, '');
 
 
 foreach ($images as $pkey=>$value) { 
-$d+
+$d++;
 
 if(isset($value)){
 $appendix_images=file_get_contents(Storage::disk('s3')->url('images/'.$value));
