@@ -353,8 +353,9 @@ foreach ($image as $key=>$images) {
 $b++;
 $pdf->SetFont('dejavusans', 'B', 14);
 
+if($images){
 $pdf->writeHTML('APPENDIX '. $b, true, false, false, false, '');
-
+}
 
 foreach ($images as $pkey=>$value) { 
 $d++;
