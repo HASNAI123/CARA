@@ -91,6 +91,63 @@
                     @endif
 
                     <div class="row">
+                         {{-- Widget - latest entries --}}
+                        <div class="{{ $settings1['column_class'] }}" style="overflow-x: auto;">
+                            <h3>{{'CARA Feature Info'}}</h3>
+                            <table style="font-size: 15 px;"class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                      <th>
+                                        Feature
+                                      </th>
+                                      <th>
+                                        Description
+                                      </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <tr style="font-weight:bold;">
+                                          <td>
+                                            SOP Archive
+                                          </td>
+                                          <td>
+                                            To save existing SOP, Manuals,Memo,and other AEON-related processes for reference.<br/><br/>
+                                            <b>Important Note:</b><br/>
+                                            All Documents uploaded in the SOP Archive are considered valid until a newly drafted SOP is approved in the CARA system.<br/><br/>
+
+                                            All New Business Units ("NBU") can refer to the existing SOP which are relevant to the New Business Process ("NBP"). The NBU is strongly advised to draft and formalize the SOP for their NBP as soon as possible.
+                                          </td>
+                                        </tr>
+                                       
+                                        <tr style="font-weight:bold;">
+                                          <td>
+                                            SOP Library & Generate SOP
+                                          </td>
+                                          <td>
+                                            To generate and formalize new SOP via CARA system Review and Approval by the assigned AlC/ALT.
+                                          </td>
+                                        </tr>
+                                        <tr style="font-weight:bold;">
+                                          <td>
+                                            SOP Progress
+                                          </td>
+                                          <td>
+                                            To show the current SOP Progress for each step of the formalization process;Draft,Review and,Approval.
+                                          </td>
+                                        </tr>
+                                        <tr style="font-weight:bold;">
+                                          <td>
+                                            Feedback
+                                          </td>
+                                          <td>
+                                            For Users to provide feedback on the CARA system or any comments on the SOP for improvement.
+                                          </td>
+                                        </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                        
                         {{-- Widget - latest entries --}}
                         <div class="{{ $settings1['column_class'] }}" style="overflow-x: auto;">
                             <h3>{{ $settings1['chart_title'] }}</h3>
