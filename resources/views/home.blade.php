@@ -124,7 +124,7 @@
                                             SOP Library & Generate SOP
                                           </td>
                                           <td>
-                                            To generate and formalize new SOP via CARA system Review and Approval by the assigned AlC/ALT.
+                                            To generate and formalize new SOP via CARA system Review and Approval by the assigned ALC/ALT.
                                           </td>
                                         </tr>
                                         <tr style="font-weight:bold;">
