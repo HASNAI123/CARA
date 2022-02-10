@@ -150,7 +150,7 @@
                             <div class="modal-dialog" role="document">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLabel">Terms & Conditions</h5>
+                                  <h5 class="modal-title" id="exampleModalLabel">Acknowledgement</h5>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
@@ -161,9 +161,32 @@
                                         @csrf
                                    <p>I hereby acknowledge that i am going to view and download the following documents from CARA (caramyaeon.com.my).</p> 
                                    <p>I acknowledge the it is my responsbility to read, understand, and adhere to these procedures.</p>
-                                   <p>I further understand that any failure to fully adhere to the said procedure by me may result in disciplinary action, including termination.</p>      
-                                  <input type="checkbox" name="" required="">Accept all terms & conditions     
-                                  <br>
+                                   <p>I further understand that any failure to fully adhere to the said procedure by me may result in disciplinary action, including termination.</p>  
+
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                      <input type="checkbox" id="agree" required=""> Agree 
+                                    </div> 
+
+                                    <div class="col-md-6">
+                                    <input type="checkbox"  id="disagree" /> Disagree
+                                    </div>
+                                  </div>
+                                  <br/>
+                            
+                                <div id="question" style="display: none">
+                                    <p>In case of any disagreement or discrepancy in the procedures, it is within my responsibility to provide feedback to the Process Owner.</p>
+
+                                     <div class="row">
+                                    <div class="col-md-6">
+                                      <input type="checkbox" id="agree2"> Agree  
+                                    </div> 
+
+                                    <div class="col-md-6">
+                                    <input type="checkbox" /> Disagree
+                                    </div>
+                                  </div>                                    
+                                </div>
                                 </div>
                                 <div class="modal-footer">
                                 <button class="btn btn-success" type="submit">
@@ -187,7 +210,21 @@
 @endsection
 @section('scripts')
 @parent
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script>
+    $(function () {
+            $("#disagree").click(function () {
+                if ($(this).is(":checked")) {
+                    $("#question").show();
+                    $('#agree').prop('required',false);
+                    $('#agree2').prop('required',true);
+                } else {
+                    $("#question").hide();
+                    $('#agree').prop('required',true);
+                    $('#agree2').prop('required',false);
+                }
+            });
+        });
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
 
