@@ -216,6 +216,7 @@
            $('input[type="radio"]').click(function(){
               if($(this).attr("value")=="disagree"){
                  $(".question").show();
+                 $('#agree2').prop('required',true);
               }
               if($(this).attr("value")=="agree"){
                  $(".question").hide();
