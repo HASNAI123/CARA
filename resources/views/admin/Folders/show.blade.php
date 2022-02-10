@@ -107,7 +107,7 @@
                            
                             <td>
                            
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.generatesop.show', $generatesop->id) }}" target="_blank">
+                                    <a class="btn btn-xs btn-primary" href="" target="_blank" data-toggle="modal" data-target="#exampleModal-{{$generatesop->id}}">
                                         {{ trans('View & Download') }}
                                     </a>
                                     
@@ -141,11 +141,40 @@
                                         {{ trans('global.delete') }}
                                     </a>
                                   @endcan  
-                    
-
                             </td>
 
                         </tr>
+                        
+                         <!-- Modal -->
+                          <div class="modal fade" id="exampleModal-{{$generatesop->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Terms & Conditions</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                <form method="POST" action="{{ route('admin.generatesop.show',$generatesop->id) }}" enctype="multipart/form-data">
+                                        @method('GET')
+                                        @csrf
+                                   <p>I hereby acknowledge that i am going to view and download the following documents from CARA (caramyaeon.com.my).</p> 
+                                   <p>I acknowledge the it is my responsbility to read, understand, and adhere to these procedures.</p>
+                                   <p>I further understand that any failure to fully adhere to the said procedure by me may result in disciplinary action, including termination.</p>      
+                                  <input type="checkbox" name="" required="">Accept all terms & conditions     
+                                  <br>
+                                </div>
+                                <div class="modal-footer">
+                                <button class="btn btn-success" type="submit">
+                                              {{ trans('Ok') }}
+                                </button>
+                                </form>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    @endforeach
                     @endforeach
             
                 
