@@ -145,7 +145,7 @@
 
                         </tr>
                         
-                         <!-- Modal -->
+                        <!-- Modal -->
                           <div class="modal fade" id="exampleModal-{{$generatesop->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                               <div class="modal-content">
@@ -165,31 +165,31 @@
 
                                   <div class="row">
                                     <div class="col-md-6">
-                                      <input type="checkbox" id="agree" required=""> Agree 
+                                      <input type="radio" name="radio" value="agree" id="agree" required=""> Agree 
                                     </div> 
 
                                     <div class="col-md-6">
-                                    <input type="checkbox"  id="disagree" /> Disagree
+                                    <input type="radio" name="radio" value="disagree"  id="disagree" /> Disagree
                                     </div>
                                   </div>
                                   <br/>
                             
-                                <div id="question" style="display: none">
+                                <div class="question" style="display: none">
                                     <p>In case of any disagreement or discrepancy in the procedures, it is within my responsibility to provide feedback to the Process Owner.</p>
 
                                      <div class="row">
                                     <div class="col-md-6">
-                                      <input type="checkbox" id="agree2"> Agree  
+                                      <input type="radio" name="radio2" value="agree2" id="agree2" required=""> Agree   
                                     </div> 
 
                                     <div class="col-md-6">
-                                    <input type="checkbox" /> Disagree
+                                    <input type="radio" name="radio2" value="disagree2"  id="disagree2" /> Disagree
                                     </div>
                                   </div>                                    
                                 </div>
                                 </div>
                                 <div class="modal-footer">
-                                <button class="btn btn-success" type="submit">
+                                <button class="btn btn-success" id="btn" type="submit">
                                               {{ trans('Ok') }}
                                 </button>
                                 </form>
@@ -213,17 +213,20 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script>
     $(function () {
-            $("#disagree").click(function () {
-                if ($(this).is(":checked")) {
-                    $("#question").show();
-                    $('#agree').prop('required',false);
-                    $('#agree2').prop('required',true);
-                } else {
-                    $("#question").hide();
-                    $('#agree').prop('required',true);
-                    $('#agree2').prop('required',false);
-                }
-            });
+           $('input[type="radio"]').click(function(){
+              if($(this).attr("value")=="disagree"){
+                 $(".question").show();
+              }
+              if($(this).attr("value")=="agree"){
+                 $(".question").hide();
+                 $('#agree2').prop('required',false);
+              }  
+              if($(this).attr("value")=="disagree2"){
+                 $('#btn').hide();
+              }else{
+                $('#btn').show();
+              }        
+        });
         });
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
