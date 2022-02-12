@@ -109,7 +109,7 @@
                                     </a>
                                      @endcan
 
-                                     <a class="btn btn-xs btn-info" href="{{ route('admin.sops.download',$sop->sop_file ) }}">
+                                     <a class="btn btn-xs btn-info" href="#"  target="_blank" data-toggle="modal" data-target="#exampleModal-{{$sop->id}}">
                                         {{ trans(' View & Download') }}
                                     </a>
 
@@ -120,11 +120,61 @@
                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
                                     </form>
                                     @endcan
-                    
-
                             </td>
-
                         </tr>
+                        
+                        <!-- Modal -->
+                          <div class="modal fade" id="exampleModal-{{$sop->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Acknowledgement</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="javascript:window.location.reload()">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                <form method="POST" action="{{ route('admin.sops.download',$sop->sop_file) }}" enctype="multipart/form-data">
+                                        @method('GET')
+                                        @csrf
+                                   <p>I hereby acknowledge that i am going to view and download the following documents from CARA (caramyaeon.com.my).</p> 
+                                   <p>I acknowledge the it is my responsbility to read, understand, and adhere to these procedures.</p>
+                                   <p>I further understand that any failure to fully adhere to the said procedure by me may result in disciplinary action, including termination.</p>  
+
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                      <input type="radio" name="radio" value="agree" id="agree" required=""> Agree 
+                                    </div> 
+
+                                    <div class="col-md-6">
+                                    <input type="radio" name="radio" value="disagree"  id="disagree" /> Disagree
+                                    </div>
+                                  </div>
+                                  <br/>
+                            
+                                <div class="question" style="display: none">
+                                    <p>In case of any disagreement or discrepancy in the procedures, it is within my responsibility to provide feedback to the Process Owner.</p>
+
+                                     <div class="row">
+                                    <div class="col-md-6">
+                                      <input type="radio" name="radio2" value="agree2" id="agree2" required=""> Agree   
+                                    </div> 
+
+                                    <div class="col-md-6">
+                                    <input type="radio" name="radio2" value="disagree2"  id="disagree2" /> Disagree
+                                    </div>
+                                  </div>                                    
+                                </div>
+                                </div>
+                                <div class="modal-footer">
+                                <button class="btn btn-success" id="btn" type="submit">
+                                              {{ trans('Ok') }}
+                                </button>
+                                </form>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                     @endforeach
                 </tbody>
             </table>
@@ -137,7 +187,27 @@
 @endsection
 @section('scripts')
 @parent
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script>
+    $(function () {
+        
+            $('input[type="radio"]').click(function(){
+              if($(this).attr("value")=="disagree"){
+                 $(".question").show();
+                 $('#agree2').prop('required',true);
+              }
+              if($(this).attr("value")=="agree"){
+                 $(".question").hide();
+                 $('#agree2').prop('required',false);
+              }  
+              if($(this).attr("value")=="disagree2"){
+                 $('#btn').hide();
+              }else{
+                $('#btn').show();
+              }        
+        });
+        });
+        
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
 
