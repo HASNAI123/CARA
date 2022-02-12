@@ -167,7 +167,7 @@
                                 </div>
                                 </div>
                                 <div class="modal-footer">
-                                <button class="btn btn-success" id="btn" type="submit">
+                                <button class="btn btn-success btn_hide" type="submit">
                                               {{ trans('Ok') }}
                                 </button>
                                 </form>
@@ -201,9 +201,9 @@
                  $('#agree2').prop('required',false);
               }  
               if($(this).attr("value")=="disagree2"){
-                 $('#btn').hide();
+                 $('.btn_hide').hide();
               }else{
-                $('#btn').show();
+                $('.btn_hide').show();
               }        
         });
         });
