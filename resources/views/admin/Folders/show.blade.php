@@ -188,7 +188,7 @@
                                     <li><p>In case of any disagreement or discrepancy in the procedures, it is within my responsibility to provide feedback to the Process Owner.<br>
                                     Sekiranya terdapat sebarang percanggahan atau percanggahan dalam prosedur, adalah menjadi tanggungjawab saya untuk memberikan maklum balas kepada Pemilik Proses.</p></li>
                                      
-                                     </ol>
+                                     
                                      
                                      
                                      <div class="row" style="text-align: center;">
@@ -201,7 +201,8 @@
                                     </div>
                                     
                                   </div>
-    
+                                </ol>
+                                
                                 </div>
                                 </div>
                                 
