@@ -169,10 +169,10 @@
                                    
                                    <li><p> I further understand that any failure to fully adhere to the said procedure by me may result in disciplinary action, including termination.<br>
                                        <i>Saya selanjutnya memahami bahawa sebarang kegagalan untuk mematuhi sepenuhnya prosedur tersebut oleh saya boleh mengakibatkan tindakan tatatertib, termasuk pemberhentian.</i></p></li>
-                                  </ol>
+                                 
                                   
                                   
-                                  <div class="row">
+                                  <div class="row" style="text-align: center;">
                                     <div class="col-md-6">
                                       <input type="radio" name="radio" value="agree" id="agree" required=""> Agree 
                                     </div> 
@@ -181,12 +181,17 @@
                                     <input type="radio" name="radio" value="disagree"  id="disagree" /> Disagree
                                     </div>
                                   </div>
+                                  
                                   <br/>
                             
                                 <div class="question" style="display: none">
-                                    <p>In case of any disagreement or discrepancy in the procedures, it is within my responsibility to provide feedback to the Process Owner.</p>
-
-                                     <div class="row">
+                                    <li><p>In case of any disagreement or discrepancy in the procedures, it is within my responsibility to provide feedback to the Process Owner.<br>
+                                    Sekiranya terdapat sebarang percanggahan atau percanggahan dalam prosedur, adalah menjadi tanggungjawab saya untuk memberikan maklum balas kepada Pemilik Proses.</p></li>
+                                     
+                                     </ol>
+                                     
+                                     
+                                     <div class="row" style="text-align: center;">
                                     <div class="col-md-6">
                                       <input type="radio" name="radio2" value="agree2" id="agree2" required=""> Agree   
                                     </div> 
@@ -194,9 +199,12 @@
                                     <div class="col-md-6">
                                     <input type="radio" name="radio2" value="disagree2"  id="disagree2" /> Disagree
                                     </div>
-                                  </div>                                    
+                                    
+                                  </div>
+    
                                 </div>
                                 </div>
+                                
                                 <div class="modal-footer">
                                 <button class="btn btn-success btn_hide" type="submit">
                                               {{ trans('Ok') }}
