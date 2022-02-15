@@ -128,7 +128,7 @@
                             <div class="modal-dialog" role="document">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLabel">Acknowledgement</h5>
+                                  <h5 class="modal-title" id="exampleModalLabel" style="text-align:center;">Acknowledgement<br> <i>Pengakuan</i></h5>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="javascript:window.location.reload()">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
@@ -137,11 +137,20 @@
                                 <form method="POST" action="{{ route('admin.sops.download',$sop->sop_file) }}" enctype="multipart/form-data">
                                         @method('GET')
                                         @csrf
-                                   <p>I hereby acknowledge that i am going to view and download the following documents from CARA (caramyaeon.com.my).</p> 
-                                   <p>I acknowledge the it is my responsbility to read, understand, and adhere to these procedures.</p>
-                                   <p>I further understand that any failure to fully adhere to the said procedure by me may result in disciplinary action, including termination.</p>  
-
-                                  <div class="row">
+                                   
+                                 <ol type="1">
+                                  <li><p> I hereby acknowledge that i am going to view and download the following documents from CARA (caramyaeon.com.my).<br>
+                                       <i>Saya dengan ini mengakui bahawa saya akan melihat dan memuat turun dokumen berikut daripada CARA (caramyaeon.com.my).</i></p></li>
+                                   
+                                   <li><p> I acknowledge the it is my responsbility to read, understand, and adhere to these procedures.<br>
+                                       <i>Saya mengakui tanggungjawab saya untuk membaca, memahami dan mematuhi prosedur ini.</i></p></li>
+                                   
+                                   <li><p> I further understand that any failure to fully adhere to the said procedure by me may result in disciplinary action, including termination.<br>
+                                       <i>Saya selanjutnya memahami bahawa sebarang kegagalan untuk mematuhi sepenuhnya prosedur tersebut oleh saya boleh mengakibatkan tindakan tatatertib, termasuk pemberhentian.</i></p></li>
+                                 
+                                  
+                                  
+                                  <div class="row" style="text-align: center;">
                                     <div class="col-md-6">
                                       <input type="radio" name="radio" value="agree" id="agree" required=""> Agree 
                                     </div> 
@@ -150,12 +159,17 @@
                                     <input type="radio" name="radio" value="disagree"  id="disagree" /> Disagree
                                     </div>
                                   </div>
+                                  
                                   <br/>
                             
                                 <div class="question" style="display: none">
-                                    <p>In case of any disagreement or discrepancy in the procedures, it is within my responsibility to provide feedback to the Process Owner.</p>
-
-                                     <div class="row">
+                                    <li><p>In case of any disagreement or discrepancy in the procedures, it is within my responsibility to provide feedback to the Process Owner.<br>
+                                    <i>Sekiranya terdapat sebarang percanggahan atau percanggahan dalam prosedur, adalah menjadi tanggungjawab saya untuk memberikan maklum balas kepada Pemilik Proses.</i></p></li>
+                                     
+                                     
+                                     
+                                     
+                                     <div class="row" style="text-align: center;">
                                     <div class="col-md-6">
                                       <input type="radio" name="radio2" value="agree2" id="agree2" required=""> Agree   
                                     </div> 
@@ -163,14 +177,19 @@
                                     <div class="col-md-6">
                                     <input type="radio" name="radio2" value="disagree2"  id="disagree2" /> Disagree
                                     </div>
-                                  </div>                                    
+                                    
+                                  </div>
+                                
+                                
                                 </div>
                                 </div>
+                                
                                 <div class="modal-footer">
                                 <button class="btn btn-success btn_hide" type="submit">
                                               {{ trans('Ok') }}
                                 </button>
                                 </form>
+                                </ol>
                                 </div>
                               </div>
                             </div>
