@@ -172,7 +172,7 @@
                                  
                                   
                                   
-                                  <div class="row" style="text-align: center;">
+                                  <div class="row">
                                     <div class="col-md-6">
                                       <input type="radio" name="radio" value="agree" id="agree" required=""> Agree 
                                     </div> 
