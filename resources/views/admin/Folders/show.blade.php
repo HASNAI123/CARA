@@ -150,7 +150,7 @@
                             <div class="modal-dialog" role="document">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLabel">Acknowledgement</h5>
+                                  <h5 class="modal-title" id="exampleModalLabel">Acknowledgement<br><i>Pengakuan</i></h5>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="javascript:window.location.reload()">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
@@ -186,7 +186,7 @@
                             
                                 <div class="question" style="display: none">
                                     <li><p>In case of any disagreement or discrepancy in the procedures, it is within my responsibility to provide feedback to the Process Owner.<br>
-                                    Sekiranya terdapat sebarang percanggahan atau percanggahan dalam prosedur, adalah menjadi tanggungjawab saya untuk memberikan maklum balas kepada Pemilik Proses.</p></li>
+                                    <i>Sekiranya terdapat sebarang percanggahan atau percanggahan dalam prosedur, adalah menjadi tanggungjawab saya untuk memberikan maklum balas kepada Pemilik Proses.</i></p></li>
                                      
                                      
                                      
