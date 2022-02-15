@@ -160,13 +160,13 @@
                                         @method('GET')
                                         @csrf
                                    <p>1. I hereby acknowledge that i am going to view and download the following documents from CARA (caramyaeon.com.my).<br>
-                                       Saya dengan ini mengakui bahawa saya akan melihat dan memuat turun dokumen berikut daripada CARA (caramyaeon.com.my).</p>
+                                       <i>Saya dengan ini mengakui bahawa saya akan melihat dan memuat turun dokumen berikut daripada CARA (caramyaeon.com.my).</i></p>
                                    
                                    <p>2. I acknowledge the it is my responsbility to read, understand, and adhere to these procedures.<br>
-                                      Saya mengakui tanggungjawab saya untuk membaca, memahami dan mematuhi prosedur ini.</p>
+                                      <i>Saya mengakui tanggungjawab saya untuk membaca, memahami dan mematuhi prosedur ini.</i></p>
                                    
                                    <p>3. I further understand that any failure to fully adhere to the said procedure by me may result in disciplinary action, including termination.<br>
-                                      Saya selanjutnya memahami bahawa sebarang kegagalan untuk mematuhi sepenuhnya prosedur tersebut oleh saya boleh mengakibatkan tindakan tatatertib, termasuk pemberhentian.</p>
+                                      <i>Saya selanjutnya memahami bahawa sebarang kegagalan untuk mematuhi sepenuhnya prosedur tersebut oleh saya boleh mengakibatkan tindakan tatatertib, termasuk pemberhentian.</i></p>
                                   
                                   <div class="row">
                                     <div class="col-md-6">
