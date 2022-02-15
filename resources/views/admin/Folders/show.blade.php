@@ -201,7 +201,7 @@
                                     </div>
                                     
                                   </div>
-                                </ol>
+                                
                                 
                                 </div>
                                 </div>
@@ -211,6 +211,7 @@
                                               {{ trans('Ok') }}
                                 </button>
                                 </form>
+                                </ol>
                                 </div>
                               </div>
                             </div>
