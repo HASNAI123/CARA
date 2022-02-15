@@ -5,7 +5,7 @@
 
    <div class="form-group">
                 <a class="btn btn-primary" href="{{ route("admin.folders.index") }}">
-                  <i class="fa fa-arrow-left" aria-hidden="true"></i>  {{ trans('Sop library') }}
+                  <i class="fa fa-arrow-left" aria-hidden="true"></i>  {{ trans('SOP library') }}
                 </a>
             </div>
 
