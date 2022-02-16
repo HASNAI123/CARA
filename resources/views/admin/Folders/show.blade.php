@@ -208,7 +208,7 @@
                                 
                                 <div class="modal-footer">
                                 <button class="btn btn-success btn_hide" type="submit">
-                                              {{ trans('Ok') }}
+                                              {{ trans('OK') }}
                                 </button>
                                 </form>
                                 </ol>
