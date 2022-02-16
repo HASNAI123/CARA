@@ -196,9 +196,8 @@ $flow=array();
         
         $newpdf =view( 'newpdf', [ 
             'generatesop' => $generatesop,
-            
             ] );
-        return $newpdf
+        return $newpdf;
         
         
         
