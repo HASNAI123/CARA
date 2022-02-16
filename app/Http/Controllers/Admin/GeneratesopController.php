@@ -176,31 +176,38 @@ $flow=array();
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public static function show(generatesop $generatesop)
+    public static function show(Request $request,$id)
     {   
-        $steps=collect($generatesop);
-        
-        $desc=$generatesop->desc;
+      $generatesops= Generatesop::where('id',$id)->get();
+      foreach ($generatesops as $generatesop) {
+  
+      }
+      
+      $name= Auth::user()->name;
+      $employee_id= Auth::user()->email;
+
+      DB::table('generatesop_history')->insert([
+          'title'=>$generatesop->sop_title,
+          'employee_name'=>$name,
+          'employee_id'=>$employee_id,
+          'selection_one'=>$request->radio,
+          'selection_two'=>$request->radio2
+      ]);
         
         $newpdf =view( 'newpdf', [ 
             'generatesop' => $generatesop,
-            'steps'=>$steps,
-             'desc'=>$desc,
+            
             ] );
-        return $newpdf;
-        
-       
-
-
-
+        return $newpdf
         
         
-        $pdf = \PDF::loadView( 'admin.generatesop.pdf', [ 
-            'generatesop' => $generatesop,
-            'steps'=>$steps,
-             'desc'=>$desc,
-            ] );
-        return $pdf->stream();
+        
+        // $pdf = \PDF::loadView( 'admin.generatesop.pdf', [ 
+        //     'generatesop' => $generatesop,
+        //     'steps'=>$steps,
+        //      'desc'=>$desc,
+        //     ] );
+        // return $pdf->stream();
         
 
     }
