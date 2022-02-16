@@ -157,7 +157,6 @@
                                 </div>
                                 <div class="modal-body">
                                 <form method="POST" action="{{ route('admin.generatesop.show',$generatesop->id) }}" enctype="multipart/form-data">
-                                        @method('GET')
                                         @csrf
                                     
                                   <ol type="1">
