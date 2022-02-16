@@ -174,11 +174,11 @@
                                   
                                   <div class="row">
                                     <div class="col-md-6">
-                                      <input type="radio" name="radio" value="agree" id="agree" required=""> Agree 
+                                      <input type="radio" name="radio" value="agree" class="agree" required=""> Agree 
                                     </div> 
 
                                     <div class="col-md-6">
-                                    <input type="radio" name="radio" value="disagree"  id="disagree" /> Disagree
+                                    <input type="radio" name="radio" value="disagree"  class="disagree" /> Disagree
                                     </div>
                                   </div>
                                   
@@ -193,11 +193,11 @@
                                      
                                      <div class="row" >
                                     <div class="col-md-6">
-                                      <input type="radio" name="radio2" value="agree2" id="agree2" required=""> Agree   
+                                      <input type="radio" name="radio2" value="agree" class="agree2" required=""> Agree   
                                     </div> 
 
                                     <div class="col-md-6">
-                                    <input type="radio" name="radio2" value="disagree2"  id="disagree2" /> Disagree
+                                    <input type="radio" name="radio2" value="disagree"  class="disagree2" /> Disagree
                                     </div>
                                     
                                   </div>
@@ -233,15 +233,18 @@
 <script>
     $(function () {
            $('input[type="radio"]').click(function(){
-              if($(this).attr("value")=="disagree"){
+              if($(this).attr("class")=="disagree"){
                  $(".question").show();
-                 $('#agree2').prop('required',true);
+                 $('.agree2').prop('required',true);
+                  $('.agree').prop('required',false);
               }
-              if($(this).attr("value")=="agree"){
+              if($(this).attr("class")=="agree"){
                  $(".question").hide();
-                 $('#agree2').prop('required',false);
+                 $('.agree2').prop('required',false);
+                 $('.agree2').prop('checked', false);
+                 $('.disagree2').prop('checked', false);
               }  
-              if($(this).attr("value")=="disagree2"){
+              if($(this).attr("class")=="disagree2"){
                  $('.btn_hide').hide();
               }else{
                 $('.btn_hide').show();
