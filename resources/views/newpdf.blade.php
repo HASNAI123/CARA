@@ -455,7 +455,9 @@ $pdf->endTOCPage();
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output($generatesop->sop_title.'.pdf', 'D');
+
+ob_end_clean();
+$pdf->Output($generatesop->sop_title.'.pdf', 'I');
 
 //============================================================+
 // END OF FILE
