@@ -194,12 +194,23 @@ class SopController extends Controller
     }
     }
     
-    public function download($sop_file){
-        
+    public function download(Request $request, $sop_file)
+    {
         // $path = storage_path('./app/public/'.$sop_file);
         // return response()->download($path);
         
-     
+        $name= Auth::user()->name;
+        $employee_id= Auth::user()->email;
+
+        DB::table('sop_history')->insert([
+              'title'=>$sop_file,
+              'employee_name'=>$name,
+              'employee_id'=>$employee_id,
+              'selection_one'=>$request->radio,
+              'selection_two'=>$request->radio2
+        ]);
+        
+
       return $path= Storage::disk('s3')->response('pdfs/'.$sop_file);
          
        
