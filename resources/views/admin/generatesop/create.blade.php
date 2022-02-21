@@ -149,7 +149,7 @@ input[type=text]:focus {
                 </select>
             <br><br>
 
-            <label> SOP Details </label><br><br><br>
+            <label> SOP Details </label><br>
             <p>SOP Title:<br><br><input  type="text" name="sop_title" value="{{ old('sop_title', '') }}"   /></p>
             <p>Version No. :<br><br><input type="integer" name="version_no"  value="{{ old('version_no', '') }}"         /> </p>
             <p>Business Unit:<br><br><input readonly type="text" name="business_unit"   value="{{ Auth::user()->business_unit }}"                /> </p> 
