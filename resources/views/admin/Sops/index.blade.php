@@ -135,7 +135,6 @@
                                 </div>
                                 <div class="modal-body">
                                 <form method="POST" action="{{ route('admin.sops.download',$sop->sop_file) }}" enctype="multipart/form-data">
-                                        @method('GET')
                                         @csrf
                                    
                                  <ol type="1">
