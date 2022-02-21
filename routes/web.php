@@ -21,7 +21,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::delete('sops/destroy', 'SopController@massDestroy')->name('sops.massDestroy');
     Route::post('sops/media', 'SopController@storeMedia')->name('sops.storeMedia');
     Route::post('sops/ckmedia', 'SopController@storeCKEditorImages')->name('sops.storeCKEditorImages');
-   Route::get('sops/download/{sop_file}', 'SopController@download')->name('sops.download');
+   Route::post('sops/download/{sop_file}', 'SopController@download')->name('sops.download');
     Route::resource('sops', 'SopController');
     Route::get('sops/index/{id}', 'SopController@index')->name('sops.index');
     Route::get('sops/create/{id}', 'SopController@create')->name('sops.create');
