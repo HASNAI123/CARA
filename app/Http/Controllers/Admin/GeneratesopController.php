@@ -439,38 +439,41 @@ $flow=array();
           {
             $filenames .=implode(',',$oldimg);
           }
-        }     
+        }  
+        
+           $generatesop= generatesop::find($id);
+          
+           $generatesop->sop_title=$sop_title;
+           $generatesop->effective_date=$effective_date;
+           $generatesop->version_no=$version_no;
+           $generatesop->doc_no=$doc_no;
+           $generatesop->policy=$policy;
+           $generatesop->purpose=$purpose;
+           $generatesop->scope=$scope;
+           $generatesop->review_pro=$review_pro;
+           $generatesop->monitoring=$monitoring;
+           $generatesop->verification=$verification;
+           $generatesop->steps=$steps;
+           $generatesop->desc=$desc;
+           $generatesop->img=$filenames ;
+           $generatesop->appendix=$appendix2;
+           $generatesop->folder=$folder;
+           $generatesop->Process_owner=$Process_owner;
+           $generatesop->Process_exec=$Process_exec;
+           $generatesop->Employee_id=$employee_id;
+           $generatesop->edited_by=$edited_by;
+           if($request->users){
+           $generatesop->assign_to=$request->users;
+            }
+
+           $generatesop->save();
     
    
 
           
 
 
-            generatesop::find($id)
-            ->update([
-          
-           'sop_title'=>$sop_title,
-          
-           'effective_date'=>$effective_date,
-           'version_no'=>$version_no,
-           'doc_no'=>$doc_no,
-           'policy'=>$policy,
-           'purpose'=>$purpose,
-           'scope'=>$scope,
-           'review_pro'=>$review_pro,
-           'monitoring'=>$monitoring,
-           'verification'=>$verification,
-           'steps'=>$steps,
-           'desc'=>$desc,
-           'img'=>$filenames ,
-           'appendix'=>$appendix2,
-           'folder'=>$folder,
-           'Process_owner'=>$Process_owner,
-           'Process_exec'=>$Process_exec,
-           'Employee_id'=>$employee_id,
-           'edited_by'=>$edited_by,
-          
-       ]);
+           
 
         
 
