@@ -40,7 +40,14 @@ class GeneratesopController extends Controller
     public function create()
     {
      $folders = folder::all();
-         return view('admin.generatesop.create',compact('folders'));
+     
+     $users = user::whereHas(
+    'roles', function($q){
+        $q->where('title', 'Reviewer');
+    }
+    )->get();
+    
+     return view('admin.generatesop.create',compact('folders','users'));
     
     }
 
@@ -153,7 +160,8 @@ $flow=array();
            'folder'=>$folder,
            'Process_owner'=>$Process_owner,
            'Process_exec'=>$Process_exec,
-           'Employee_id'=>$employee_id
+           'Employee_id'=>$employee_id,
+           'assign_to'=>implode(',',$request->users)
            
      
 
