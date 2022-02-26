@@ -64,7 +64,8 @@ class Generatesop extends Model
             'Process_owner',
             'Process_exec',
             'revised by',
-            'edited_by'
+            'edited_by',
+            'assign_to',
 
 
             
