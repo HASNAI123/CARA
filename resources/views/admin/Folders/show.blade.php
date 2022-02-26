@@ -117,11 +117,16 @@
                                     </a>
                                      @endcan
                                      
-                                      @can('Sop_reviewer')
+                                     <?php  
+                                      $login=Auth::user()->id;
+                                      $users=explode(',',$generatesop->assign_to);
+                                      foreach ($users as $user) {
+                                        if($login==$user){
+                                    ?> 
                                     <a class="btn btn-xs btn-warning" href="{{ route('admin.generatesop.review', $generatesop->id) }}">
                                         {{ trans('Review') }}
                                     </a>
-                                      @endcan
+                                    <?php }}?>
                                
 
                                      @if($generatesop->approved_by == null)
