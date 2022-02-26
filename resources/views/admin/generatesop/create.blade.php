@@ -58,7 +58,7 @@ textarea {
   border-radius: 4px;
   box-sizing: border-box;
 }
-    body {
+    .main-body {
     text-align: center;
     
 }
@@ -129,7 +129,8 @@ input[type=text]:focus {
     
     </style>
    
-      <div class="text-align:center">
+    <div class="main-body">
+    <div class="text-align:center">
     <div class="card-body">
         <form class="text-align:center" method="POST" action="{{ route("admin.generatesop.store") }}" enctype="multipart/form-data">
             @csrf
@@ -219,12 +220,30 @@ input[type=text]:focus {
                         <option readonly dea value="{{ $key }}" >{{ $label }}</option>
                     @endforeach
                 </select>
-      
-      <br><br>
-
             </div>
-
-            <br><br>
+        </div>    
+            <br/>
+            
+            <label for="permissions">{{ trans('Assign To') }}
+                                <span class="btn btn-info btn-xs select-all">{{ trans('global.select_all') }}</span>
+                                <span class="btn btn-info btn-xs deselect-all">{{ trans('global.deselect_all') }}</span></label><br/>
+                            <select name="users[]" id="permissions" class="form-control select2" style="width:800px;"   multiple="multiple"  required>
+                              @foreach($users as $users)
+                                    <option value="{{$users->id}}" >{{$users->name}}</option>
+                              @endforeach      
+               
+                            </select>
+                            @if($errors->has('permissions'))
+                                <p class="help-block">
+                                    {{ $errors->first('permissions') }}
+                                </p>
+                            @endif
+                            <p class="helper-block">
+                                {{ trans('cruds.role.fields.permissions_helper') }}
+                            </p>
+                            
+            <br/><br/>
+            
             <div class="form-group">
                 <button class="btn btn-success" type="submit">
                     {{ trans('global.save') }}
