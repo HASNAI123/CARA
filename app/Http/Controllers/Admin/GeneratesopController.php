@@ -318,7 +318,15 @@ $flow=array();
     {
     
          $folders = folder::all();
-        return view('admin.generatesop.edit', compact('generatesop','folders'));
+         
+         $users = user::whereHas(
+        'roles', function($q){
+            $q->where('title', 'Reviewer');
+        }
+        )->get();
+         
+         
+        return view('admin.generatesop.edit', compact('generatesop','folders','users'));
     }
 
     /**
