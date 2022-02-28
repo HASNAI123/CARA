@@ -470,9 +470,8 @@ $flow=array();
            $generatesop->Process_exec=$Process_exec;
            $generatesop->Employee_id=$employee_id;
            $generatesop->edited_by=$edited_by;
-           if($request->users){
-           $generatesop->assign_to=$request->users;
-            }
+           $generatesop->assign_to=implode(',',$request->users);
+            
 
            $generatesop->save();
     
