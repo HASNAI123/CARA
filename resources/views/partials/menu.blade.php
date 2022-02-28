@@ -170,6 +170,15 @@
                 </li>
             @endcan
         @endif
+        
+        <li class="c-sidebar-nav-item">
+            <a href="{{ route("admin.contact.index") }}" class="c-sidebar-nav-link">
+                <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt">
+
+                </i>
+                {{ trans('Contact Us') }}
+            </a>
+        </li>
         <li class="c-sidebar-nav-item">
             <a href="#" class="c-sidebar-nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
                 <i class="c-sidebar-nav-icon fas fa-fw fa-sign-out-alt">
