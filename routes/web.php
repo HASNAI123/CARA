@@ -79,6 +79,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::resource('inprogress_sop', 'InprogressSopController');
     Route::resource('reviewed_sop', 'ReviewedSopController');
     Route::resource('approved_sop', 'ApprovedSopController');
+    
+    //Contact Us
+    Route::resource('contact', 'ContactController');
 
 
 
