@@ -15,6 +15,7 @@ use App\Folder;
 use Illuminate\Support\Facades\Auth;
 use App\user;
 use Illuminate\Support\Facades\DB;
+use App\generatesop_history;
 
 
 class GeneratesopController extends Controller
@@ -194,13 +195,15 @@ $flow=array();
       $name= Auth::user()->name;
       $employee_id= Auth::user()->email;
 
-      DB::table('generatesop_history')->insert([
-          'title'=>$generatesop->sop_title,
-          'employee_name'=>$name,
-          'employee_id'=>$employee_id,
-          'selection_one'=>$request->radio,
-          'selection_two'=>$request->radio2
-      ]);
+      $histrory= New generatesop_history;
+
+      $histrory->title=$generatesop->sop_title;
+      $histrory->employee_name=$name;
+      $histrory->employee_id=$employee_id;
+      $histrory->selection_one=$request->radio;
+      $histrory->selection_two=$request->radio2;
+
+      $histrory->save();
         
         $newpdf =view( 'newpdf', [ 
             'generatesop' => $generatesop,
