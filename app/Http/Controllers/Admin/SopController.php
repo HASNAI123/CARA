@@ -15,6 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
 use App\Archive_Folder;
 use Illuminate\Support\Facades\DB;
+use App\sop_history;
 
 
 class SopController extends Controller
@@ -202,13 +203,15 @@ class SopController extends Controller
         $name= Auth::user()->name;
         $employee_id= Auth::user()->email;
 
-        DB::table('sop_history')->insert([
-              'title'=>$sop_file,
-              'employee_name'=>$name,
-              'employee_id'=>$employee_id,
-              'selection_one'=>$request->radio,
-              'selection_two'=>$request->radio2
-        ]);
+        $histrory= New sop_history;
+
+        $histrory->title=$sop_file;
+        $histrory->employee_name=$name;
+        $histrory->employee_id=$employee_id;
+        $histrory->selection_one=$request->radio;
+        $histrory->selection_two=$request->radio2;
+
+      $histrory->save();
         
 
       return $path= Storage::disk('s3')->response('pdfs/'.$sop_file);
