@@ -42,13 +42,19 @@ class GeneratesopController extends Controller
     {
      $folders = folder::all();
      
-     $users = user::whereHas(
+     $reviewers_users = user::whereHas(
     'roles', function($q){
         $q->where('title', 'Reviewer');
     }
     )->get();
+
+     $approver_users = user::whereHas(
+    'roles', function($q){
+        $q->where('title', 'Approver');
+    }
+    )->get();
     
-     return view('admin.generatesop.create',compact('folders','users'));
+     return view('admin.generatesop.create',compact('folders','reviewers_users','approver_users'));
     
     }
 
@@ -162,7 +168,8 @@ $flow=array();
            'Process_owner'=>$Process_owner,
            'Process_exec'=>$Process_exec,
            'Employee_id'=>$employee_id,
-           'assign_to'=>implode(',',$request->users)
+           'assign_reviewers'=>implode(',',$request->reviewer_users),
+           'assign_approvers'=>implode(',',$request->approver_users),
            
      
 
