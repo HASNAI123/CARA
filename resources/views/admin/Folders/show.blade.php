@@ -119,7 +119,7 @@
                                      
                                      <?php  
                                       $login=Auth::user()->id;
-                                      $users=explode(',',$generatesop->assign_to);
+                                      $users=explode(',',$generatesop->assign_reviewers);
                                       foreach ($users as $user) {
                                         if($login==$user){
                                     ?> 
