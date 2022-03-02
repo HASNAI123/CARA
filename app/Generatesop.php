@@ -65,7 +65,9 @@ class Generatesop extends Model
             'Process_exec',
             'revised by',
             'edited_by',
-            'assign_to',
+            'assign_reviewers',
+            'assign_approvers',
+
 
 
             
