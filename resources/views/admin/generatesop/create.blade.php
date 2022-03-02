@@ -223,13 +223,12 @@ input[type=text]:focus {
             </div>
         </div>    
             <br/>
-            
-            <label for="permissions">{{ trans('Assign To') }}
+           <label for="reviewers">{{ trans('Assign Reviewrs') }}
                                 <span class="btn btn-info btn-xs select-all">{{ trans('global.select_all') }}</span>
                                 <span class="btn btn-info btn-xs deselect-all">{{ trans('global.deselect_all') }}</span></label><br/>
-                            <select name="users[]" id="permissions" class="form-control select2" style="width:800px;"   multiple="multiple"  required>
-                              @foreach($users as $users)
-                                    <option value="{{$users->id}}" >{{$users->name}}</option>
+                            <select name="reviewer_users[]" id="reviewers" class="form-control select2" style="width:800px;"   multiple="multiple"  required>
+                              @foreach($reviewers_users as $r_users)
+                                    <option value="{{$r_users->id}}" >{{$r_users->name}}</option>
                               @endforeach      
                
                             </select>
@@ -240,9 +239,28 @@ input[type=text]:focus {
                             @endif
                             <p class="helper-block">
                                 {{ trans('cruds.role.fields.permissions_helper') }}
-                            </p>
-                            
-            <br/><br/>
+                            </p>  
+
+                            <br/>
+            <label for="approvers">{{ trans('Assign Approvers') }}
+                                <span class="btn btn-info btn-xs select-all">{{ trans('global.select_all') }}</span>
+                                <span class="btn btn-info btn-xs deselect-all">{{ trans('global.deselect_all') }}</span></label><br/>
+                            <select name="approver_users[]" id="approvers" class="form-control select2" style="width:800px;"   multiple="multiple"  required>
+                              @foreach($approver_users as $a_users)
+                                    <option value="{{$a_users->id}}" >{{$a_users->name}}</option>
+                              @endforeach      
+               
+                            </select>
+                            @if($errors->has('permissions'))
+                                <p class="help-block">
+                                    {{ $errors->first('permissions') }}
+                                </p>
+                            @endif
+                            <p class="helper-block">
+                                {{ trans('cruds.role.fields.permissions_helper') }}
+                            </p>          
+           
+            <br><br>
             
             <div class="form-group">
                 <button class="btn btn-success" type="submit">
