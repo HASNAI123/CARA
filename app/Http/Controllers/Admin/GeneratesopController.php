@@ -342,7 +342,7 @@ $flow=array();
         )->get();
          
          
-        return view('admin.generatesop.edit', compact('generatesop','folders','reviewer_users',approver_users));
+        return view('admin.generatesop.edit', compact('generatesop','folders','reviewer_users','approver_users'));
     }
 
     /**
