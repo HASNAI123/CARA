@@ -266,12 +266,12 @@ input[type=text]:focus {
         </div>
         <br>
         
-        <label for="permissions">{{ trans('Assign To') }}
+        <label for="reviewers">{{ trans('Assign Reviewers') }}
                                 <span class="btn btn-info btn-xs select-all">{{ trans('global.select_all') }}</span>
                                 <span class="btn btn-info btn-xs deselect-all">{{ trans('global.deselect_all') }}</span></label><br/>
-                            <select name="users[]" id="permissions" class="form-control select2" style="width:800px;"   multiple="multiple" required="">
+                            <select name="users[]" id="reviewers" class="form-control select2" style="width:800px;"   multiple="multiple" required="">
                               @foreach($users as $users)
-                                    <option value="{{$users->id}}" {{in_array($users->id, explode(',',$generatesop->assign_to) ?: []) ? "selected" : ""}}>{{$users->name}}</option>
+                                    <option value="{{$users->id}}" {{in_array($users->id, explode(',',$generatesop->assign_reviewers) ?: []) ? "selected" : ""}}>{{$users->name}}</option>
 
                               @endforeach      
                
@@ -284,6 +284,25 @@ input[type=text]:focus {
                             <p class="helper-block">
                                 {{ trans('cruds.role.fields.permissions_helper') }}
                             </p>  
+                            
+         <label for="approvers">{{ trans('Assign Approvers') }}
+                                <span class="btn btn-info btn-xs select-all">{{ trans('global.select_all') }}</span>
+                                <span class="btn btn-info btn-xs deselect-all">{{ trans('global.deselect_all') }}</span></label><br/>
+                            <select name="users[]" id="approvers" class="form-control select2" style="width:800px;"   multiple="multiple" required="">
+                              @foreach($users as $users)
+                                    <option value="{{$users->id}}" {{in_array($users->id, explode(',',$generatesop->assign_approvers) ?: []) ? "selected" : ""}}>{{$users->name}}</option>
+
+                              @endforeach      
+               
+                            </select>
+                            @if($errors->has('permissions'))
+                                <p class="help-block">
+                                    {{ $errors->first('permissions') }}
+                                </p>
+                            @endif
+                            <p class="helper-block">
+                                {{ trans('cruds.role.fields.permissions_helper') }}
+                            </p>                      
             <div/>
             <br><br>
             
