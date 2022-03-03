@@ -329,14 +329,20 @@ $flow=array();
     
          $folders = folder::all();
          
-         $users = user::whereHas(
+         $reviewer_users = user::whereHas(
         'roles', function($q){
             $q->where('title', 'Reviewer');
         }
         )->get();
+        
+         $approver_users = user::whereHas(
+        'roles', function($q){
+            $q->where('title', 'Approver');
+        }
+        )->get();
          
          
-        return view('admin.generatesop.edit', compact('generatesop','folders','users'));
+        return view('admin.generatesop.edit', compact('generatesop','folders','reviewer_users',approver_users));
     }
 
     /**
