@@ -289,8 +289,8 @@ input[type=text]:focus {
                                 <span class="btn btn-info btn-xs select-all">{{ trans('global.select_all') }}</span>
                                 <span class="btn btn-info btn-xs deselect-all">{{ trans('global.deselect_all') }}</span></label><br/>
                             <select name="users[]" id="approvers" class="form-control select2" style="width:800px;"   multiple="multiple" required="">
-                              @foreach($users as $users)
-                                    <option value="{{$users->id}}" {{in_array($users->id, explode(',',$generatesop->assign_approvers) ?: []) ? "selected" : ""}}>{{$users->name}}</option>
+                              @foreach($reviewer_users as $r_users)
+                                    <option value="{{$r_users->id}}" {{in_array($r_users->id, explode(',',$generatesop->assign_approvers) ?: []) ? "selected" : ""}}>{{$users->name}}</option>
 
                               @endforeach      
                
